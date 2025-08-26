@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "title": "Who We Are",
+    "subtitle": "We transform visions into digital realities through innovative methodologies that challenge the limits of what's possible."
+  },
+  "essence": {
+    "title": "Our Essence",
+    "description": "At Disruptivo Lab, we don't follow trends: we create them. We are architects of the digital future, combining visionary strategy with impeccable execution to create experiences that redefine industries.",
+    "additional": "Our passion for innovation drives us to constantly explore new technological horizons, turning every project into an opportunity for disruption and transformation."
+  },
+  "methodology": {
+    "title": "Our Methodology",
+    "approaches": {
+      "intelligence": {
+        "title": "Leveraged Intelligence",
+        "description": "We combine cutting-edge AI with human expertise to create solutions that surpass traditional expectations."
+      },
+      "velocity": {
+        "title": "Disruptive Velocity", 
+        "description": "We implement agile methodologies and modern technologies that accelerate our clients' time-to-market."
+      },
+      "impact": {
+        "title": "Measurable Impact",
+        "description": "Every project is designed with clear KPIs and success metrics that guarantee tangible ROI."
+      }
+    }
+  },
+  "evolution": {
+    "title": "Our Evolution",
+    "milestones": {
+      "foundation": {
+        "period": "2014-2017",
+        "phase": "Foundation",
+        "achievement": "First web and mobile projects. Establishment of agile methodologies and quality focus."
+      },
+      "specialization": {
+        "period": "2018-2020",
+        "phase": "Specialization", 
+        "achievement": "Development of expertise in cloud architectures and business process automation."
+      },
+      "transformation": {
+        "period": "2021-2023",
+        "phase": "Digital Transformation",
+        "achievement": "Integration of AI and machine learning in business solutions. Expansion of consulting services."
+      },
+      "disruption": {
+        "period": "2024-Present",
+        "phase": "Disruptive Era",
+        "achievement": "Pioneers in intelligent agents and advanced automation. Redefining industry standards."
+      }
+    }
+  },
+  "benefits": {
+    "title": "What You Get",
+    "items": {
+      "results": {
+        "title": "10x More Effective Results",
+        "description": "Our solutions multiply the impact of your current processes."
+      },
+      "speed": {
+        "title": "3x Faster Launch",
+        "description": "Optimized methodologies that accelerate your time-to-market."
+      },
+      "roi": {
+        "title": "Proven ROI in 90 Days",
+        "description": "Clear metrics and tangible results from the first quarter."
+      },
+      "support": {
+        "title": "Comprehensive Ongoing Support",
+        "description": "Long-term technical and strategic support."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready for Transformation?",
+    "description": "Join more than 50 companies that have already transformed their future with our innovative solutions.",
+    "primary": "View Our Services",
+    "secondary": "Explore Portfolio"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "title": "🎮 인터랙티브 데모 플레이그라운드",
+  "subtitle": "우리의 자동화가 귀하의 비즈니스를 어떻게 변화시키는지 실시간으로 경험하세요",
+  "demos": {
+    "chat": {
+      "title": "스마트 AI 채팅",
+      "subtitle": "대화형 AI로 24/7 지원",
+      "status": "온라인",
+      "conversation": [
+        "안녕하세요! 오늘 어떻게 도와드릴까요?",
+        "서비스에 대한 정보가 필요합니다",
+        "완벽합니다, 저는 AI 자동화 전문가입니다. 어떤 프로세스를 자동화하고 싶으신가요?",
+        "주로 이메일과 소셜 미디어입니다",
+        "훌륭한 선택입니다. 이메일의 90%를 자동화하고 소셜 미디어 콘텐츠를 24/7 생성할 수 있습니다. 개인 맞춤형 데모에 관심이 있으신가요?"
+      ]
+    },
+    "email": {
+      "title": "이메일 자동화",
+      "subtitle": "이메일을 자동으로 처리하고 응답",
+      "inbox": "받은 편지함",
+      "processing": "자동 처리 중...",
+      "emails": "이메일",
+      "processed": "✅ 처리됨",
+      "processing_status": "🔄 처리 중...",
+      "sample_emails": [
+        "비즈니스 제안 - 자동 응답 전송됨",
+        "기술 문의 - 전문가에게 전달됨",
+        "견적 요청 - 견적서 생성됨",
+        "뉴스레터 구독 - 확인 메일 전송됨",
+        "기술 지원 - 티켓 자동 생성됨"
+      ]
+    },
+    "social": {
+      "title": "소셜 미디어 관리자",
+      "subtitle": "24/7 콘텐츠 생성 및 예약",
+      "generating": "콘텐츠 생성 중...",
+      "posts_generated": "생성된 게시물",
+      "sample_posts": [
+        "🚀 AI로 비즈니스를 자동화하세요 - 방법 알아보기...",
+        "💡 AI는 운영 비용을 최대 60% 절감할 수 있습니다...",
+        "🎯 성공 사례: 회사가 생산성을 3배 향상...",
+        "⚡ 무료 웨비나: 비즈니스 자동화..."
+      ]
+    },
+    "roi": {
+      "title": "ROI 계산기",
+      "subtitle": "자동화로 절약할 수 있는 비용 발견",
+      "current_costs": "현재 월간 비용",
+      "with_automation": "AI 자동화 적용 시",
+      "monthly_savings": "월간 절약",
+      "cost_reduction": "비용 절감",
+      "annual_roi": "ROI: {percentage}% 연간",
+      "payback": "{months}개월 내 투자 회수",
+      "currency": "KRW",
+      "values": {
+        "current": 9000000,
+        "automated": 3600000,
+        "savings": 5400000,
+        "reduction_percentage": 60,
+        "roi_percentage": 180,
+        "payback_months": 2.1
+      }
+    }
+  },
+  "cta": "우리 회사에 구현",
+  "whatsapp_message": "🎮 데모가 정말 좋았습니다! 우리 회사에 AI 자동화를 구현하고 싶습니다. 언제 대화할 수 있을까요?"
+}

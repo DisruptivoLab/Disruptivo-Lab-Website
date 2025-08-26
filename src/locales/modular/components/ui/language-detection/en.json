@@ -1,0 +1,5 @@
+{
+  "title": "Language automatically detected",
+  "message": "We have switched the language to {language} based on your device settings",
+  "close": "Close notification"
+}

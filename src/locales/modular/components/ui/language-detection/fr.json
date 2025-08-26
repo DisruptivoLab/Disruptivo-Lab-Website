@@ -1,0 +1,5 @@
+{
+  "title": "Langue détectée automatiquement",
+  "message": "Nous avons changé la langue en {language} basé sur les paramètres de votre appareil",
+  "close": "Fermer la notification"
+}

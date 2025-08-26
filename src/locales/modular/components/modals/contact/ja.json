@@ -1,0 +1,28 @@
+{
+  "modal": {
+    "title": "お問い合わせ",
+    "subtitle": "プロジェクトについてお聞かせください"
+  },
+  "whatsapp": {
+    "title": "WhatsApp",
+    "subtitle": "即座に返信"
+  },
+  "phone": {
+    "title": "電話",
+    "subtitle": "直接通話"
+  },
+  "email": {
+    "title": "メール",
+    "subtitle": "詳細なメッセージ",
+    "defaultSubject": "サービスのお問い合わせ - Disruptivo Lab"
+  },
+  "schedule": {
+    "title": "営業時間",
+    "weekdays": "月 - 金: {start} - {end}",
+    "saturday": "土曜日: {start} - {end}",
+    "timezone": "{city} (GMT{offset})"
+  },
+  "cta": {
+    "primary": "WhatsAppで送信"
+  }
+}

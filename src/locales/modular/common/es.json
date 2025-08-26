@@ -1,0 +1,54 @@
+{
+  "loading": "Cargando...",
+  "error": "Error",
+  "retry": "Reintentar",
+  "close": "Cerrar",
+  "back": "Volver",
+  "cta": {
+    "title": "¿Listo para Transformar tu Negocio?",
+    "description": "Conversemos sobre cómo podemos ayudarte a alcanzar tus objetivos con soluciones innovadoras.",
+    "contact": "Contactar",
+    "whatsapp": "WhatsApp",
+    "schedule": "Agendar Consulta",
+    "email": "Enviar Email"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "method": "El Método",
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "about": "Nosotros",
+    "ai": "Inteligencia Artificial",
+    "slide_controls": {
+      "progress": "{current}/{total}",
+      "previous": "Anterior",
+      "next": "Siguiente"
+    }
+  },
+  "footer": {
+    "cta": {
+      "title": "Construyamos algo extraordinario",
+      "subtitle": "Prototipos en semanas, resultados medibles desde el día uno",
+      "contact": "Hablemos"
+    },
+    "brand": {
+      "tagline": "Agencia de innovación y tecnología. IA, automatización y productos digitales que generan resultados reales."
+    },
+    "links": {
+      "title": "Explorar"
+    },
+    "contact": {
+      "title": "Contacto",
+      "email": "Email",
+      "whatsapp": "Escríbenos por WhatsApp"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos y Condiciones",
+      "cookies": "Política de Cookies"
+    },
+    "rights": "© {year} Disruptivo Lab. Todos los derechos reservados.",
+    "madeBy": "Hecho con ❤️ en Latinoamérica"
+  }
+}

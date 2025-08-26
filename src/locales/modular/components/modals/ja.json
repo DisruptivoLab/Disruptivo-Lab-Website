@@ -1,0 +1,38 @@
+{
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "プロジェクトについてお聞かせください。実現をお手伝いします",
+    "form": {
+      "name": "氏名",
+      "email": "メールアドレス",
+      "phone": "電話番号",
+      "company": "会社名",
+      "message": "メッセージ",
+      "service": "ご興味のあるサービス",
+      "submit": "メッセージを送信",
+      "sending": "送信中...",
+      "success": "メッセージが正常に送信されました！",
+      "error": "メッセージの送信でエラーが発生しました。もう一度お試しください。"
+    },
+    "services": {
+      "ai_agents": "AIエージェント",
+      "automation": "自動化",
+      "seo": "インテリジェントSEO",
+      "consulting": "コンサルティング",
+      "development": "製品開発"
+    },
+    "close": "閉じる"
+  },
+  "video": {
+    "title": "デモを見る",
+    "loading": "動画を読み込み中...",
+    "error": "動画の読み込みエラー",
+    "close": "動画を閉じる"
+  },
+  "confirmation": {
+    "title": "アクションの確認",
+    "message": "続行してもよろしいですか？",
+    "confirm": "確認",
+    "cancel": "キャンセル"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "title": "End‑to‑End AI & Product Consulting",
+    "subtitle": "Diagnosis, strategy and AI adoption with measurable results."
+  },
+  "pitch": {
+    "subtitle_long": "We align business, data and technology to prioritize use cases, estimate impact and build a realistic roadmap. We enable decisions with prototypes, benchmarks and controlled tests.",
+    "sales_focus": [
+      "Impact‑driven, effort‑aware prioritization.",
+      "Use cases with estimated ROI and mapped risks.",
+      "Pilot in weeks and scale with governance."
+    ]
+  },
+  "definition": {
+    "what_is": "Senior advisory to assess maturity, select AI/automation opportunities and define architecture, processes and success metrics.",
+    "key_benefits": [
+      "Clear vision and 90‑180‑day roadmap.",
+      "Objective prioritization (impact × effort).",
+      "Lower technical and operational risks."
+    ]
+  },
+  "pains": [
+    "Many ideas, few implementations.",
+    "Lack of metrics and ownership in AI.",
+    "Vendors and tools not aligned with strategy."
+  ],
+  "outcomes": [
+    { "label": "Roadmap", "value": "90 days" },
+    { "label": "Prioritized cases", "value": "5–8" },
+    { "label": "Pilots", "value": "2–3" },
+    { "label": "Governance", "value": "Defined" }
+  ],
+  "deliverables": [
+    "Maturity and capabilities assessment.",
+    "Data map and target architecture.",
+    "Prioritized use cases with ROI and risks.",
+    "Pilot plan and success criteria.",
+    "Governance and security model."
+  ],
+  "steps": [
+    { "title": "Discovery", "desc": "Interviews, processes and current metrics." },
+    { "title": "Analysis", "desc": "Opportunities, benchmark and risks." },
+    { "title": "Roadmap", "desc": "Initiatives, costs and timeline." },
+    { "title": "Pilots", "desc": "Controlled tests and recommendations." }
+  ],
+  "integrations": [
+    "OpenAI", "Claude", "Vertex AI", "Databricks", "Snowflake", "n8n", "Zapier"
+  ],
+  "faqs": [
+    { "q": "How long does it take?", "a": "Between 3 and 6 weeks depending on scope and stakeholder availability." },
+    { "q": "Does it include implementation?", "a": "We can continue with pilots and implementation if you decide so." },
+    { "q": "Do you work with our existing stack?", "a": "Yes, we integrate with your cloud, data and current tools." }
+  ]
+}

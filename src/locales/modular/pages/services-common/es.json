@@ -1,0 +1,21 @@
+{
+  "headings": {
+    "what": "Qué es",
+    "why_now": "¿Por qué ahora?",
+    "how": "Cómo funciona",
+    "deliverables": "Qué entregamos",
+    "outcomes": "Resultados en 90 días",
+  "integrations": "Integraciones",
+  "pain": "Problemas que resolvemos",
+    "faq": "Preguntas frecuentes"
+  },
+  "cta": {
+    "title": "Conversemos",
+    "desc": "Te mostramos un flujo real y cómo se conecta a tu CRM en minutos.",
+    "button": "Agendar llamada"
+  },
+  "breadcrumb": {
+    "back": "Atrás",
+    "services": "Servicios"
+  }
+}

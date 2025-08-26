@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "title": "Custom Software Development",
+    "subtitle": "Business‑driven product: fast, maintainable and ready to scale."
+  },
+  "pitch": {
+    "subtitle_long": "We build web, apps and microservices with weekly deliveries and strong focus on impact. From idea to MVP in weeks, or evolve your current platform with zero drama.",
+    "sales_focus": [
+      "Ship fast: prioritize essentials and measure outcomes.",
+      "Sustained growth: modular architecture and automated tests.",
+      "Experience that converts: performance, UX and technical SEO.",
+      "Modern stack with production‑ready DevOps."
+    ]
+  },
+  "definition": {
+    "what_is": "Full‑stack team that designs, develops and deploys tailor‑made software (web/apps/APIs) using modern practices and short cycles to minimize risk and maximize learning.",
+    "key_benefits": [
+      "Time‑to‑market in weeks.",
+      "Maintainable, well‑documented code.",
+      "Reproducible, secure infrastructure.",
+      "Monitoring and analytics from day one.",
+      "Extended team that integrates with your operation."
+    ]
+  },
+  "pains": [
+    "Slow projects with little visibility.",
+    "Technical debt blocking the roadmap.",
+    "Performance and UX issues hurting conversion.",
+    "Risky deployments without monitoring.",
+    "Quality problems due to lack of testing."
+  ],
+  "outcomes": [
+    { "label": "MVP", "value": "4–6 weeks" },
+    { "label": "Availability", "value": ">= 99.9%" },
+    { "label": "Core Web Vitals", "value": "Good" },
+    { "label": "Automated tests", "value": "+80% critical" }
+  ],
+  "deliverables": [
+    "Prioritized backlog and release roadmap.",
+    "Technical design and architecture definition.",
+    "Implementation with QA and automated tests.",
+    "CI/CD, observability and baseline security.",
+    "Documentation and hand‑off to your team."
+  ],
+  "steps": [
+    { "title": "Discovery & scope", "desc": "Goals, KPIs and key user stories." },
+    { "title": "Technical design", "desc": "Architecture, data model and stack decisions." },
+    { "title": "Iterative delivery", "desc": "Weekly sprints with demos and feedback." },
+    { "title": "Go‑Live & improvement", "desc": "Deployment, monitoring and next roadmap." }
+  ],
+  "integrations": [
+    "Next.js", "Node.js", "Postgres", "Vercel", "AWS", "Stripe", "Auth0", "Algolia"
+  ],
+  "faqs": [
+    { "q": "Who owns the code?", "a": "Always the client, with repository, CI/CD and documentation." },
+    { "q": "How long does an MVP take?", "a": "Typically 4–6 weeks depending on scope and dependencies." },
+    { "q": "How do you ensure quality?", "a": "Code reviews, automated tests and production monitoring." }
+  ]
+}

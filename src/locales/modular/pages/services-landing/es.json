@@ -1,0 +1,60 @@
+{
+  "servicesLanding": {
+  "title": "Soluciones de IA y Software",
+    "cta": "Descubrir",
+  "seo": "En Disruptivo Lab diseñamos e implementamos soluciones de IA conversacional, automatización de procesos y software a medida para acelerar ventas, reducir costos operativos y escalar productos digitales. Integramos WhatsApp, CRM y herramientas clave con metodologías ágiles para entregar resultados medibles en semanas.",
+  "usp": {
+      "title": "¿Por qué nosotros?",
+      "items": [
+        {
+          "key": "garantia",
+          "title": "Garantía de resultados",
+          "desc": "Resultados medibles en 90 días: definimos KPIs y los seguimos con transparencia."
+        },
+        {
+          "key": "tiempos",
+          "title": "Implementación en semanas",
+          "desc": "Sprints ágiles para lanzar rápido: 2–6 semanas según alcance."
+        },
+        {
+          "key": "acompanamiento",
+          "title": "Acompañamiento continuo",
+          "desc": "Capacitación, soporte y optimización para escalar sin fricción."
+        }
+      ]
+    },
+    "ctaBlock": {
+      "title": "¿Listo para construir con IA?",
+      "subtitle": "Conversemos y te mostramos cómo acelerar resultados con IA + software a medida.",
+      "primary": "Hablemos",
+      "secondary": "Ver metodología"
+    },
+    "cards": [
+      {
+        "slug": "whatsapp-ia",
+        "title": "IA Conversacional + WhatsApp",
+        "desc": "Automatiza ventas y soporte 24/7 con chatbots inteligentes que califican leads y agendan citas."
+      },
+      {
+        "slug": "automatizacion",
+        "title": "Automatización de Procesos",
+        "desc": "Ahorra 40+ horas semanales automatizando facturación, reportes y marketing para reducir errores."
+      },
+      {
+        "slug": "desarrollo-software",
+        "title": "Desarrollo de Software",
+        "desc": "Web, apps y microservicios escalables. Desde MVP hasta productos listos para producción."
+      },
+      {
+        "slug": "consultoria-integral",
+        "title": "Consultoría Integral",
+        "desc": "Diagnóstico, estrategia y adopción de IA con capacitación para integrar tecnología con resultados medibles."
+      },
+      {
+        "slug": "embudo-ia",
+        "title": "Embudo de Ventas con IA",
+        "desc": "Atrae, califica y convierte con recorridos multicanal automatizados impulsados por IA."
+      }
+    ]
+  }
+}

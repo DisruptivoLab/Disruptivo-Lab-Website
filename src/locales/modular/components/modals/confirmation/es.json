@@ -1,0 +1,18 @@
+{
+  "title": "Confirmar acción",
+  "message": "¿Estás seguro de que deseas continuar?",
+  "confirm": "Confirmar",
+  "cancel": "Cancelar",
+  "delete": {
+    "title": "Eliminar elemento",
+    "message": "Esta acción no se puede deshacer. ¿Estás seguro?",
+    "confirm": "Sí, eliminar",
+    "cancel": "Cancelar"
+  },
+  "save": {
+    "title": "Guardar cambios",
+    "message": "¿Deseas guardar los cambios realizados?",
+    "confirm": "Guardar",
+    "cancel": "Descartar"
+  }
+}

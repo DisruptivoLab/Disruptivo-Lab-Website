@@ -1,0 +1,28 @@
+{
+  "loading": "読み込み中...",
+  "error": "エラー",
+  "retry": "再試行",
+  "close": "閉じる",
+  "back": "戻る",
+  "cta": {
+    "title": "ビジネスを変革する準備はできていますか？",
+    "description": "革新的なソリューションで目標達成をお手伝いする方法について話し合いましょう。",
+    "contact": "お問い合わせ",
+    "whatsapp": "WhatsApp",
+    "schedule": "相談予約",
+    "email": "メール送信"
+  },
+  "navigation": {
+    "home": "ホーム",
+    "method": "メソッド",
+    "services": "サービス",
+    "portfolio": "ポートフォリオ",
+    "about": "私たちについて",
+    "ai": "人工知能",
+    "slide_controls": {
+      "progress": "{current}/{total}",
+      "previous": "前へ",
+      "next": "次へ"
+    }
+  }
+}

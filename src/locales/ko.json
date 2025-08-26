@@ -1,0 +1,28 @@
+{
+  "loading": "로딩 중...",
+  "error": "오류",
+  "retry": "다시 시도",
+  "close": "닫기",
+  "back": "뒤로",
+  "cta": {
+    "title": "비즈니스를 혁신할 준비가 되셨나요?",
+    "description": "혁신적인 솔루션으로 목표 달성을 도와드리는 방법에 대해 이야기해 봅시다.",
+    "contact": "연락처",
+    "whatsapp": "WhatsApp",
+    "schedule": "상담 예약",
+    "email": "이메일 보내기"
+  },
+  "navigation": {
+    "home": "홈",
+    "method": "방법",
+    "services": "서비스",
+    "portfolio": "포트폴리오",
+    "about": "소개",
+    "ai": "인공지능",
+    "slide_controls": {
+      "progress": "{current}/{total}",
+      "previous": "이전",
+      "next": "다음"
+    }
+  }
+}

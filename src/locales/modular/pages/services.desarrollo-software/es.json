@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "title": "Desarrollo de Software a Medida",
+    "subtitle": "Producto con foco en negocio: rápido, mantenible y listo para escalar."
+  },
+  "pitch": {
+    "subtitle_long": "Construimos web, apps y microservicios con entregas semanales y foco en impacto. De idea a MVP en semanas, o evolución de tu plataforma actual con cero drama.",
+    "sales_focus": [
+      "Lanza rápido: priorizamos lo esencial y medimos resultados.",
+      "Crecimiento sostenido: arquitectura modular y pruebas automatizadas.",
+      "Experiencia que convierte: performance, UX y SEO técnico.",
+      "Stack moderno con DevOps listo para producción."
+    ]
+  },
+  "definition": {
+    "what_is": "Equipo full‑stack que diseña, desarrolla y despliega software a medida (web/apps/APIs) con prácticas modernas y ciclos cortos para minimizar riesgo y maximizar aprendizaje.",
+    "key_benefits": [
+      "Time‑to‑market en semanas.",
+      "Código mantenible y documentado.",
+      "Infraestructura reproducible y segura.",
+      "Monitoreo y analítica desde el día uno.",
+      "Equipo extendido que se integra con tu operación."
+    ]
+  },
+  "pains": [
+    "Proyectos lentos y sin visibilidad.",
+    "Deuda técnica que frena el roadmap.",
+    "Fallas de performance y UX que impactan conversión.",
+    "Despliegues riesgosos y sin monitoreo.",
+    "Problemas de calidad por falta de pruebas."
+  ],
+  "outcomes": [
+    { "label": "MVP", "value": "4–6 semanas" },
+    { "label": "Disponibilidad", "value": ">= 99.9%" },
+    { "label": "Core Web Vitals", "value": "Good" },
+    { "label": "Automated tests", "value": "+80% criticos" }
+  ],
+  "deliverables": [
+    "Backlog priorizado y roadmap de releases.",
+    "Diseño técnico y definición de arquitectura.",
+    "Implementación con QA y pruebas automatizadas.",
+    "CI/CD, observabilidad y seguridad básica.",
+    "Documentación y hand‑off al equipo."
+  ],
+  "steps": [
+    { "title": "Descubrimiento y alcance", "desc": "Objetivos, KPIs y Users Stories clave." },
+    { "title": "Diseño técnico", "desc": "Arquitectura, data model y decisiones de stack." },
+    { "title": "Entrega iterativa", "desc": "Sprints semanales con demos y feedback." },
+    { "title": "Go‑Live y mejora", "desc": "Despliegue, monitoreo y roadmap posterior." }
+  ],
+  "integrations": [
+    "Next.js", "Node.js", "Postgres", "Vercel", "AWS", "Stripe", "Auth0", "Algolia"
+  ],
+  "faqs": [
+    { "q": "¿Quién es dueño del código?", "a": "Siempre el cliente, con repositorio, CI/CD y documentación." },
+    { "q": "¿Cuánto tarda un MVP?", "a": "Típicamente 4–6 semanas según alcance y dependencias." },
+    { "q": "¿Cómo garantizan calidad?", "a": "Revisiones de código, pruebas automatizadas y monitoreo en producción." }
+  ]
+}

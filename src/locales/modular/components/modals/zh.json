@@ -1,0 +1,38 @@
+{
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "告诉我们您的项目，我们将帮助您实现它",
+    "form": {
+      "name": "全名",
+      "email": "电子邮件地址",
+      "phone": "电话",
+      "company": "公司",
+      "message": "消息",
+      "service": "感兴趣的服务",
+      "submit": "发送消息",
+      "sending": "发送中...",
+      "success": "消息发送成功！",
+      "error": "发送消息时出错。请重试。"
+    },
+    "services": {
+      "ai_agents": "AI代理",
+      "automation": "自动化",
+      "seo": "智能SEO",
+      "consulting": "咨询",
+      "development": "产品开发"
+    },
+    "close": "关闭"
+  },
+  "video": {
+    "title": "观看演示",
+    "loading": "加载视频中...",
+    "error": "视频加载错误",
+    "close": "关闭视频"
+  },
+  "confirmation": {
+    "title": "确认操作",
+    "message": "您确定要继续吗？",
+    "confirm": "确认",
+    "cancel": "取消"
+  }
+}

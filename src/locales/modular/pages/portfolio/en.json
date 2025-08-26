@@ -1,0 +1,67 @@
+{
+  "title": "Our Portfolio",
+  "subtitle": "Success stories where innovation and technology come together to create real results.",
+  "filterAll": "All",
+  "closeButton": "Close modal",
+  "close": "Close",
+  "visitSite": "Visit site",
+  "year": "Year",
+  "industry": "Industry",
+  "modal": {
+    "closeButton": "Close modal",
+    "close": "Close",
+    "visitSite": "Visit site",
+    "year": "Year",
+    "industry": "Industry"
+  },
+  "clients": {
+    "tagger-pet": {
+      "name": "TAGGER PET",
+      "title": "Technology for pet care",
+      "description": "When our friends from Tagger Pet told us their mission: \"technology to care for our pets\", it inspired us. We created a digital-soul identity, developed a multiplatform solution (app, admin panel and web) with an artificial intelligence assistant ready to guide each user. The result: a fluid, close and efficient experience that promotes animal welfare from the palm of your hand.",
+      "category": "Software Development",
+      "industry": "Pet Tech",
+      "tags": ["Multiplatform", "AI", "Animal Health", "UX/UI"]
+    },
+    "bee-consultoria": {
+      "name": "BEE CONSULTORÍA",
+      "title": "AI automation for the financial sector",
+      "description": "In the financial world, precision is everything. Bee Consultoría sought us out to create solutions that rise to that challenge. In this regard, we provided development and programming consulting, focused on automators capable of performing product testing for banks, all powered by artificial intelligence. Seeking faster, safer and more efficient processes as a result, giving the company and its clients a competitive advantage in a sector that admits no errors.",
+      "category": "AI Consulting",
+      "industry": "Financial Services",
+      "tags": ["Automation", "AI", "Testing", "Fintech"]
+    },
+    "domipet": {
+      "name": "DOMIPET",
+      "title": "Smart eCommerce for pets",
+      "description": "Domipet came with a clear idea: take pet care to the digital world. At Disruptivo LAB we gave them their own identity and developed an eCommerce platform equipped with an artificial intelligence assistant, designed to make selling and buying products and services for companion animals as easy as a click. Today, Domipet connects responsible owners with everything they need to pamper and protect their furry friends, without leaving home.",
+      "category": "eCommerce",
+      "industry": "Pet Commerce",
+      "tags": ["eCommerce", "AI", "Pet Care", "Branding"]
+    },
+    "sivespa": {
+      "name": "SIVESPA",
+      "title": "Government epidemiological software",
+      "description": "Public health requires accurate and accessible information. For SIVESPA, a government sector client, we developed epidemiological software that centralizes and connects addiction data between medical institutions and health departments throughout a department. Our solution facilitates management, analysis and decision-making, turning technology into an ally to improve care and prevention.",
+      "category": "Specialized Software",
+      "industry": "Public Sector",
+      "tags": ["Public Health", "Big Data", "Government", "Epidemiology"]
+    },
+    "solodomis": {
+      "name": "SOLODOMIS",
+      "title": "High-impact landing pages",
+      "description": "Solodomis needed an effective entry point for their campaigns and products. We created four strategic landing pages, designed to capture attention, guide the user and convert visits into concrete actions. Each one optimized to fulfill a specific objective, with a modern design and clear messages that turn curious visitors into customers.",
+      "category": "Digital Marketing",
+      "industry": "Marketing",
+      "tags": ["Landing Pages", "Conversion", "Marketing", "Design"]
+    },
+    "papas-paisas": {
+      "name": "PAPAS PAISAS",
+      "title": "eCommerce with Paisa flavor",
+      "description": "Potatoes with Antioquia flavor, now also with digital flavor. For Papas Paisas we developed an e-commerce that combines tradition and Paisa pride with a modern and friendly shopping experience. The brand's personality, which is warm, authentic and full of flavor, was captured in every detail of the site, allowing their products to reach more homes with just a few clicks.",
+      "category": "eCommerce",
+      "industry": "Food Industry",
+      "tags": ["eCommerce", "Branding", "Food", "Regional"]
+    }
+  }
+}

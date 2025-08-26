@@ -1,0 +1,75 @@
+{
+  "hero": {
+    "title": "Asistentes de WhatsApp con IA",
+    "subtitle": "Vende más y brinda soporte 24/7. Captura, califica y agenda por WhatsApp con IA conectada a tu CRM y campañas."
+  },
+  "pitch": {
+    "subtitle_long": "Implementamos asistentes conversacionales conectados a CRM, agenda y catálogos para captar, calificar, nutrir y convertir 24/7 por WhatsApp: más citas, cierres y soporte sin esperas.",
+    "sales_focus": [
+      "Cierra más: seguimiento proactivo y recuperación de conversaciones que se enfriaron.",
+      "Campañas que convierten: integra tus ads y segmenta respuestas por fuente (UTM).",
+      "Soporte técnico que escala: clasifica, resuelve FAQs y deriva sólo lo complejo.",
+      "Explora productos y servicios: guía a cada persona al plan correcto con catálogo y precios."
+    ]
+  },
+  "definition": {
+    "what_is": "Un asistente conversacional en WhatsApp, impulsado por IA y conectado a tus sistemas (CRM, agenda, catálogos y campañas), que atiende en segundos, califica leads, agenda citas, resuelve preguntas frecuentes y retoma conversaciones que se enfriaron para maximizar cierres.",
+    "key_benefits": [
+      "Respuesta inmediata 24/7 y experiencia consistente.",
+      "Calificación automática y envío al vendedor correcto.",
+      "Agenda integrada para reducir fricción y no‑shows.",
+      "Registro completo en CRM para reportes reales y atribución.",
+      "Retoma de leads fríos y nurturing sin esfuerzo del equipo."
+    ]
+  },
+  "pains": [
+    "Leads preguntan ‘¿está disponible?’ pero no reciben respuesta a tiempo.",
+    "Conversaciones que se enfrían: nadie retoma y se pierde la venta.",
+    "Vendedores respondiendo repetidos en lugar de cerrar oportunidades.",
+    "Datos de WhatsApp sin registrar en el CRM: reportes incompletos.",
+    "Soporte saturado por preguntas básicas que podría resolver un asistente."
+  ],
+  "outcomes": [
+    { "label": "Citas calificadas", "value": "+30–60%" },
+    { "label": "Cierres acelerados", "value": "+10–25%" },
+    { "label": "Tiempo ahorrado del equipo", "value": "10–20 h/sem" },
+    { "label": "Respuesta inmediata", "value": "24/7" },
+    { "label": "Registro en CRM", "value": "100% auto" }
+  ],
+  "deliverables": [
+    "Asistente de WhatsApp con flujos de calificación, nurturing y agendamiento.",
+    "Recuperación automática de leads: retoma chats fríos y reengancha con valor.",
+    "Integración con CRM y campañas: pipelines, owners, UTM y eventos.",
+    "Base de conocimiento (FAQ + URLs/PDFs) para respuestas precisas.",
+    "Panel de métricas: conversaciones, citas, conversiones y motivos de abandono.",
+    "Entrenamiento al equipo + manual operativo + mejoras 30/60/90 días."
+  ],
+  "steps": [
+    { "title": "Descubrimiento comercial", "desc": "Objetivos, KPIs y tono de marca; mapeo de dolores y objeciones." },
+    { "title": "Integración", "desc": "Meta Cloud/Twilio, CRM (etapas/owners), agenda y catálogos." },
+    { "title": "Contenido y entrenamiento", "desc": "FAQs, documentos y prompts para ventas y soporte." },
+    { "title": "Piloto y recuperación", "desc": "Pruebas controladas + retoma de conversaciones frías." },
+    { "title": "Despliegue y optimización", "desc": "24/7, dashboards y mejoras orientadas a cerrar más." }
+  ],
+  "integrations": [
+    "WhatsApp Business API",
+    "Meta Cloud",
+    "Twilio",
+    "HubSpot",
+    "Pipedrive",
+    "RD Station",
+    "Calendly",
+    "Google Calendar",
+    "Shopify",
+    "WooCommerce",
+    "Google Ads",
+    "Meta Ads"
+  ],
+  "faqs": [
+    { "q": "¿Necesito WhatsApp Business API?", "a": "Sí. Te ayudamos a operar con Meta Cloud API o tu proveedor (p. ej., Twilio) para plantillas y envío confiable." },
+    { "q": "¿Cuánto tardamos en lanzar?", "a": "Piloto funcional en 2–3 semanas; despliegue completo según integraciones en 3–6 semanas." },
+    { "q": "¿Cómo medimos el ROI?", "a": "Definimos KPIs (citas, cierres, tiempo ahorrado) y montamos reportes semanales con datos del CRM." },
+    { "q": "¿Puede responder con mis documentos?", "a": "Sí. Indexamos FAQs, URLs y PDFs para respuestas contextuales (RAG) con control de tono." },
+    { "q": "¿Y la seguridad/consentimiento?", "a": "Respetamos opt-in de WhatsApp y aplicamos roles, auditoría y borrado bajo solicitud." }
+  ]
+}

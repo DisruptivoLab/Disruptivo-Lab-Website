@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "title": "Innovación Aplicada para Crecer tu Negocio",
+    "subtitle": "Aumenta tus ventas 3x, reduce costos operativos y automatiza procesos con tecnología probada",
+    "cta": "Acelera tu Crecimiento"
+  },
+  "agents": {
+    "title": "Tu WhatsApp Atendido por IA",
+    "subtitle": "Tú tecleas menos, vendes más y mejoras la atención de tus clientes con agentes inteligentes 24/7",
+    "cta": "Automatiza tu Negocio"
+  },
+  "seo": {
+    "title": "SEO Inteligente con IA",
+    "subtitle": "Posiciona tu negocio en Google automáticamente con contenido optimizado y estrategias basadas en datos",
+    "cta": "Mejora tu Posicionamiento"
+  },
+  "automation": {
+    "title": "Automatización Empresarial con IA",
+    "subtitle": "Libera tiempo valioso automatizando tareas repetitivas y optimiza tus procesos operativos",
+    "cta": "Automatiza Procesos"
+  },
+  "consulting": {
+    "title": "Consultoría Estratégica en IA",
+    "subtitle": "Transforma tu negocio con estrategias personalizadas y implementación guiada de tecnología",
+    "cta": "Solicita Consultoría"
+  },
+  "product_dev": {
+    "title": "Desarrollo de Productos Digitales",
+    "subtitle": "Crea aplicaciones web y móviles que impulsen tu negocio con tecnología de vanguardia",
+    "cta": "Desarrolla tu Producto"
+  }
+}

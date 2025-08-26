@@ -1,0 +1,28 @@
+{
+  "modal": {
+    "title": "Fale Conosco",
+    "subtitle": "Conte-nos sobre seu projeto"
+  },
+  "whatsapp": {
+    "title": "WhatsApp",
+    "subtitle": "Resposta imediata"
+  },
+  "phone": {
+    "title": "Telefone",
+    "subtitle": "Chamada direta"
+  },
+  "email": {
+    "title": "Email",
+    "subtitle": "Mensagem detalhada",
+    "defaultSubject": "Consulta sobre serviços - Disruptivo Lab"
+  },
+  "schedule": {
+    "title": "Horários de Atendimento",
+    "weekdays": "Seg - Sex: {start} - {end}",
+    "saturday": "Sábado: {start} - {end}",
+    "timezone": "{city} (GMT{offset})"
+  },
+  "cta": {
+    "primary": "Enviar pelo WhatsApp"
+  }
+}

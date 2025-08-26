@@ -1,0 +1,12 @@
+{
+  "title": "Watch Demo",
+  "loading": "Loading video...",
+  "error": "Error loading video",
+  "close": "Close video",
+  "play": "Play",
+  "pause": "Pause",
+  "fullscreen": "Fullscreen",
+  "volume": "Volume",
+  "quality": "Quality",
+  "speed": "Speed"
+}

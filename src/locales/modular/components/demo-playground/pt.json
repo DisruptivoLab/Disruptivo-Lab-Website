@@ -1,0 +1,67 @@
+{
+  "title": "🎮 Playground de Demos Interativo",
+  "subtitle": "Experimente em tempo real como nossas automações transformam seu negócio",
+  "demos": {
+    "chat": {
+      "title": "Chat IA Inteligente",
+      "subtitle": "Atendimento 24/7 com IA conversacional",
+      "status": "Online",
+      "conversation": [
+        "Olá! Como posso ajudá-lo hoje?",
+        "Preciso de informações sobre seus serviços",
+        "Perfeito, sou especialista em automação com IA. Que tipo de processos você quer automatizar?",
+        "Principalmente emails e redes sociais",
+        "Excelente escolha. Podemos automatizar 90% dos seus emails e gerar conteúdo para redes sociais 24/7. Tem interesse numa demo personalizada?"
+      ]
+    },
+    "email": {
+      "title": "Automação de Email",
+      "subtitle": "Processa e responde emails automaticamente",
+      "inbox": "Caixa de Entrada",
+      "processing": "Processando automaticamente...",
+      "emails": "emails",
+      "processed": "✅ Processado",
+      "processing_status": "🔄 Processando...",
+      "sample_emails": [
+        "Proposta comercial - Resposta automática enviada",
+        "Consulta técnica - Encaminhada ao especialista",
+        "Solicitação de orçamento - Cotação gerada",
+        "Inscrição newsletter - Confirmação enviada",
+        "Suporte técnico - Ticket criado automaticamente"
+      ]
+    },
+    "social": {
+      "title": "Gerenciador de Redes Sociais",
+      "subtitle": "Gera e programa conteúdo 24/7",
+      "generating": "Gerando conteúdo...",
+      "posts_generated": "posts gerados",
+      "sample_posts": [
+        "🚀 Automatize seu negócio com IA - Descubra como...",
+        "💡 A IA pode reduzir seus custos operacionais em até 60%...",
+        "🎯 Casos de sucesso: Empresa aumenta produtividade 3x...",
+        "⚡ Webinar gratuito: Automação empresarial..."
+      ]
+    },
+    "roi": {
+      "title": "Calculadora ROI",
+      "subtitle": "Descubra sua economia com automação",
+      "current_costs": "Custos mensais atuais",
+      "with_automation": "Com automação IA",
+      "monthly_savings": "Economia mensal",
+      "cost_reduction": "de redução de custos",
+      "annual_roi": "ROI: {percentage}% anual",
+      "payback": "Recupera o investimento em {months} meses",
+      "currency": "BRL",
+      "values": {
+        "current": 15000,
+        "automated": 6000,
+        "savings": 9000,
+        "reduction_percentage": 60,
+        "roi_percentage": 180,
+        "payback_months": 2.1
+      }
+    }
+  },
+  "cta": "Implementar na minha empresa",
+  "whatsapp_message": "🎮 Adorei as demos! Quero implementar automação IA na minha empresa. Quando podemos conversar?"
+}

@@ -1,0 +1,38 @@
+{
+  "contact": {
+    "title": "문의하기",
+    "subtitle": "프로젝트에 대해 알려주시면 실현을 도와드리겠습니다",
+    "form": {
+      "name": "성명",
+      "email": "이메일 주소",
+      "phone": "전화번호",
+      "company": "회사명",
+      "message": "메시지",
+      "service": "관심 서비스",
+      "submit": "메시지 보내기",
+      "sending": "전송 중...",
+      "success": "메시지가 성공적으로 전송되었습니다!",
+      "error": "메시지 전송 중 오류가 발생했습니다. 다시 시도해 주세요."
+    },
+    "services": {
+      "ai_agents": "AI 에이전트",
+      "automation": "자동화",
+      "seo": "지능형 SEO",
+      "consulting": "컨설팅",
+      "development": "제품 개발"
+    },
+    "close": "닫기"
+  },
+  "video": {
+    "title": "데모 보기",
+    "loading": "비디오 로딩 중...",
+    "error": "비디오 로딩 오류",
+    "close": "비디오 닫기"
+  },
+  "confirmation": {
+    "title": "작업 확인",
+    "message": "계속하시겠습니까?",
+    "confirm": "확인",
+    "cancel": "취소"
+  }
+}

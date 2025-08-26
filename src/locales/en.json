@@ -1,0 +1,28 @@
+{
+  "loading": "Loading...",
+  "error": "Error",
+  "retry": "Retry",
+  "close": "Close",
+  "back": "Back",
+  "cta": {
+    "title": "Ready to Transform Your Business?",
+    "description": "Let's talk about how we can help you achieve your goals with innovative solutions.",
+    "contact": "Contact",
+    "whatsapp": "WhatsApp",
+    "schedule": "Schedule Consultation",
+    "email": "Send Email"
+  },
+  "navigation": {
+    "home": "Home",
+    "method": "The Method",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About Us",
+    "ai": "Artificial Intelligence",
+    "slide_controls": {
+      "progress": "{current}/{total}",
+      "previous": "Previous",
+      "next": "Next"
+    }
+  }
+}

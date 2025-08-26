@@ -1,0 +1,12 @@
+{
+  "title": "Ver Demo",
+  "loading": "Cargando video...",
+  "error": "Error al cargar el video",
+  "close": "Cerrar video",
+  "play": "Reproducir",
+  "pause": "Pausar",
+  "fullscreen": "Pantalla completa",
+  "volume": "Volumen",
+  "quality": "Calidad",
+  "speed": "Velocidad"
+}

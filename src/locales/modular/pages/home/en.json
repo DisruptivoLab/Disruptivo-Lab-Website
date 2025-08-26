@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "Disruptivo Lab - Applied Innovation to Grow Your Business",
+    "description": "Increase sales 3x, reduce operational costs and automate processes with proven technology. Specialists in AI, automation and digital development."
+  },
+  "page_specific": {
+    "welcome_message": "Welcome to Disruptivo Lab",
+    "intro_text": "We transform businesses with cutting-edge technology"
+  },
+  "about": {
+    "body": {
+      "p1": "Disruptivo Lab is an innovation and technology studio specialized in turning ideas into revolutionary digital solutions. With expertise in artificial intelligence, web development, mobile apps, and automation, we craft digital experiences that drive exponential growth for our clients."
+    },
+    "slogan": {
+      "leading": "Radical Innovation,",
+      "highlight": "Real Results"
+    },
+    "cta": {
+      "about": "About",
+      "services": "Services"
+    }
+  }
+  ,
+  "conversion": {
+    "title": "Ready to accelerate growth?",
+    "rotate": ["sell more", "automate processes", "ship faster"],
+    "subtitle": "We design, automate and launch products that convert in weeks, not months.",
+    "cta": {
+      "primary": "Let's Talk",
+      "secondary": "Message Us"
+    },
+    "stats": {
+      "items": ["+120% qualified leads", "-40% acquisition cost", "99.9% uptime"]
+    },
+    "valueProps": [
+      { "title": "Conversational AI + WhatsApp", "desc": "Automate 24/7 sales and support with intelligent chatbots that qualify leads and schedule appointments." },
+      { "title": "Process Automation", "desc": "Save 40+ hours weekly automating billing, reports and marketing to reduce errors." },
+  { "title": "Software Development", "desc": "Web, apps and scalable microservices. From MVP to production-ready products." },
+  { "title": "End-to-End Consulting", "desc": "Diagnosis, strategy and AI adoption with training to integrate technology with measurable results." },
+  { "title": "AI-Powered Sales Funnel", "desc": "From click to close: 24/7 assistants, smart forms and lead prioritization." }
+    ]
+  }
+  ,
+  "parallaxCta": {
+    "title": "Let’s build something extraordinary",
+    "subtitle": "Prototypes in weeks, measurable results from day one",
+    "cta": "Let’s talk"
+  }
+}

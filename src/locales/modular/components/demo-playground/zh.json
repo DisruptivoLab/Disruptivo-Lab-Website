@@ -1,0 +1,67 @@
+{
+  "title": "🎮 互动演示游乐场",
+  "subtitle": "实时体验我们的自动化如何改变您的业务",
+  "demos": {
+    "chat": {
+      "title": "智能AI聊天",
+      "subtitle": "对话式AI提供24/7支持",
+      "status": "在线",
+      "conversation": [
+        "您好！今天我能为您做些什么？",
+        "我需要了解您的服务信息",
+        "太好了，我专门从事AI自动化。您想自动化哪些类型的流程？",
+        "主要是邮件和社交媒体",
+        "绝佳的选择。我们可以自动化90%的邮件并24/7生成社交媒体内容。您对个性化演示感兴趣吗？"
+      ]
+    },
+    "email": {
+      "title": "邮件自动化",
+      "subtitle": "自动处理和回复邮件",
+      "inbox": "收件箱",
+      "processing": "自动处理中...",
+      "emails": "邮件",
+      "processed": "✅ 已处理",
+      "processing_status": "🔄 处理中...",
+      "sample_emails": [
+        "商业提案 - 自动回复已发送",
+        "技术咨询 - 已转发给专家",
+        "报价请求 - 报价单已生成",
+        "订阅通讯 - 确认邮件已发送",
+        "技术支持 - 工单自动创建"
+      ]
+    },
+    "social": {
+      "title": "社交媒体管理器",
+      "subtitle": "24/7生成和安排内容",
+      "generating": "内容生成中...",
+      "posts_generated": "生成的帖子",
+      "sample_posts": [
+        "🚀 用AI自动化您的业务 - 了解如何...",
+        "💡 AI可以将运营成本降低多达60%...",
+        "🎯 成功案例：公司生产力提高3倍...",
+        "⚡ 免费网络研讨会：企业自动化..."
+      ]
+    },
+    "roi": {
+      "title": "ROI计算器",
+      "subtitle": "发现自动化为您节省的成本",
+      "current_costs": "当前月度成本",
+      "with_automation": "使用AI自动化",
+      "monthly_savings": "月度节省",
+      "cost_reduction": "成本降低",
+      "annual_roi": "ROI：{percentage}% 年收益",
+      "payback": "在{months}个月内收回投资",
+      "currency": "CNY",
+      "values": {
+        "current": 48000,
+        "automated": 19200,
+        "savings": 28800,
+        "reduction_percentage": 60,
+        "roi_percentage": 180,
+        "payback_months": 2.1
+      }
+    }
+  },
+  "cta": "在我的公司实施",
+  "whatsapp_message": "🎮 我很喜欢这些演示！我想在我的公司实施AI自动化。我们什么时候可以谈？"
+}

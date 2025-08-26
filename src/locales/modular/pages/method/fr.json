@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "title": "Notre Méthodologie | Disruptivo Lab",
+    "description": "Découvrez notre méthodologie unique pour transformer les entreprises avec une technologie avancée."
+  },
+  "hero": {
+    "title": "Notre Méthodologie",
+    "subtitle": "Une approche systématique de la transformation numérique"
+  },
+  "discovery": {
+    "title": "Découverte",
+    "description": "Nous analysons votre entreprise, identifions les opportunités et définissons des objectifs clairs pour maximiser l'impact de la transformation numérique.",
+    "benefits": [
+      "Analyse approfondie du modèle d'affaires actuel",
+      "Identification des opportunités d'automatisation",
+      "Définition des métriques de succès et KPI"
+    ]
+  },
+  "strategy": {
+    "title": "Stratégie",
+    "description": "Nous développons une feuille de route personnalisée qui aligne la technologie avec vos objectifs commerciaux pour garantir des résultats mesurables.",
+    "benefits": [
+      "Feuille de route technologique personnalisée",
+      "Sélection d'outils et technologies optimales",
+      "Planification des ressources et budget"
+    ]
+  },
+  "design": {
+    "title": "Conception",
+    "description": "Nous créons des expériences intuitives et des interfaces élégantes qui non seulement paraissent bien, mais améliorent la productivité et la satisfaction utilisateur.",
+    "benefits": [
+      "Conception UX/UI centrée sur l'utilisateur",
+      "Prototypes interactifs et maquettes",
+      "Systèmes de conception évolutifs"
+    ]
+  },
+  "development": {
+    "title": "Développement",
+    "description": "Nous construisons des solutions robustes et évolutives en utilisant les meilleures pratiques de développement et les technologies les plus avancées du marché.",
+    "benefits": [
+      "Code propre et maintenable",
+      "Architecture évolutive et sécurisée",
+      "Intégration avec les systèmes existants"
+    ]
+  },
+  "launch": {
+    "title": "Lancement",
+    "description": "Nous implémentons votre solution avec une approche graduelle, assurant une transition en douceur et fournissant un support continu pour le succès.",
+    "benefits": [
+      "Déploiement graduel et contrôlé",
+      "Formation de l'équipe",
+      "Support et maintenance continus"
+    ]
+  },
+  "cta": {
+    "title": "Prêt à Transformer Votre Entreprise ?",
+    "description": "Parlons de la façon dont notre méthodologie peut stimuler la croissance de votre entreprise avec des solutions technologiques innovantes."
+  }
+}

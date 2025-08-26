@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "title": "Our Methodology | Disruptivo Lab",
+    "description": "Discover our unique methodology to transform businesses with advanced technology."
+  },
+  "hero": {
+    "title": "Our Methodology",
+    "subtitle": "A systematic approach to digital transformation"
+  },
+  "discovery": {
+    "title": "Discovery",
+    "description": "We analyze your business, identify opportunities, and define clear objectives to maximize the impact of digital transformation.",
+    "benefits": [
+      "Deep analysis of current business model",
+      "Identification of automation opportunities",
+      "Definition of success metrics and KPIs"
+    ]
+  },
+  "strategy": {
+    "title": "Strategy",
+    "description": "We develop a personalized roadmap that aligns technology with your business objectives to ensure measurable results.",
+    "benefits": [
+      "Personalized technology roadmap",
+      "Selection of optimal tools and technologies",
+      "Resource and budget planning"
+    ]
+  },
+  "design": {
+    "title": "Design",
+    "description": "We create intuitive experiences and elegant interfaces that not only look good but improve productivity and user satisfaction.",
+    "benefits": [
+      "User-centered UX/UI design",
+      "Interactive prototypes and wireframes",
+      "Scalable design systems"
+    ]
+  },
+  "development": {
+    "title": "Development",
+    "description": "We build robust and scalable solutions using best development practices and the most advanced technologies in the market.",
+    "benefits": [
+      "Clean and maintainable code",
+      "Scalable and secure architecture",
+      "Integration with existing systems"
+    ]
+  },
+  "launch": {
+    "title": "Launch",
+    "description": "We implement your solution with a gradual approach, ensuring a smooth transition and providing continuous support for success.",
+    "benefits": [
+      "Gradual and controlled deployment",
+      "Team training",
+      "Continuous support and maintenance"
+    ]
+  },
+  "cta": {
+    "title": "Ready to Transform Your Business?",
+    "description": "Let's talk about how our methodology can drive your company's growth with innovative technological solutions."
+  }
+}

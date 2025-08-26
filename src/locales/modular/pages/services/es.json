@@ -1,0 +1,108 @@
+{
+  "services": {
+  "hero": {"title": "Servicios para crecer con IA y software", "subtitle": "IA con agentes, automatizaciones y consultoría para hacer crecer tu negocio como nunca antes."},
+  "cta": {"whatsapp": "Cotizar Ahora", "explore": "Explorar servicios", "explore_short": "Explorar", "packages": "Ver Paquetes"},
+  "ia": {
+    "title": "Inteligencia Artificial Empresarial", 
+    "desc": "Potencia tu negocio con IA personalizada: agentes inteligentes, automatización de procesos y análisis de datos que trabajan 24/7 para aumentar tus ventas y optimizar operaciones.", 
+    "items": [
+      "Agentes conversacionales que entienden tu negocio", 
+      "RAG integrado con toda tu documentación empresarial", 
+      "Copilots especializados para cada área de trabajo",
+      "Automatización inteligente de procesos críticos",
+      "Análisis predictivo y reportes automáticos"
+    ]
+  },
+  "automation": {"title": "Automatización", "desc": "Automatiza procesos clave, elimina errores y acelera ventas. Consultoría + implementación.", "items": ["Lead routing y CRM", "Reportes automáticos", "Onboarding y facturación"]},
+  "software": {"title": "Software a medida", "desc": "Construimos producto con foco en negocio: rápido, mantenible y listo para escalar."},
+  "landings": {"title": "Sitios web y marketing digital", "desc": "Páginas que convierten: velocidad, SEO técnico y experimentación continua.", "items": ["Copy y diseño", "Analítica y SEO técnico", "Experimentos A/B"]},
+  "consulting": {"title": "Consultoría", "desc": "Diagnóstico accionable y roadmap priorizado para impactos en semanas, no meses.", "items": ["Diagnóstico y roadmap", "Guía de stack y arquitectura"]},
+    "packages": {
+      "title": "Paquetes",
+      "weeks": "Duración: {n} semanas",
+      "ai_starter": {"title": "AI Starter", "desc": "Agente + RAG básico + analítica de uso."},
+      "automation_sprint": {"title": "Automation Sprint", "desc": "3-5 flujos críticos con documentación."},
+      "landing_express": {"title": "Landing Express", "desc": "Landing en 5 días lista para campañas."}
+    },
+    "pain": {
+      "items": [
+        {"label": "Dolor #1", "title": "Leads que no convierten", "desc": "Campañas activas pero baja conversión y seguimiento manual."},
+        {"label": "Dolor #2", "title": "Procesos lentos", "desc": "Mucho copy-paste, reportes manuales y tareas repetitivas."},
+        {"label": "Dolor #3", "title": "Sin claridad del ROI", "desc": "Dudas sobre dónde invertir para ver resultados rápidos."},
+        {"label": "Dolor #4", "title": "No alcanzo a atender todos los mensajes", "desc": "WhatsApp y DMs saturados; respuestas tardías hacen que los leads se enfríen."},
+        {"label": "Dolor #5", "title": "Necesito crecer ventas ya", "desc": "Falta un sistema repetible para generar demanda y cerrar oportunidades."}
+      ],
+      "quotes": [
+        {"text": "Invertimos en ads, pero los leads se enfrían antes de que alguien responda.", "role": "Dirección de Marketing, Servicios"},
+        {"text": "WhatsApp y DMs explotados; perdemos oportunidades por respuestas tardías.", "role": "Jefe de Ventas, Retail"},
+        {"text": "No sé qué canal trae ventas: reportes manuales y datos sueltos.", "role": "CEO, E‑commerce"},
+        {"text": "Tenemos tráfico, pero la landing no convierte ni al 1%.", "role": "Paid Media, SaaS"},
+        {"text": "Mucho copy‑paste entre CRM, facturación y soporte; se nos va el día.", "role": "Operaciones, B2B"},
+        {"text": "Quiero lanzar un MVP en semanas, no en meses ni con presupuestos infinitos.", "role": "Founder, Startup"},
+        {"text": "El equipo pide IA, pero no sé por dónde empezar ni cómo medir el ROI.", "role": "Innovación, Multinacional"},
+        {"text": "Pagamos herramientas que nadie usa; procesos rotos y duplicados.", "role": "COO, Servicios"},
+        {"text": "Seguimiento comercial inconsistente: nadie sabe en qué quedó cada oportunidad.", "role": "Gerente Comercial, B2B"},
+        {"text": "Mi equipo hace reportes a mano; los cierres se demoran y se pierden insights.", "role": "Finanzas, PyME"}
+      ]
+    },
+    "our": {
+      "title": "Nuestros servicios",
+      "subtitle": "Elegimos lo esencial para impactar ventas y operaciones.",
+      "cards": {
+        "ai": {"title": "Inteligencia artificial", "desc": "Agentes y RAG con tus datos para responder 24/7 y cerrar más."},
+        "software": {"title": "Software a medida", "desc": "Software y automatizaciones que mejoran procesos críticos y eliminan fricción."},
+        "web_marketing": {"title": "Sitios web y marketing digital", "desc": "Sitios y funnels listos para ads, con SEO técnico, analítica y consultoría de crecimiento."}
+      }
+    },
+    "process": {
+      "title": "Proceso",
+      "steps": [
+        {"label": "01", "title": "Diagnóstico"},
+        {"label": "02", "title": "Propuesta"},
+        {"label": "03", "title": "Implementación"},
+        {"label": "04", "title": "Medición"}
+      ]
+    },
+  "roi": {"hours": "Horas/mes a automatizar", "hour_cost": "Costo por hora (USD)", "automation_rate": "% automatizable", "savings": "Ahorro estimado", "payback": "Payback aprox.", "weeks": "semanas"},
+  "price": {"from": "Desde"},
+  "pricing": {"title": "Planes y precios", "subtitle": "Empezá con un sprint y mide impacto en 2 semanas.", "plan": "Plan", "note": "Valores aproximados. Referencia: 1 USD ≈ 4.200 COP."},
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "q0": {"q": "¿Cómo empezamos?", "a": "Agendamos un diagnóstico y definimos quick wins."},
+      "q1": {"q": "¿Quién es dueño del código?", "a": "El cliente, con repositorio y documentación."},
+      "q2": {"q": "¿Plazos típicos?", "a": "Sprints de 2 semanas; MVP 4-6 semanas."},
+      "q3": {"q": "¿Stack?", "a": "Next.js, Node, Postgres, Vercel, Zapier/Make/n8n según el caso."},
+      "q4": {"q": "¿Mantenimiento?", "a": "Ofrecemos planes de soporte y evolución."},
+      "q5": {"q": "¿Idioma?", "a": "ES/EN."}
+    },
+  "cta_final": {"title": "Cuéntanos tu caso", "subtitle": "Te damos ideas accionables en 48 horas."},
+  "sticky_cta": "Hablar ahora por WhatsApp",
+  "roi_calculator": {
+    "title": "Calculadora ROI",
+    "main_question": "¿Cuál es tu mayor dolor de cabeza?",
+    "hours_question": "¿Cuántas horas dedicas a esto por semana?",
+    "contacts_question": "¿Cuántos contactos/consultas recibes por día?",
+    "hours_weekly": "{hours}h semanales",
+    "monthly_cost": "= ${cost} USD/mes en costos",
+    "daily_contacts": "{contacts} por día",
+    "monthly_contacts": "= {total} contactos/mes"
+  },
+  "ia_section": {
+    "tagline": "IA que transforma negocios reales",
+    "headline": "¿Tu empresa {highlight} mientras duermes?",
+    "headline_highlight": "pierde dinero",
+    "subtitle": "Mientras tu competencia automatiza y crece 24/7, tú sigues perdiendo clientes, tiempo y dinero en procesos manuales. <strong class=\"text-red-400\"> Es hora de cambiar el juego.</strong>",
+    "navigation": {
+      "roi_calculator": "Calculadora ROI",
+      "success_cases": "Casos de Éxito",
+      "demo_ia": "Demo IA",
+      "services_ia": "Servicios IA"
+    }
+  }
+  }
+  ,
+  "breadcrumb": {
+    "back": "Atrás",
+    "services": "Servicios"
+  }
+}

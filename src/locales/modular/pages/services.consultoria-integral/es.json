@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "title": "Consultoría Integral en IA y Producto",
+    "subtitle": "Diagnóstico, estrategia y adopción de IA con resultados medibles."
+  },
+  "pitch": {
+    "subtitle_long": "Alineamos negocio, datos y tecnología para priorizar casos de uso, estimar impacto y construir una hoja de ruta realista. Facilitamos decisiones con prototipos, benchmarks y pruebas controladas.",
+    "sales_focus": [
+      "Roadmap priorizado por impacto y esfuerzo.",
+      "Casos de uso con ROI estimado y riesgos mapeados.",
+      "Pilotear en semanas y escalar con gobernanza."
+    ]
+  },
+  "definition": {
+    "what_is": "Servicio de acompañamiento senior para evaluar madurez, seleccionar oportunidades de IA/automatización y definir arquitectura, procesos y métricas de éxito.",
+    "key_benefits": [
+      "Visión clara y hoja de ruta 90‑180 días.",
+      "Priorización objetiva (impacto x esfuerzo).",
+      "Reducción de riesgos técnicos y operativos."
+    ]
+  },
+  "pains": [
+    "Muchas ideas, pocas implementaciones.",
+    "Falta de métricas y ownership en IA.",
+    "Proveedores y herramientas sin alineación estratégica."
+  ],
+  "outcomes": [
+    { "label": "Roadmap", "value": "90 días" },
+    { "label": "Casos priorizados", "value": "5–8" },
+    { "label": "Pilotos", "value": "2–3" },
+    { "label": "Gobernanza", "value": "Definida" }
+  ],
+  "deliverables": [
+    "Assessment de madurez y capacidades.",
+    "Mapa de datos y arquitectura objetivo.",
+    "Casos de uso priorizados con ROI y riesgos.",
+    "Plan de pilotos y criterios de éxito.",
+    "Modelo de gobernanza y seguridad."
+  ],
+  "steps": [
+    { "title": "Discovery", "desc": "Entrevistas, procesos y métricas actuales." },
+    { "title": "Análisis", "desc": "Oportunidades, benchmark y riesgos." },
+    { "title": "Hoja de ruta", "desc": "Iniciativas, costos y cronograma." },
+    { "title": "Pilotos", "desc": "Pruebas controladas y recomendaciones." }
+  ],
+  "integrations": [
+    "OpenAI", "Claude", "Vertex AI", "Databricks", "Snowflake", "n8n", "Zapier"
+  ],
+  "faqs": [
+    { "q": "¿Cuánto dura el proceso?", "a": "Entre 3 y 6 semanas según alcance y disponibilidad de stakeholders." },
+    { "q": "¿Incluye implementación?", "a": "Podemos continuar con pilotos e implementación si así lo definen." },
+    { "q": "¿Trabajan con stack existente?", "a": "Sí, nos integramos con tu nube, datos y herramientas actuales." }
+  ]
+}

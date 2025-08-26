@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "title": "Nuestra Metodología | Disruptivo Lab",
+    "description": "Descubre nuestra metodología única para transformar negocios con tecnología avanzada."
+  },
+  "hero": {
+    "title": "Nuestra Metodología",
+    "subtitle": "Un enfoque sistemático para la transformación digital"
+  },
+  "discovery": {
+    "title": "Descubrimiento",
+    "description": "Analizamos tu negocio, identificamos oportunidades y definimos objetivos claros para maximizar el impacto de la transformación digital.",
+    "benefits": [
+      "Análisis profundo del modelo de negocio actual",
+      "Identificación de oportunidades de automatización",
+      "Definición de métricas de éxito y KPIs"
+    ]
+  },
+  "strategy": {
+    "title": "Estrategia",
+    "description": "Desarrollamos una hoja de ruta personalizada que alinea la tecnología con tus objetivos comerciales para garantizar resultados medibles.",
+    "benefits": [
+      "Roadmap tecnológico personalizado",
+      "Selección de herramientas y tecnologías óptimas",
+      "Planificación de recursos y presupuesto"
+    ]
+  },
+  "design": {
+    "title": "Diseño",
+    "description": "Creamos experiencias intuitivas y interfaces elegantes que no solo lucen bien, sino que mejoran la productividad y satisfacción del usuario.",
+    "benefits": [
+      "Diseño UX/UI centrado en el usuario",
+      "Prototipos interactivos y wireframes",
+      "Sistemas de diseño escalables"
+    ]
+  },
+  "development": {
+    "title": "Desarrollo",
+    "description": "Construimos soluciones robustas y escalables utilizando las mejores prácticas de desarrollo y las tecnologías más avanzadas del mercado.",
+    "benefits": [
+      "Código limpio y mantenible",
+      "Arquitectura escalable y segura",
+      "Integración con sistemas existentes"
+    ]
+  },
+  "launch": {
+    "title": "Lanzamiento",
+    "description": "Implementamos tu solución con un enfoque gradual, asegurando una transición suave y proporcionando soporte continuo para el éxito.",
+    "benefits": [
+      "Despliegue gradual y controlado",
+      "Capacitación del equipo",
+      "Soporte y mantenimiento continuo"
+    ]
+  },
+  "cta": {
+    "title": "¿Listo para Transformar tu Negocio?",
+    "description": "Conversemos sobre cómo nuestra metodología puede impulsar el crecimiento de tu empresa con soluciones tecnológicas innovadoras."
+  }
+}

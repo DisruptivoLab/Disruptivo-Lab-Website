@@ -1,0 +1,54 @@
+{
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "close": "Close",
+    "back": "Back",
+    "cta": {
+        "title": "Ready to Transform Your Business?",
+        "description": "Let's talk about how we can help you achieve your goals with innovative solutions.",
+        "contact": "Contact Us",
+        "whatsapp": "WhatsApp",
+        "schedule": "Schedule Consultation",
+        "email": "Send Email"
+    },
+    "navigation": {
+        "home": "Home",
+        "method": "The Method",
+        "services": "Services",
+        "portfolio": "Portfolio",
+        "about": "About Us",
+        "ai": "Artificial Intelligence",
+        "slide_controls": {
+            "progress": "{current}/{total}",
+            "previous": "Previous",
+            "next": "Next"
+        }
+    },
+    "footer": {
+        "cta": {
+            "title": "Let’s build something extraordinary",
+            "subtitle": "Prototypes in weeks, measurable results from day one",
+            "contact": "Let’s talk"
+        },
+        "brand": {
+            "tagline": "Innovation and technology studio. AI, automation and digital products that drive real results."
+        },
+        "links": {
+            "title": "Explore"
+        },
+        "contact": {
+            "title": "Contact",
+            "email": "Email",
+            "whatsapp": "Message us on WhatsApp"
+        },
+        "legal": {
+            "title": "Legal",
+            "privacy": "Privacy Policy",
+            "terms": "Terms & Conditions",
+            "cookies": "Cookie Policy"
+        },
+        "rights": "© {year} Disruptivo Lab. All rights reserved.",
+        "madeBy": "Made with ❤️ in Latin America"
+    }
+}

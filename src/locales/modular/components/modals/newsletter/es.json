@@ -1,0 +1,22 @@
+{
+  "title": "Suscríbete a nuestro newsletter",
+  "subtitle": "Recibe las últimas noticias sobre IA y automatización",
+  "form": {
+    "email": "Tu correo electrónico",
+    "name": "Tu nombre (opcional)",
+    "interests": "Temas de interés",
+    "submit": "Suscribirse",
+    "subscribing": "Suscribiendo...",
+    "success": "¡Te has suscrito exitosamente!",
+    "error": "Error al suscribirse. Inténtalo de nuevo.",
+    "already_subscribed": "Ya estás suscrito con este email"
+  },
+  "interests": {
+    "ai": "Inteligencia Artificial",
+    "automation": "Automatización",
+    "development": "Desarrollo Web",
+    "marketing": "Marketing Digital"
+  },
+  "privacy": "Al suscribirte aceptas nuestra política de privacidad",
+  "close": "Cerrar"
+}

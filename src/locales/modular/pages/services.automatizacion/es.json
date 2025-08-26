@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "title": "Automatización de Procesos",
+    "subtitle": "Ahorra horas por semana y elimina errores. Flujos que conectan ventas, operaciones y finanzas."
+  },
+  "pitch": {
+    "subtitle_long": "Diseñamos y automatizamos flujos críticos de punta a punta (CRM, facturación, reportes, marketing) para que tu equipo deje lo repetitivo y se enfoque en crecer.",
+    "sales_focus": [
+      "Escala ventas sin sumar headcount: lead routing, SLAs y secuencias.",
+      "Operaciones sin fricción: onboarding, facturación y conciliación.",
+      "Marketing siempre‑on: audiencias, enriquecimiento y reportes.",
+      "Tableros vivos: datos confiables y decisiones en tiempo real."
+    ]
+  },
+  "definition": {
+    "what_is": "Automatizamos procesos manuales entre tus herramientas (CRM, ERP, soporte, marketing) con reglas y bots que ejecutan tareas, actualizan datos y notifican al equipo sin intervención humana.",
+    "key_benefits": [
+      "Ahorro de 10–40 h/sem por equipo.",
+      "Datos consistentes: menos errores y duplicados.",
+      "Tiempos de ciclo más cortos y mejor experiencia.",
+      "Trazabilidad de punta a punta en cada proceso.",
+      "Escalabilidad sin crecer costos fijos."
+    ]
+  },
+  "pains": [
+    "Mucho copy‑paste entre herramientas y errores frecuentes.",
+    "Reportes manuales y sin trazabilidad.",
+    "Seguimiento comercial inconsistente.",
+    "Onboarding, facturación o soporte lentos y con cuellos de botella.",
+    "Falta de visibilidad para decidir: datos aislados."
+  ],
+  "outcomes": [
+    { "label": "Horas ahorradas", "value": "10–40 h/sem" },
+    { "label": "Menos errores", "value": "-60–90%" },
+    { "label": "Ciclos más rápidos", "value": "-20–40%" },
+    { "label": "Datos confiables", "value": "+100%" }
+  ],
+  "deliverables": [
+    "Mapeo de procesos y quick wins priorizados.",
+    "Automatizaciones en CRM/ERP/marketing con documentación.",
+    "Alertas, SLAs y tableros de control.",
+    "Capacitación y manual operativo para el equipo.",
+    "Plan de mejoras 30/60/90 días."
+  ],
+  "steps": [
+    { "title": "Descubrimiento y mapeo", "desc": "Identificamos cuellos y oportunidades, definimos éxito y alcance." },
+    { "title": "Diseño y priorización", "desc": "Roadmap por impacto y esfuerzo, con quick wins primeros." },
+    { "title": "Implementación", "desc": "Flujos, validaciones y pruebas integradas." },
+    { "title": "Monitor y mejora", "desc": "Métricas, alertas y ajustes continuos." }
+  ],
+  "integrations": [
+    "HubSpot", "Pipedrive", "Salesforce", "Google Sheets", "Slack", "Jira", "Xero", "QuickBooks", "Zapier", "Make", "n8n"
+  ],
+  "faqs": [
+    { "q": "¿Cuánto tardan los primeros flujos?", "a": "Quick wins en 1–2 semanas; programas de 4–8 semanas según alcance." },
+    { "q": "¿Necesito equipo técnico?", "a": "No. Hacemos hand‑off con capacitación y manuales." },
+    { "q": "¿Cómo medimos el ROI?", "a": "Horas ahorradas, errores evitados, tiempos de ciclo y NPS interno/cliente." }
+  ]
+}

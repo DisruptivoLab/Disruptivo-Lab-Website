@@ -1,0 +1,67 @@
+{
+  "title": "Nuestro Portafolio",
+  "subtitle": "Casos de éxito donde la innovación y la tecnología se encuentran para crear resultados reales.",
+  "filterAll": "Todos",
+  "closeButton": "Cerrar modal",
+  "close": "Cerrar",
+  "visitSite": "Visitar sitio",
+  "year": "Año",
+  "industry": "Industria",
+  "modal": {
+    "closeButton": "Cerrar modal",
+    "close": "Cerrar",
+    "visitSite": "Visitar sitio",
+    "year": "Año",
+    "industry": "Industria"
+  },
+  "clients": {
+    "tagger-pet": {
+      "name": "TAGGER PET",
+      "title": "Tecnología para el cuidado de mascotas",
+      "description": "Cuando nuestros amigos de Tagger Pet nos contaron su misión: \"tecnología para cuidar a nuestras mascotas\", nos inspiró. Creamos una identidad con alma digital, desarrollamos una multiplataforma (app, panel administrador y web) con una asistente de inteligencia artificial lista para guiar a cada usuario. El resultado, una experiencia fluida, cercana y eficiente que impulsa el bienestar animal desde la palma de tu mano.",
+      "category": "Desarrollo de Software",
+      "industry": "Pet Tech",
+      "tags": ["Multiplataforma", "IA", "Salud Animal", "UX/UI"]
+    },
+    "bee-consultoria": {
+      "name": "BEE CONSULTORÍA",
+      "title": "Automatización con IA para el sector financiero",
+      "description": "En el mundo financiero, la precisión lo es todo. Bee Consultoría nos buscó para crear soluciones a la altura de ese reto. En ese sentido, les brindamos consultoría en desarrollo y programación, enfocado en automatizadores capaces de realizar pruebas de productos para bancos, todo impulsado por inteligencia artificial. Buscando como resultado procesos más rápidos, seguros y eficientes, que le dan a la empresa y sus clientes una ventaja competitiva en un sector que no admite errores.",
+      "category": "Consultoría IA",
+      "industry": "Servicios Financieros",
+      "tags": ["Automatización", "IA", "Testing", "Fintech"]
+    },
+    "domipet": {
+      "name": "DOMIPET",
+      "title": "eCommerce inteligente para mascotas",
+      "description": "Domipet llegó con una idea clara: llevar el cuidado de las mascotas al mundo digital. En Disruptivo LAB les dimos identidad propia y desarrollamos una plataforma eCommerce equipada con un asistente de inteligencia artificial, diseñada para que vender y comprar productos y servicios para animales de compañía sea tan fácil como dar un clic. Hoy, Domipet conecta a dueños responsables con todo lo que necesitan para consentir y proteger a sus peludos, sin salir de casa.",
+      "category": "eCommerce",
+      "industry": "Pet Commerce",
+      "tags": ["eCommerce", "IA", "Pet Care", "Branding"]
+    },
+    "sivespa": {
+      "name": "SIVESPA",
+      "title": "Software epidemiológico gubernamental",
+      "description": "La salud pública requiere información precisa y accesible. Para SIVESPA, un cliente del sector gubernamental, desarrollamos un software epidemiológico que centraliza y conecta datos sobre adicciones entre instituciones médicas y secretarías de salud de todo un departamento. Nuestra solución facilita la gestión, el análisis y la toma de decisiones, convirtiendo la tecnología en una aliada para mejorar la atención y la prevención.",
+      "category": "Software Especializado",
+      "industry": "Sector Público",
+      "tags": ["Salud Pública", "Big Data", "Gobierno", "Epidemiología"]
+    },
+    "solodomis": {
+      "name": "SOLODOMIS",
+      "title": "Landing pages de alto impacto",
+      "description": "Solodomis necesitaba una puerta de entrada efectiva para sus campañas y productos. Creamos cuatro landing pages estratégicas, diseñadas para captar la atención, guiar al usuario y convertir visitas en acciones concretas. Cada una optimizada para cumplir un objetivo específico, con un diseño moderno y mensajes claros que convierten curiosos en clientes.",
+      "category": "Marketing Digital",
+      "industry": "Marketing",
+      "tags": ["Landing Pages", "Conversión", "Marketing", "Diseño"]
+    },
+    "papas-paisas": {
+      "name": "PAPAS PAISAS",
+      "title": "eCommerce con sabor paisa",
+      "description": "Papas con sabor a Antioquia, ahora también con sabor digital. Para Papas Paisas desarrollamos un e-commerce que combina la tradición y el orgullo paisa con una experiencia de compra moderna y amigable. La personalidad de la marca la cual es cálida, auténtica y llena de sabor, quedó plasmada en cada detalle del sitio, permitiendo que sus productos lleguen a más hogares con solo unos clics.",
+      "category": "eCommerce",
+      "industry": "Alimentario",
+      "tags": ["eCommerce", "Branding", "Alimentos", "Regional"]
+    }
+  }
+}

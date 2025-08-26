@@ -1,0 +1,28 @@
+{
+  "modal": {
+    "title": "联系我们",
+    "subtitle": "告诉我们您的项目"
+  },
+  "whatsapp": {
+    "title": "WhatsApp",
+    "subtitle": "即时回复"
+  },
+  "phone": {
+    "title": "电话",
+    "subtitle": "直接通话"
+  },
+  "email": {
+    "title": "邮箱",
+    "subtitle": "详细信息",
+    "defaultSubject": "服务咨询 - Disruptivo Lab"
+  },
+  "schedule": {
+    "title": "营业时间",
+    "weekdays": "周一 - 周五: {start} - {end}",
+    "saturday": "周六: {start} - {end}",
+    "timezone": "{city} (GMT{offset})"
+  },
+  "cta": {
+    "primary": "通过WhatsApp发送"
+  }
+}

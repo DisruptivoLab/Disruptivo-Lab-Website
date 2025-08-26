@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "title": "Embudo de Ventas con IA",
+    "subtitle": "Atrae, califica y convierte 24/7 con recorridos multicanal automatizados."
+  },
+  "pitch": {
+    "subtitle_long": "Diseñamos un embudo completo con IA: captación en anuncios y landing, calificación en WhatsApp/Chat, nurturing por email/DM y agendamiento automático. Todo orquestado y medido para optimizar ROAS y tasa de cierre.",
+    "sales_focus": [
+      "Leads calificados automáticamente (A/B/C).",
+      "Seguimiento y nurturing sin olvidos.",
+      "Medición de extremo a extremo (ad → venta)."
+    ]
+  },
+  "definition": {
+    "what_is": "Un sistema orquestado por IA que conecta anuncios, landing, chat/WhatsApp, CRM y agendas para convertir más y mejor con menos esfuerzo manual.",
+    "key_benefits": [
+      "Más velocidad de respuesta y mejor experiencia.",
+      "Prioriza al SDR con leads calientes.",
+      "Escala campañas con datos reales de conversión."
+    ]
+  },
+  "pains": [
+    "Tiempos de respuesta lentos y pérdida de leads.",
+    "Mucho lead frío sin calificación.",
+    "Dificultad para atribuir ventas a campañas."
+  ],
+  "outcomes": [
+    { "label": "Tiempo de respuesta", "value": "< 1 min" },
+    { "label": "Calificación", "value": "+auto" },
+    { "label": "Agendamiento", "value": "+30%" },
+    { "label": "ROAS", "value": "+x1.3–x2" }
+  ],
+  "deliverables": [
+    "Mapeo de journey y definiciones de mensajes.",
+    "Bots/flows para calificación y nurturing.",
+    "Integración con CRM y agenda.",
+    "Dash de métricas (captación → cierre).",
+    "Pruebas A/B y playbook de optimización."
+  ],
+  "steps": [
+    { "title": "Estrategia y journey", "desc": "Propuesta de valor, oferta y flujo por canal." },
+    { "title": "Implementación", "desc": "Landing + anuncios + bots + CRM + agenda." },
+    { "title": "Medición", "desc": "Eventos, dashboards y atribución." },
+    { "title": "Optimización", "desc": "A/B testing y mejoras continuas." }
+  ],
+  "integrations": [
+    "Meta Ads", "Google Ads", "WhatsApp", "HubSpot", "Pipedrive", "Calendly", "GA4", "Segment", "Zapier", "n8n"
+  ],
+  "faqs": [
+    { "q": "¿Necesito un CRM?", "a": "Recomendado. Integramos con HubSpot, Pipedrive u otros. Si no tienes, proponemos uno ligero." },
+    { "q": "¿Qué tan rápido se ve impacto?", "a": "En 2–4 semanas puedes ver mejoras en respuesta y agendamiento; ROAS mejora con iteraciones." },
+    { "q": "¿Reemplaza a mi equipo de ventas?", "a": "No. La IA automatiza tareas repetitivas y califica; el cierre sigue en tu equipo con mejor foco." }
+  ]
+}

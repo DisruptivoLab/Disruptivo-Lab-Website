@@ -1,0 +1,28 @@
+{
+  "modal": {
+    "title": "Nous Contacter",
+    "subtitle": "Parlez-nous de votre projet"
+  },
+  "whatsapp": {
+    "title": "WhatsApp",
+    "subtitle": "Réponse immédiate"
+  },
+  "phone": {
+    "title": "Téléphone",
+    "subtitle": "Appel direct"
+  },
+  "email": {
+    "title": "Email",
+    "subtitle": "Message détaillé",
+    "defaultSubject": "Demande de renseignements - Disruptivo Lab"
+  },
+  "schedule": {
+    "title": "Heures d'Ouverture",
+    "weekdays": "Lun - Ven: {start} - {end}",
+    "saturday": "Samedi: {start} - {end}",
+    "timezone": "{city} (GMT{offset})"
+  },
+  "cta": {
+    "primary": "Écrire sur WhatsApp"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "title": "AI‑Powered Sales Funnel",
+    "subtitle": "Attract, qualify and convert 24/7 with automated multichannel journeys."
+  },
+  "pitch": {
+    "subtitle_long": "We design a full AI funnel: acquisition on ads and landing, qualification on WhatsApp/Chat, email/DM nurturing and auto‑scheduling. All orchestrated and measured to optimize ROAS and close rate.",
+    "sales_focus": [
+      "Automatic lead qualification (A/B/C).",
+      "Follow‑up and nurturing without drop‑offs.",
+      "End‑to‑end measurement (ad → sale)."
+    ]
+  },
+  "definition": {
+    "what_is": "An AI‑orchestrated system connecting ads, landing, chat/WhatsApp, CRM and calendars to convert more and better with less manual effort.",
+    "key_benefits": [
+      "Faster response times and better experience.",
+      "Prioritize SDRs with hot leads.",
+      "Scale campaigns with true conversion data."
+    ]
+  },
+  "pains": [
+    "Slow response, lead leakage.",
+    "Too many cold leads without qualification.",
+    "Hard to attribute sales to campaigns."
+  ],
+  "outcomes": [
+    { "label": "Response time", "value": "< 1 min" },
+    { "label": "Qualification", "value": "+auto" },
+    { "label": "Scheduling", "value": "+30%" },
+    { "label": "ROAS", "value": "+x1.3–x2" }
+  ],
+  "deliverables": [
+    "Journey mapping and messaging.",
+    "Bots/flows for qualification and nurturing.",
+    "CRM and calendar integration.",
+    "Metrics dashboard (acquisition → close).",
+    "A/B tests and optimization playbook."
+  ],
+  "steps": [
+    { "title": "Strategy & journey", "desc": "Value prop, offer and per‑channel flow." },
+    { "title": "Implementation", "desc": "Landing + ads + bots + CRM + calendar." },
+    { "title": "Measurement", "desc": "Events, dashboards and attribution." },
+    { "title": "Optimization", "desc": "A/B testing and continuous improvements." }
+  ],
+  "integrations": [
+    "Meta Ads", "Google Ads", "WhatsApp", "HubSpot", "Pipedrive", "Calendly", "GA4", "Segment", "Zapier", "n8n"
+  ],
+  "faqs": [
+    { "q": "Do I need a CRM?", "a": "Recommended. We integrate with HubSpot, Pipedrive or others. If you don’t have one, we suggest a lightweight option." },
+    { "q": "How fast can we see impact?", "a": "In 2–4 weeks you’ll likely see response and scheduling improvements; ROAS improves with iterations." },
+    { "q": "Does this replace my sales team?", "a": "No. AI automates repetitive work and qualification; closing remains with your team with better focus." }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "title": "Quiénes Somos",
+    "subtitle": "Transformamos visiones en realidades digitales a través de metodologías innovadoras que desafían los límites de lo posible."
+  },
+  "essence": {
+    "title": "Nuestra Esencia",
+    "description": "En Disruptivo Lab, no seguimos tendencias: las creamos. Somos arquitectos del futuro digital, combinando estrategia visionaria con ejecución impecable para crear experiencias que redefinen industrias.",
+    "additional": "Nuestra pasión por la innovación nos impulsa a explorar constantemente nuevos horizontes tecnológicos, convirtiendo cada proyecto en una oportunidad de ruptura y transformación."
+  },
+  "methodology": {
+    "title": "Nuestra Metodología",
+    "approaches": {
+      "intelligence": {
+        "title": "Inteligencia Apalancada",
+        "description": "Combinamos IA de vanguardia con expertise humano para crear soluciones que superan las expectativas tradicionales."
+      },
+      "velocity": {
+        "title": "Velocidad Disruptiva", 
+        "description": "Implementamos metodologías ágiles y tecnologías modernas que aceleran el time-to-market de nuestros clientes."
+      },
+      "impact": {
+        "title": "Impacto Medible",
+        "description": "Cada proyecto está diseñado con KPIs claros y métricas de éxito que garantizan ROI tangible."
+      }
+    }
+  },
+  "evolution": {
+    "title": "Nuestra Evolución",
+    "milestones": {
+      "foundation": {
+        "period": "2014-2017",
+        "phase": "Fundación",
+        "achievement": "Primeros proyectos web y móviles. Establecimiento de metodologías ágiles y enfoque en calidad."
+      },
+      "specialization": {
+        "period": "2018-2020", 
+        "phase": "Especialización",
+        "achievement": "Desarrollo de expertise en arquitecturas cloud y automatización de procesos empresariales."
+      },
+      "transformation": {
+        "period": "2021-2023",
+        "phase": "Transformación Digital",
+        "achievement": "Integración de IA y machine learning en soluciones empresariales. Expansión de servicios consultivos."
+      },
+      "disruption": {
+        "period": "2024-Presente",
+        "phase": "Era Disruptiva", 
+        "achievement": "Pioneros en agentes inteligentes y automatización avanzada. Redefiniendo estándares de la industria."
+      }
+    }
+  },
+  "benefits": {
+    "title": "Lo Que Obtienes",
+    "items": {
+      "results": {
+        "title": "Resultados 10x más efectivos",
+        "description": "Nuestras soluciones multiplican el impacto de tus procesos actuales."
+      },
+      "speed": {
+        "title": "Lanzamiento 3x más rápido",
+        "description": "Metodologías optimizadas que aceleran tu time-to-market."
+      },
+      "roi": {
+        "title": "ROI comprobado en 90 días",
+        "description": "Métricas claras y resultados tangibles desde el primer trimestre."
+      },
+      "support": {
+        "title": "Soporte integral continuo",
+        "description": "Acompañamiento técnico y estratégico a largo plazo."
+      }
+    }
+  },
+  "cta": {
+    "title": "¿Listo para la Transformación?",
+    "description": "Únete a más de 50 empresas que ya han transformado su futuro con nuestras soluciones innovadoras.",
+    "primary": "Ver Nuestros Servicios",
+    "secondary": "Explorar Portfolio"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "headings": {
+    "what": "What it is",
+    "why_now": "Why now?",
+    "how": "How it works",
+    "deliverables": "What you get",
+    "outcomes": "Results in 90 days",
+    "integrations": "Integrations",
+    "pain": "Problems we solve",
+    "faq": "FAQs"
+  },
+  "cta": {
+    "title": "Let's talk",
+    "desc": "We'll show you a real flow and how it connects to your CRM in minutes.",
+    "button": "Book a call"
+  },
+  "breadcrumb": {
+    "back": "Back",
+    "services": "Services"
+  }
+}

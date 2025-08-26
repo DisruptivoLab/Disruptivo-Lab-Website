@@ -1,0 +1,28 @@
+{
+  "loading": "Cargando...",
+  "error": "Error",
+  "retry": "Reintentar",
+  "close": "Cerrar",
+  "back": "Volver",
+  "cta": {
+    "title": "¿Listo para Transformar tu Negocio?",
+    "description": "Conversemos sobre cómo podemos ayudarte a alcanzar tus objetivos con soluciones innovadoras.",
+    "contact": "Contactar",
+    "whatsapp": "WhatsApp",
+    "schedule": "Agendar Consulta",
+    "email": "Enviar Email"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "method": "El Método",
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "about": "Nosotros",
+    "ai": "Inteligencia Artificial",
+    "slide_controls": {
+      "progress": "{current}/{total}",
+      "previous": "Anterior",
+      "next": "Siguiente"
+    }
+  }
+}

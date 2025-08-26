@@ -1,0 +1,38 @@
+{
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Conte-nos sobre seu projeto e ajudaremos você a torná-lo realidade",
+    "form": {
+      "name": "Nome completo",
+      "email": "Endereço de e-mail",
+      "phone": "Telefone",
+      "company": "Empresa",
+      "message": "Mensagem",
+      "service": "Serviço de interesse",
+      "submit": "Enviar mensagem",
+      "sending": "Enviando...",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Erro ao enviar mensagem. Tente novamente."
+    },
+    "services": {
+      "ai_agents": "Agentes de IA",
+      "automation": "Automação",
+      "seo": "SEO Inteligente",
+      "consulting": "Consultoria",
+      "development": "Desenvolvimento de Produtos"
+    },
+    "close": "Fechar"
+  },
+  "video": {
+    "title": "Ver Demo",
+    "loading": "Carregando vídeo...",
+    "error": "Erro ao carregar vídeo",
+    "close": "Fechar vídeo"
+  },
+  "confirmation": {
+    "title": "Confirmar ação",
+    "message": "Tem certeza de que deseja continuar?",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar"
+  }
+}

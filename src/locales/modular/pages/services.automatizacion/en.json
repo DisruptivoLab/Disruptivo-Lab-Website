@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "title": "Process Automation",
+    "subtitle": "Save hours per week and eliminate errors. Flows that connect sales, operations and finance."
+  },
+  "pitch": {
+    "subtitle_long": "We design and automate end‑to‑end critical flows (CRM, invoicing, reporting, marketing) so your team drops the repetitive work and focuses on growth.",
+    "sales_focus": [
+      "Scale sales without adding headcount: lead routing, SLAs and sequences.",
+      "Frictionless ops: onboarding, invoicing and reconciliation.",
+      "Always‑on marketing: audiences, enrichment and reporting.",
+      "Live dashboards: trustworthy data and real‑time decisions."
+    ]
+  },
+  "definition": {
+    "what_is": "We automate manual processes across your tools (CRM, ERP, support, marketing) with rules and bots that execute tasks, update data and notify the team without human intervention.",
+    "key_benefits": [
+      "Save 10–40 h/week per team.",
+      "Consistent data: fewer errors and duplicates.",
+      "Shorter cycle times and better experience.",
+      "End‑to‑end traceability for every process.",
+      "Scalability without growing fixed costs."
+    ]
+  },
+  "pains": [
+    "Too much copy‑paste between tools and frequent errors.",
+    "Manual reports and no traceability.",
+    "Inconsistent sales follow‑up.",
+    "Slow onboarding, invoicing or support with bottlenecks.",
+    "Lack of visibility to decide: siloed data."
+  ],
+  "outcomes": [
+    { "label": "Hours saved", "value": "10–40 h/wk" },
+    { "label": "Fewer errors", "value": "-60–90%" },
+    { "label": "Faster cycles", "value": "-20–40%" },
+    { "label": "Trustworthy data", "value": "+100%" }
+  ],
+  "deliverables": [
+    "Process mapping and prioritized quick wins.",
+    "Automations in CRM/ERP/marketing with documentation.",
+    "Alerts, SLAs and control dashboards.",
+    "Training and operating manual for the team.",
+    "30/60/90 day improvement plan."
+  ],
+  "steps": [
+    { "title": "Discovery & mapping", "desc": "Identify bottlenecks and opportunities; define success and scope." },
+    { "title": "Design & prioritization", "desc": "Roadmap by impact vs effort, with quick wins first." },
+    { "title": "Implementation", "desc": "Flows, validations and integrated testing." },
+    { "title": "Monitor & improve", "desc": "Metrics, alerts and continuous adjustments." }
+  ],
+  "integrations": [
+    "HubSpot", "Pipedrive", "Salesforce", "Google Sheets", "Slack", "Jira", "Xero", "QuickBooks", "Zapier", "Make", "n8n"
+  ],
+  "faqs": [
+    { "q": "How fast are the first flows?", "a": "Quick wins in 1–2 weeks; 4–8 week programs depending on scope." },
+    { "q": "Do I need a technical team?", "a": "No. We hand off with training and manuals." },
+    { "q": "How do we measure ROI?", "a": "Hours saved, errors avoided, cycle times and internal/customer NPS." }
+  ]
+}

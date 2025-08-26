@@ -1,0 +1,98 @@
+{
+  "services": {
+  "hero": {"title": "Services to grow with AI and software", "subtitle": "AI with agents, automations and consulting to grow your business like never before."},
+  "cta": {"whatsapp": "Chat on WhatsApp", "explore": "Explore services", "explore_short": "Explore", "packages": "See packages"},
+  "ia": {"title": "Artificial Intelligence", "desc": "Assistants and RAG with your data to reply 24/7, close more and learn from every interaction.", "items": ["Custom assistants/agents", "RAG with your docs", "Internal copilots"]},
+  "automation": {"title": "Automation", "desc": "Automate key processes, remove errors and speed up sales. Consulting + implementation.", "items": ["Lead routing & CRM", "Automated reporting", "Onboarding & invoicing"]},
+    "software": {"title": "Custom software", "desc": "Scalable web products focused on business."},
+    "landings": {"title": "High-converting landings", "desc": "Fast, ad-ready, with A/B testing.", "items": ["Copy & design", "Analytics & technical SEO", "A/B experiments"]},
+    "consulting": {"title": "Consulting", "desc": "Diagnosis, roadmap and quick wins.", "items": ["Diagnosis & roadmap", "Stack & architecture guidance"]},
+    "pain": {
+      "items": [
+        {"label": "Pain #1", "title": "Leads not converting", "desc": "Active campaigns but low conversion and manual follow-up."},
+        {"label": "Pain #2", "title": "Slow processes", "desc": "Too much copy-paste, manual reports and repetitive tasks."},
+  {"label": "Pain #3", "title": "Unclear ROI", "desc": "Uncertainty about where to invest to see results fast."},
+  {"label": "Pain #4", "title": "Can't handle all messages", "desc": "WhatsApp and DMs overloaded; late replies make leads go cold."},
+  {"label": "Pain #5", "title": "Need to grow sales now", "desc": "Missing a repeatable system to generate demand and close opportunities."}
+      ],
+      "quotes": [
+        {"text": "We invest in ads, but leads go cold before someone replies.", "role": "Marketing Director, Services"},
+        {"text": "WhatsApp and DMs overflowing; we lose opportunities due to late replies.", "role": "Head of Sales, Retail"},
+        {"text": "I don't know which channel brings sales: manual reports and scattered data.", "role": "CEO, E‑commerce"},
+        {"text": "We have traffic, but the landing doesn't even convert 1%.", "role": "Paid Media, SaaS"},
+        {"text": "Too much copy‑paste between CRM, invoicing and support; the day slips away.", "role": "Operations, B2B"},
+        {"text": "I want to launch an MVP in weeks, not months or with endless budgets.", "role": "Founder, Startup"},
+        {"text": "The team asks for AI, but I don't know where to start or how to measure ROI.", "role": "Innovation, Enterprise"},
+        {"text": "We pay for tools no one uses; broken and duplicated processes.", "role": "COO, Services"},
+        {"text": "Inconsistent sales follow-up: nobody knows the status of each opportunity.", "role": "Sales Manager, B2B"},
+        {"text": "My team writes reports by hand; closing takes longer and insights are lost.", "role": "Finance, SMB"}
+      ]
+    },
+    "our": {
+      "title": "Our services",
+      "subtitle": "We focus on what moves revenue and operations.",
+      "cards": {
+        "ai": {"title": "Artificial intelligence", "desc": "Assistants and RAG with your data to reply 24/7 and close more."},
+        "software": {"title": "Custom software", "desc": "Fast, maintainable web apps built to scale."},
+        "web_marketing": {"title": "Websites & digital marketing", "desc": "Landings and funnels ready for ads, technical SEO and analytics."}
+      }
+    },
+    "packages": {
+      "title": "Packages",
+      "weeks": "Duration: {n} weeks",
+      "ai_starter": {"title": "AI Starter", "desc": "Agent + basic RAG + usage analytics."},
+      "automation_sprint": {"title": "Automation Sprint", "desc": "3–5 critical flows with documentation."},
+      "landing_express": {"title": "Landing Express", "desc": "Landing in 5 days ready for campaigns."}
+    },
+    "process": {
+      "title": "Process",
+      "steps": [
+        {"label": "01", "title": "Diagnosis"},
+        {"label": "02", "title": "Proposal"},
+        {"label": "03", "title": "Implementation"},
+        {"label": "04", "title": "Measurement"}
+      ]
+    },
+  "roi": {"hours": "Hours/month to automate", "hour_cost": "Hourly cost (USD)", "automation_rate": "% automatable", "savings": "Estimated savings", "payback": "Approx. payback", "weeks": "weeks"},
+  "price": {"from": "From"},
+  "pricing": {"title": "Plans & pricing", "subtitle": "Start with a sprint and measure impact in 2 weeks.", "plan": "Plan", "note": "Approximate values. Reference: 1 USD ≈ 4,200 COP."},
+    "faq": {
+      "title": "Frequently asked questions",
+      "q0": {"q": "How do we start?", "a": "We schedule a diagnosis and define quick wins."},
+      "q1": {"q": "Who owns the code?", "a": "The client, with repository and documentation."},
+      "q2": {"q": "Typical timelines?", "a": "2‑week sprints; MVP 4–6 weeks."},
+      "q3": {"q": "Stack?", "a": "Next.js, Node, Postgres, Vercel, Zapier/Make/n8n as needed."},
+      "q4": {"q": "Maintenance?", "a": "We offer support and evolution plans."},
+      "q5": {"q": "Language?", "a": "ES/EN."}
+    },
+  "cta_final": {"title": "Tell us about your case", "subtitle": "We give you actionable ideas in 48 hours."},
+  "sticky_cta": "Chat now on WhatsApp",
+  "roi_calculator": {
+    "title": "ROI Calculator",
+    "main_question": "What's your biggest headache?",
+    "hours_question": "How many hours do you spend on this per week?",
+    "contacts_question": "How many contacts/inquiries do you receive per day?",
+    "hours_weekly": "{hours}h weekly",
+    "monthly_cost": "= ${cost} USD/month in costs",
+    "daily_contacts": "{contacts} per day",
+    "monthly_contacts": "= {total} contacts/month"
+  },
+  "ia_section": {
+    "tagline": "AI that transforms real businesses",
+    "headline": "Is your company {highlight} while you sleep?",
+    "headline_highlight": "losing money",
+    "subtitle": "While your competition automates and grows 24/7, you keep losing customers, time and money on manual processes. <strong class=\"text-red-400\">It's time to change the game.</strong>",
+    "navigation": {
+      "roi_calculator": "ROI Calculator",
+      "success_cases": "Success Cases",
+      "demo_ia": "AI Demo",
+      "services_ia": "AI Services"
+    }
+  }
+  }
+  ,
+  "breadcrumb": {
+    "back": "Back",
+    "services": "Services"
+  }
+}

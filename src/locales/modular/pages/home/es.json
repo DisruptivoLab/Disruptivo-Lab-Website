@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "title": "Disruptivo Lab - Innovación Aplicada para Crecer tu Negocio",
+    "description": "Aumenta tus ventas 3x, reduce costos operativos y automatiza procesos con tecnología probada. Especialistas en IA, automatización y desarrollo digital."
+  },
+  "page_specific": {
+    "welcome_message": "Bienvenido a Disruptivo Lab",
+    "intro_text": "Transformamos negocios con tecnología de vanguardia"
+  },
+  "about": {
+    "body": {
+      "p1": "Disruptivo Lab es una agencia de innovación y tecnología especializada en transformar ideas en soluciones digitales revolucionarias. Con expertise en inteligencia artificial, desarrollo web, aplicaciones móviles y automatización, creamos experiencias digitales que impulsan el crecimiento exponencial de nuestros clientes."
+    },
+    "slogan": {
+      "leading": "Innovación Radical,",
+      "highlight": "Resultados Reales"
+    },
+    "cta": {
+      "about": "Nosotros",
+      "services": "Servicios"
+    }
+  }
+  ,
+  "conversion": {
+    "title": "¿Listo para acelerar el crecimiento?",
+    "rotate": ["vender más", "automatizar procesos", "lanzar más rápido"],
+    "subtitle": "Diseñamos, automatizamos y lanzamos productos que convierten en semanas, no meses.",
+    "cta": {
+      "primary": "Hablemos",
+      "secondary": "Escríbenos"
+    },
+    "valueProps": [
+      { "title": "IA Conversacional + WhatsApp", "desc": "Automatiza ventas y soporte 24/7 con chatbots inteligentes que califican leads y agendan citas." },
+      { "title": "Automatización de Procesos", "desc": "Ahorra 40+ horas semanales automatizando facturación, reportes y marketing para reducir errores." },
+  { "title": "Desarrollo de Software", "desc": "Web, apps y microservicios escalables. Desde MVP hasta productos listos para producción." },
+  { "title": "Consultoría Integral", "desc": "Diagnóstico, estrategia y adopción de IA con capacitación para integrar tecnología con resultados medibles." },
+  { "title": "Embudo de Ventas con IA", "desc": "Desde el clic hasta el cierre: asistentes 24/7, formularios inteligentes y priorización de leads." }
+    ]
+  }
+  ,
+  "parallaxCta": {
+    "title": "Construyamos algo extraordinario",
+    "subtitle": "Prototipos en semanas, resultados medibles desde el día uno",
+    "cta": "Hablemos"
+  }
+}

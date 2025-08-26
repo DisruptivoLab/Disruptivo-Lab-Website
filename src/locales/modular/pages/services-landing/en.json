@@ -1,0 +1,60 @@
+{
+  "servicesLanding": {
+    "title": "AI & Software Solutions",
+    "cta": "Discover",
+  "seo": "At Disruptivo Lab we design and implement conversational AI, process automation, and custom software to accelerate sales, cut operating costs, and scale digital products. We integrate WhatsApp, CRMs, and key tools with agile methods to deliver measurable results in weeks.",
+  "usp": {
+      "title": "Why us?",
+      "items": [
+        {
+          "key": "garantia",
+          "title": "Results guarantee",
+          "desc": "Measurable results in 90 days: we define KPIs and track them transparently."
+        },
+        {
+          "key": "tiempos",
+          "title": "Weeks, not months",
+          "desc": "Agile sprints to ship fast: 2–6 weeks depending on scope."
+        },
+        {
+          "key": "acompanamiento",
+          "title": "Ongoing partnership",
+          "desc": "Training, support, and optimization to scale without friction."
+        }
+      ]
+    },
+    "ctaBlock": {
+      "title": "Ready to build with AI?",
+      "subtitle": "Let’s talk and we’ll show you how to accelerate results with AI + custom software.",
+      "primary": "Let’s talk",
+      "secondary": "See methodology"
+    },
+    "cards": [
+      {
+        "slug": "whatsapp-ia",
+        "title": "Conversational AI + WhatsApp",
+        "desc": "Automate 24/7 sales and support with smart chatbots that qualify leads and book appointments."
+      },
+      {
+        "slug": "automatizacion",
+        "title": "Process Automation",
+        "desc": "Save 40+ hours a week by automating billing, reporting, and marketing to cut errors."
+      },
+      {
+        "slug": "desarrollo-software",
+        "title": "Custom Software",
+        "desc": "Scalable web, apps, and microservices — from MVP to production-grade products."
+      },
+      {
+        "slug": "consultoria-integral",
+        "title": "Full-Stack Consulting",
+        "desc": "Assessment, strategy, and AI adoption with training to deliver measurable results."
+      },
+      {
+        "slug": "embudo-ia",
+        "title": "AI-Powered Sales Funnel",
+        "desc": "Attract, qualify, and convert with automated, AI-driven multichannel journeys."
+      }
+    ]
+  }
+}

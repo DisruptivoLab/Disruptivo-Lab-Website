@@ -1,0 +1,5 @@
+{
+  "title": "Idioma detectado automáticamente",
+  "message": "Hemos cambiado el idioma a {language} basado en la configuración de tu dispositivo",
+  "close": "Cerrar notificación"
+}

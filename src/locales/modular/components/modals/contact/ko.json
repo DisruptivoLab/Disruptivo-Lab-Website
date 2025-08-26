@@ -1,0 +1,28 @@
+{
+  "modal": {
+    "title": "문의하기",
+    "subtitle": "프로젝트에 대해 알려주세요"
+  },
+  "whatsapp": {
+    "title": "WhatsApp",
+    "subtitle": "즉시 응답"
+  },
+  "phone": {
+    "title": "전화",
+    "subtitle": "직접 통화"
+  },
+  "email": {
+    "title": "이메일",
+    "subtitle": "자세한 메시지",
+    "defaultSubject": "서비스 문의 - Disruptivo Lab"
+  },
+  "schedule": {
+    "title": "운영 시간",
+    "weekdays": "월 - 금: {start} - {end}",
+    "saturday": "토요일: {start} - {end}",
+    "timezone": "{city} (GMT{offset})"
+  },
+  "cta": {
+    "primary": "WhatsApp으로 보내기"
+  }
+}

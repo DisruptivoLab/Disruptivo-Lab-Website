@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "title": "Applied Innovation to Grow Your Business",
+    "subtitle": "Increase sales 3x, reduce operational costs and automate processes with proven technology",
+    "cta": "Accelerate Your Growth"
+  },
+  "agents": {
+    "title": "Your WhatsApp Powered by AI",
+    "subtitle": "Type less, sell more and improve customer service with intelligent 24/7 agents",
+    "cta": "Automate Your Business"
+  },
+  "seo": {
+    "title": "Intelligent SEO with AI",
+    "subtitle": "Position your business on Google automatically with optimized content and data-driven strategies",
+    "cta": "Improve Your Ranking"
+  },
+  "automation": {
+    "title": "Business Automation with AI",
+    "subtitle": "Free up valuable time by automating repetitive tasks and optimize your operational processes",
+    "cta": "Automate Processes"
+  },
+  "consulting": {
+    "title": "Strategic AI Consulting",
+    "subtitle": "Transform your business with personalized strategies and guided technology implementation",
+    "cta": "Request Consulting"
+  },
+  "product_dev": {
+    "title": "Digital Product Development",
+    "subtitle": "Create web and mobile applications that drive your business with cutting-edge technology",
+    "cta": "Develop Your Product"
+  }
+}

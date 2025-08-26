@@ -1,0 +1,28 @@
+{
+  "modal": {
+    "title": "Contact Us",
+    "subtitle": "Tell us about your project"
+  },
+  "whatsapp": {
+    "title": "WhatsApp",
+    "subtitle": "Instant response"
+  },
+  "phone": {
+    "title": "Phone",
+    "subtitle": "Direct call"
+  },
+  "email": {
+    "title": "Email",
+    "subtitle": "Detailed message",
+    "defaultSubject": "Service inquiry - Disruptivo Lab"
+  },
+  "schedule": {
+    "title": "Office Hours",
+    "weekdays": "Mon - Fri: {start} - {end}",
+    "saturday": "Saturday: {start} - {end}",
+    "timezone": "{city} (GMT{offset})"
+  },
+  "cta": {
+    "primary": "Message on WhatsApp"
+  }
+}

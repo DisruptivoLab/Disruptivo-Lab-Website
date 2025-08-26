@@ -1,0 +1,22 @@
+{
+  "title": "Subscribe to our newsletter",
+  "subtitle": "Get the latest news about AI and automation",
+  "form": {
+    "email": "Your email address",
+    "name": "Your name (optional)",
+    "interests": "Topics of interest",
+    "submit": "Subscribe",
+    "subscribing": "Subscribing...",
+    "success": "You have successfully subscribed!",
+    "error": "Error subscribing. Please try again.",
+    "already_subscribed": "You are already subscribed with this email"
+  },
+  "interests": {
+    "ai": "Artificial Intelligence",
+    "automation": "Automation",
+    "development": "Web Development",
+    "marketing": "Digital Marketing"
+  },
+  "privacy": "By subscribing you accept our privacy policy",
+  "close": "Close"
+}

@@ -1,0 +1,38 @@
+{
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Tell us about your project and we'll help you make it a reality",
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone",
+      "company": "Company",
+      "message": "Message",
+      "service": "Service of interest",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    },
+    "services": {
+      "ai_agents": "AI Agents",
+      "automation": "Automation",
+      "seo": "Intelligent SEO",
+      "consulting": "Consulting",
+      "development": "Product Development"
+    },
+    "close": "Close"
+  },
+  "video": {
+    "title": "Watch Demo",
+    "loading": "Loading video...",
+    "error": "Error loading video",
+    "close": "Close video"
+  },
+  "confirmation": {
+    "title": "Confirm action",
+    "message": "Are you sure you want to continue?",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  }
+}

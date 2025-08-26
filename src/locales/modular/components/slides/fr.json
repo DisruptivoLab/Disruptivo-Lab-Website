@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "title": "Innovation Appliquée pour Développer Votre Entreprise",
+    "subtitle": "Augmentez vos ventes de 3x, réduisez les coûts opérationnels et automatisez les processus avec une technologie éprouvée",
+    "cta": "Accélérez Votre Croissance"
+  },
+  "agents": {
+    "title": "Votre WhatsApp Alimenté par l'IA",
+    "subtitle": "Tapez moins, vendez plus et améliorez le service client avec des agents intelligents 24/7",
+    "cta": "Automatisez Votre Entreprise"
+  },
+  "seo": {
+    "title": "SEO Intelligent avec l'IA",
+    "subtitle": "Positionnez votre entreprise sur Google automatiquement avec du contenu optimisé et des stratégies basées sur les données",
+    "cta": "Améliorez Votre Classement"
+  },
+  "automation": {
+    "title": "Automatisation d'Entreprise avec l'IA",
+    "subtitle": "Libérez du temps précieux en automatisant les tâches répétitives et optimisez vos processus opérationnels",
+    "cta": "Automatisez les Processus"
+  },
+  "consulting": {
+    "title": "Conseil Stratégique en IA",
+    "subtitle": "Transformez votre entreprise avec des stratégies personnalisées et une implémentation technologique guidée",
+    "cta": "Demandez une Consultation"
+  },
+  "product_dev": {
+    "title": "Développement de Produits Numériques",
+    "subtitle": "Créez des applications web et mobiles qui propulsent votre entreprise avec une technologie de pointe",
+    "cta": "Développez Votre Produit"
+  }
+}

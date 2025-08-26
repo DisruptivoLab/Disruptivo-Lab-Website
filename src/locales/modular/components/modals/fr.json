@@ -1,0 +1,38 @@
+{
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Parlez-nous de votre projet et nous vous aiderons à le réaliser",
+    "form": {
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "phone": "Téléphone",
+      "company": "Entreprise",
+      "message": "Message",
+      "service": "Service d'intérêt",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès !",
+      "error": "Erreur lors de l'envoi du message. Veuillez réessayer."
+    },
+    "services": {
+      "ai_agents": "Agents IA",
+      "automation": "Automatisation",
+      "seo": "SEO Intelligent",
+      "consulting": "Conseil",
+      "development": "Développement de Produits"
+    },
+    "close": "Fermer"
+  },
+  "video": {
+    "title": "Voir la Démo",
+    "loading": "Chargement de la vidéo...",
+    "error": "Erreur lors du chargement de la vidéo",
+    "close": "Fermer la vidéo"
+  },
+  "confirmation": {
+    "title": "Confirmer l'action",
+    "message": "Êtes-vous sûr de vouloir continuer ?",
+    "confirm": "Confirmer",
+    "cancel": "Annuler"
+  }
+}

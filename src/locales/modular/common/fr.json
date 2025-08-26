@@ -1,0 +1,28 @@
+{
+  "loading": "Chargement...",
+  "error": "Erreur",
+  "retry": "Réessayer",
+  "close": "Fermer",
+  "back": "Retour",
+  "cta": {
+    "title": "Prêt à Transformer Votre Entreprise ?",
+    "description": "Parlons de la façon dont nous pouvons vous aider à atteindre vos objectifs avec des solutions innovantes.",
+    "contact": "Nous Contacter",
+    "whatsapp": "WhatsApp",
+    "schedule": "Planifier une Consultation",
+    "email": "Envoyer un Email"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "method": "La Méthode",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "À Propos",
+    "ai": "Intelligence Artificielle",
+    "slide_controls": {
+      "progress": "{current}/{total}",
+      "previous": "Précédent",
+      "next": "Suivant"
+    }
+  }
+}
