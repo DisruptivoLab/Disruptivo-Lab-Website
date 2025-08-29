@@ -153,7 +153,7 @@ export default function ParallaxVideoCTA() {
             <video
               ref={videoRef}
               className="absolute inset-0 w-full h-full object-cover rounded-2xl"
-              src="/media/Identidad/disruptivo_lab_parallax.mp4"
+              src="https://firebasestorage.googleapis.com/v0/b/disruptivolabwebsite.firebasestorage.app/o/Disruptivo%20Lab%20Parallax.mp4?alt=media&token=5c5c1e85-fc44-4b21-97f5-a3bf33ac1624"
               muted
               playsInline
               preload="metadata"
