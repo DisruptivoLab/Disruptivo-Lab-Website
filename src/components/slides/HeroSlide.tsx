@@ -62,7 +62,7 @@ export default function HeroSlide({
         {shouldLoadVideo && (
           <video
             ref={videoRef}
-            src="/media/Identidad/video_background_disruptivo_Lab_2.mp4"
+            src="https://firebasestorage.googleapis.com/v0/b/disruptivolabwebsite.firebasestorage.app/o/Video%20Background%20Disruptivo%20Lab%202.mp4?alt=media&token=b921be5c-24c8-4833-9f9f-0321555d1965"
             autoPlay={!prefersReducedMotion && isActive}
             loop
             muted

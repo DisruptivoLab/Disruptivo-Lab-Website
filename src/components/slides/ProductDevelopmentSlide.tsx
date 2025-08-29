@@ -57,7 +57,7 @@ export default function ProductDevelopmentSlide({
         {shouldLoadVideo && (
           <video
             ref={videoRef}
-            src="/media/Identidad/web-design.mp4"
+            src="https://firebasestorage.googleapis.com/v0/b/disruptivolabwebsite.firebasestorage.app/o/Web-Design.mp4?alt=media&token=4d84f407-af42-4519-91fc-3733a24e758a"
             autoPlay={!prefersReducedMotion && isActive}
             loop
             muted

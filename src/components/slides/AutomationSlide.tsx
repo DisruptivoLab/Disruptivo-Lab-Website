@@ -57,7 +57,7 @@ export default function AutomationSlide({
         {shouldLoadVideo && (
           <video
             ref={videoRef}
-            src="/media/Identidad/video_background_Disruptivo_Lab.mp4"
+            src="https://firebasestorage.googleapis.com/v0/b/disruptivolabwebsite.firebasestorage.app/o/Video%20Background%20Disruptivo%20Lab.mp4?alt=media&token=9cdd30d6-0bca-4b9b-97dc-d91d30bc06e1"
             autoPlay={!prefersReducedMotion && isActive}
             loop
             muted

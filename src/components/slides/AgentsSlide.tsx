@@ -58,7 +58,7 @@ export default function AgentsSlide({
         {shouldLoadVideo && (
           <video
             ref={videoRef}
-            src="/media/Identidad/agentes_con_ia_para_tu_negocio.mp4"
+            src="https://firebasestorage.googleapis.com/v0/b/disruptivolabwebsite.firebasestorage.app/o/Agentes%20Con%20Ia%20Para%20Tu%20Negocio.mp4?alt=media&token=5d062031-dfc8-47ae-8a9e-e96b522b8438"
             autoPlay={!prefersReducedMotion && isActive}
             loop
             muted
