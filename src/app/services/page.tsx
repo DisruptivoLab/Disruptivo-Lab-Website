@@ -245,7 +245,7 @@ function FullBleedCTA({
         className="relative w-[100vw] min-h-[100svh] grid items-center overflow-hidden rounded-3xl [clip-path:polygon(0_2.5rem,100%_0,100%_calc(100%-2.5rem),0_100%)]"
       >
   {/* Video background (lazy) */}
-  <LazyBgVideo src="/media/Identidad/disruptivo_lab_parallax2.mp4" className="absolute inset-0 h-full w-full object-cover mx-auto rounded-3xl pointer-events-none" />
+  <LazyBgVideo src="https://firebasestorage.googleapis.com/v0/b/disruptivolabwebsite.firebasestorage.app/o/Video%20Background%20Disruptivo%20Lab.mp4?alt=media&token=9cdd30d6-0bca-4b9b-97dc-d91d30bc06e1" className="absolute inset-0 h-full w-full object-cover mx-auto rounded-3xl pointer-events-none" />
 
         {/* Overlays por tema y gradiente para legibilidad */}
         <div className="absolute inset-0 bg-white/20 dark:bg-black/40" />
