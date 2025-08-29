@@ -27,12 +27,12 @@ export default function ServicesPage() {
   const cards: Card[] = useMemo(() => {
     // Videos provisionales del repositorio (puedes reemplazarlos luego)
     const videos = [
-  '/media/Identidad/agentes_con_ia_para_tu_negocio.mp4',
+  'https://firebasestorage.googleapis.com/v0/b/disruptivolabwebsite.firebasestorage.app/o/Agentes%20Con%20Ia%20Para%20Tu%20Negocio.mp4?alt=media&token=5d062031-dfc8-47ae-8a9e-e96b522b8438',
   // Con espacios URL-encoded para mayor compatibilidad
-  '/media/Identidad/automatiza%20con%20disruptivo%20lab.mp4',
-  '/media/Identidad/disruptivo_lab_parallax.mp4',
-  '/media/Identidad/disruptivo_lab_parallax2.mp4',
-  '/media/Identidad/agentes_con_ia_para_tu_negocio.mp4',
+  'https://firebasestorage.googleapis.com/v0/b/disruptivolabwebsite.firebasestorage.app/o/Automatiza%20Con%20Disruptivo%20Lab.mp4?alt=media&token=53c33600-f29f-4f82-854f-f4202b6c5dc3',
+  'https://firebasestorage.googleapis.com/v0/b/disruptivolabwebsite.firebasestorage.app/o/Disruptivo%20Lab%20Parallax.mp4?alt=media&token=5c5c1e85-fc44-4b21-97f5-a3bf33ac1624',
+  'https://firebasestorage.googleapis.com/v0/b/disruptivolabwebsite.firebasestorage.app/o/Libera%20Tu%20Potencial.mp4?alt=media&token=66f206f9-2cfe-407c-95a6-8cbfbc4d0cde',
+  'https://firebasestorage.googleapis.com/v0/b/disruptivolabwebsite.firebasestorage.app/o/Video%20Background%20Disruptivo%20Lab.mp4?alt=media&token=9cdd30d6-0bca-4b9b-97dc-d91d30bc06e1',
     ];
     const list = (get('servicesLanding.cards') as Array<{ slug: string; title: string; desc?: string }>) ?? [];
     return list.slice(0, 5).map((c, i) => ({ ...c, video: videos[i % videos.length] }));
