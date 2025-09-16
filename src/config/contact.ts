@@ -82,10 +82,10 @@ export const scheduleConfig = {
 export const contactConfig = {
   // Teléfonos
   phone: {
-    primary: "+52 33 1234 5678",
-    secondary: "+52 33 8765 4321",
-    display: "+52 33 1234 5678",
-    whatsapp: "5233123456789", // Sin + ni espacios
+    primary: "+57 300 7874923",
+    secondary: "+57 300 7874923",
+    display: "+57 300 7874923",
+    whatsapp: "573007874923", // Sin + ni espacios
   },
 
   // Emails
