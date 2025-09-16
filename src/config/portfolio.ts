@@ -19,38 +19,32 @@ export const portfolioClientsBase: PortfolioClient[] = [
     id: 'tagger-pet',
     name: 'TAGGER PET',
     website: 'https://taggerpet.com',
-    image: 'https://picsum.photos/seed/taggerpet-petcare/800/600',
+    image: '/media/clients/taggerpet.svg',
     year: '2024'
   },
   {
     id: 'bee-consultoria',
     name: 'BEE CONSULTORÍA',
-    image: 'https://picsum.photos/seed/bee-fintech/800/600',
+    image: '/media/clients/beeconsultoria.svg',
     year: '2024'
   },
   {
     id: 'domipet',
     name: 'DOMIPET',
     website: 'https://www.domipet.com',
-    image: 'https://picsum.photos/seed/domipet-ecommerce/800/600',
+    image: '/media/clients/domipet.svg',
     year: '2024'
-  },
-  {
-    id: 'sivespa',
-    name: 'SIVESPA',
-    image: 'https://picsum.photos/seed/sivespa-health/800/600',
-    year: '2023'
   },
   {
     id: 'solodomis',
     name: 'SOLODOMIS',
-    image: 'https://picsum.photos/seed/solodomis-marketing/800/600',
+    image: '/media/clients/solodomis.svg',
     year: '2024'
   },
   {
     id: 'papas-paisas',
     name: 'PAPAS PAISAS',
-    image: 'https://picsum.photos/seed/papaspaisas-food/800/600',
+    image: '/media/clients/papaspaisas.svg',
     year: '2024'
   }
 ];
