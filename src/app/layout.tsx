@@ -76,8 +76,9 @@ export default function RootLayout({
         
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#FF4500" />
-        <link rel="icon" href="/media/Identidad/iconotipo_disrptivo_Lab.png" />
-        <link rel="apple-touch-icon" href="/media/Identidad/iconotipo_disrptivo_Lab.png" />
+        <link rel="icon" href="/media/Identidad/Icono-Disruptivo-Lab.webp" />
+        <link rel="apple-touch-icon" href="/media/Identidad/Icono-Disruptivo-Lab.webp" />
+        <link rel="shortcut icon" href="/media/Identidad/Icono-Disruptivo-Lab.webp" />
         <meta name="format-detection" content="telephone=no" />
         <script
           type="application/ld+json"
