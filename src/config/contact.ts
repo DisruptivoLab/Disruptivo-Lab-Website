@@ -98,7 +98,7 @@ export const contactConfig = {
 
   // Redes sociales
   social: {
-    whatsapp: "https://wa.me/5233123456789",
+    whatsapp: "https://wa.me/573007874923",
     telegram: "https://t.me/disruptivolab",
     instagram: "https://instagram.com/disruptivolab",
     linkedin: "https://linkedin.com/company/disruptivolab",
