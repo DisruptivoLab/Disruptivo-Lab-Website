@@ -1,7 +1,8 @@
 {
   "hero": {
     "title": "WhatsApp AI Assistants",
-    "subtitle": "Sell more and support 24/7. Capture, qualify and schedule via WhatsApp with AI connected to your CRM and campaigns."
+    "subtitle": "Sell more and support 24/7. Capture, qualify and schedule via WhatsApp with AI connected to your CRM and campaigns.",
+    "cta_button": "Try Our Interactive Demos Now!"
   },
   "pitch": {
     "subtitle_long": "We implement conversational assistants connected to your CRM, calendar and catalogs to capture, qualify, nurture and convert 24/7 on WhatsApp: more bookings, more closes and support without wait times.",

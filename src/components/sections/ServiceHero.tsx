@@ -3,6 +3,8 @@
 import { useMemo } from 'react';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/contexts/theme-context';
+import { GlassIconButton } from '@/components/ui/glass-icon-button';
+import { MessageCircle } from 'lucide-react';
 
 type Props = {
   title: string;
@@ -11,10 +13,15 @@ type Props = {
   Icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   className?: string;
   themeClassName?: string; // ej: service-theme-whatsapp-ia
+  ctaButton?: {
+    text: string;
+    href: string;
+    target?: string;
+  };
 };
 
 // Hero con gradiente: arriba color de marca, desvaneciendo a blanco (light) o negro (dark)
-export function ServiceHero({ title, subtitle, Icon, className, themeClassName }: Props) {
+export function ServiceHero({ title, subtitle, Icon, className, themeClassName, ctaButton }: Props) {
   const { theme } = useTheme();
 
   return (
@@ -44,6 +51,22 @@ export function ServiceHero({ title, subtitle, Icon, className, themeClassName }
         {subtitle ? (
           <p className="mt-3 text-base md:text-lg text-foreground/85 max-w-2xl mx-auto">{subtitle}</p>
         ) : null}
+
+        {ctaButton && (
+          <div className="mt-6">
+            <a
+              href={ctaButton.href}
+              target={ctaButton.target || '_blank'}
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10 hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300 group"
+            >
+              <GlassIconButton size="sm" className="pointer-events-none">
+                <MessageCircle className="h-4 w-4" />
+              </GlassIconButton>
+              <span className="font-medium">{ctaButton.text}</span>
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

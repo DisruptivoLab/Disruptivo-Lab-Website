@@ -192,12 +192,19 @@ export default function ServiceDetailPage() {
       {(() => {
     const themeDef = getServiceTheme(slug);
         const themeClass = themeDef ? `service-theme-${slug}` : 'service-theme-default';
+        const ctaButton = slug === 'whatsapp-ia' ? {
+          text: get('hero.cta_button') as string,
+          href: 'https://chat.disruptivo.app',
+          target: '_blank'
+        } : undefined;
+
         return (
           <ServiceHero
       title={(get('hero.title') as string) || service.title}
       subtitle={(get('hero.subtitle') as string) || service.desc || ''}
             Icon={themeDef?.Icon}
             themeClassName={themeClass}
+            ctaButton={ctaButton}
           />
         );
       })()}
