@@ -8,6 +8,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/admin/', '/api/'],
       },
+      {
+        userAgent: 'Googlebot-News',
+        allow: '/',
+        disallow: ['/admin/', '/api/'],
+      },
       // Optimización para crawlers de IA/LLM
       {
         userAgent: 'GPTBot', // ChatGPT
