@@ -101,7 +101,7 @@ export const getLocalizedClient = (
 };
 
 // Helper para obtener todas las categorías localizadas
-export const getLocalizedCategories = (translations: Record<string, Record<string, { category?: string }> | string>): string[] => {
+export const getLocalizedCategories = (translations: any): string[] => {
   if (!translations?.clients) {
     return ['All']; // Fallback básico
   }
@@ -109,7 +109,7 @@ export const getLocalizedCategories = (translations: Record<string, Record<strin
   const categories = new Set<string>();
   
   portfolioClientsBase.forEach(client => {
-    const clientTranslations = translations.clients[client.id];
+    const clientTranslations = (translations.clients as any)[client.id];
     if (clientTranslations?.category) {
       categories.add(clientTranslations.category);
     }
