@@ -61,7 +61,7 @@ export interface LocalizedPortfolioClient extends PortfolioClient {
 // Helper para combinar datos base con traducciones
 export const getLocalizedClient = (
   clientBase: PortfolioClient, 
-  translations: any
+  translations: Record<string, Record<string, { title?: string; description?: string; category?: string; industry?: string; tags?: string[] }>>
 ): LocalizedPortfolioClient => {
   // Verificar que existan las traducciones de clientes
   if (!translations?.clients) {
@@ -101,7 +101,7 @@ export const getLocalizedClient = (
 };
 
 // Helper para obtener todas las categorías localizadas
-export const getLocalizedCategories = (translations: any): string[] => {
+export const getLocalizedCategories = (translations: Record<string, Record<string, { category?: string }> | string>): string[] => {
   if (!translations?.clients) {
     return ['All']; // Fallback básico
   }

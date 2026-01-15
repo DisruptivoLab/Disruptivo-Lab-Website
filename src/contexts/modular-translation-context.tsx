@@ -168,20 +168,15 @@ export function ModularTranslationProvider({ children }: ModularTranslationProvi
 
   // Función de traducción síncrona - 100% modular
   const t = (key: string, params?: Record<string, string | number>): string => {
-    // Buscar en las traducciones modulares cargadas
     const value: unknown = getNestedValue(translations, key);
-    
-    // Si no se encuentra, devolver la clave como fallback
     let result: string = String(value || key);
 
-    // Reemplazar parámetros si existen
     if (params && typeof result === 'string') {
       Object.entries(params).forEach(([paramKey, paramValue]) => {
         result = result.replace(new RegExp(`{${paramKey}}`, 'g'), String(paramValue));
       });
     }
     
-    // Log para debugging en desarrollo
     if (!value && process.env.NODE_ENV === 'development') {
       console.warn(`🔍 Traducción no encontrada: ${key} (idioma: ${locale})`);
     }
@@ -193,7 +188,6 @@ export function ModularTranslationProvider({ children }: ModularTranslationProvi
   const loadAndMergeModule = async (moduleName: string, targetLocale: Locale = locale): Promise<void> => {
     const cacheKey = `${moduleName}-${targetLocale}`;
     
-    // Si ya está cargado, no hacer nada
     if (loadedModules.has(cacheKey)) {
       return;
     }

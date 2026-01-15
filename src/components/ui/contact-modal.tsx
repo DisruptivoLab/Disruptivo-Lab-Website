@@ -35,10 +35,15 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const { t, loadModularTranslation } = useModularTranslation();
   const locale = useLanguage();
   const [copiedItem, setCopiedItem] = useState<string | null>(null);
+  const [translationsLoaded, setTranslationsLoaded] = useState(false);
 
   useEffect(() => {
-    loadModularTranslation('components/modals/contact');
-  }, [loadModularTranslation]);
+    if (isOpen && !translationsLoaded) {
+      loadModularTranslation('components/modals/contact').then(() => {
+        setTranslationsLoaded(true);
+      });
+    }
+  }, [isOpen, translationsLoaded, loadModularTranslation]);
 
   const copyToClipboard = async (text: string, item: string) => {
     try {
@@ -83,7 +88,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
     },
   ];
 
-  if (!isOpen) return null;
+  if (!isOpen || !translationsLoaded) return null;
 
   return (
     <AnimatePresence>

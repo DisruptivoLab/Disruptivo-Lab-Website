@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useTheme } from '@/contexts/theme-context';
 import { useModularTranslation } from '@/contexts/modular-translation-context';
 import { HeroTitle, BodyText } from '@/components/ui/typography';
-import { MinimalistLink } from '@/components/ui';
 import { ContactModal } from '@/components/ui/contact-modal';
 import { cn } from '@/lib/utils';
 
@@ -29,7 +28,10 @@ export default function ParallaxVideoCTA() {
 
   // Detectar breakpoint para escalas distintas
   useEffect(() => {
-    const compute = () => setIsMobile(window.innerWidth < 768);
+    const compute = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+    };
     compute();
     window.addEventListener('resize', compute);
     return () => window.removeEventListener('resize', compute);
@@ -81,6 +83,9 @@ export default function ParallaxVideoCTA() {
     const section = sectionRef.current;
     const video = videoRef.current;
     const wrapper = wrapperRef.current;
+    const currentTheme = theme;
+    const currentIsMobile = isMobile;
+    
     if (!section || !video || !wrapper) return;
 
     const onScroll = () => {
@@ -97,9 +102,9 @@ export default function ParallaxVideoCTA() {
         const parallaxY = (progress - 0.5) * 2 * amplitude; // -amp..+amp
 
         // Escalas por breakpoint
-        const start = isMobile ? 0.80 : 0.70;
+        const start = currentIsMobile ? 0.80 : 0.70;
         const mid = 1.00; // snap sutil en el centro
-        const end = isMobile ? 0.70 : 0.60;
+        const end = currentIsMobile ? 0.70 : 0.60;
         const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
         const easeInOutSine = (t: number) => 0.5 - 0.5 * Math.cos(Math.PI * t);
         const scale = progress <= 0.5
@@ -112,7 +117,7 @@ export default function ParallaxVideoCTA() {
         if (overlayRef.current) {
           const edgeIntensity = Math.max(0, Math.abs(progress - 0.5) * 2); // 0..1
           overlayRef.current.style.opacity = String(
-            (theme === 'dark' ? 0.5 : 0.4) + edgeIntensity * 0.1
+            (currentTheme === 'dark' ? 0.5 : 0.4) + edgeIntensity * 0.1
           );
         }
 
@@ -132,7 +137,7 @@ export default function ParallaxVideoCTA() {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
     };
-  }, []);
+  }, [theme, isMobile]);
 
   // Fallback: ocultar el indicador tras unos segundos aunque no haya scroll
   useEffect(() => {

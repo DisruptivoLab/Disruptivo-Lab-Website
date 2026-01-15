@@ -16,7 +16,7 @@ import { useTheme } from '@/contexts/theme-context';
 import { ContentLoading } from '@/components/ui/global-loading';
 
 export default function HomePage() {
-  const { t, loadModularTranslation, isLoading } = useModularTranslation();
+  const { loadModularTranslation, isLoading } = useModularTranslation();
   const { theme } = useTheme();
 
   useEffect(() => {

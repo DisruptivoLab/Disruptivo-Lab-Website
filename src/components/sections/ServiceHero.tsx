@@ -1,6 +1,5 @@
 "use client";
 
-import { useMemo } from 'react';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/contexts/theme-context';
 import { GlassIconButton } from '@/components/ui/glass-icon-button';

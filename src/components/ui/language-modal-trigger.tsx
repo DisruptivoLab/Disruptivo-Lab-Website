@@ -21,8 +21,6 @@ export function LanguageModalTrigger({ className }: { className?: string }) {
     setMounted(true);
   }, [loadModularTranslation]);
 
-  const current = languages.find((l) => l.code === locale) || languages[0];
-
   const onSelect = (code: 'es' | 'en') => {
     if (code !== locale) changeLocale(code);
     setOpen(false);

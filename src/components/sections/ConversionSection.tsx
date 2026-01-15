@@ -1,10 +1,9 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useTheme } from '@/contexts/theme-context';
 import { useModularTranslation } from '@/contexts/modular-translation-context';
-import { MinimalistLink, GlassCard } from '@/components/ui';
 import { ContactModal } from '@/components/ui/contact-modal';
 import { FrostedButton } from '@/components/ui/frosted-button';
 import { HeroTitle, BodyText } from '@/components/ui/typography';
@@ -19,20 +18,18 @@ export default function ConversionSection() {
   const valueProps = (get('conversion.valueProps') as Array<{ title: string; desc: string }>) || [];
 
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   // Cargar las traducciones del módulo cuando cambie el idioma
   useEffect(() => {
     loadModularTranslation('pages/home');
   }, [locale, loadModularTranslation]);
 
-  const [idx, setIdx] = useState(0);
   useEffect(() => {
     if (!rotateWords.length) return;
-    const id = setInterval(() => setIdx((i) => (i + 1) % rotateWords.length), 2500);
+    const id = setInterval(() => setCurrentWordIndex((i) => (i + 1) % rotateWords.length), 2500);
     return () => clearInterval(id);
   }, [rotateWords.length]);
-
-  const waLink = generateWhatsAppLink(locale as any);
 
   return (
     <section className={`py-16 md:py-24 lg:py-28 ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>

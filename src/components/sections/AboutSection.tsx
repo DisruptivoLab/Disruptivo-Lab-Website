@@ -1,11 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useTheme } from '@/contexts/theme-context';
 import { useModularTranslation } from '@/contexts/modular-translation-context';
 import { MinimalistLink } from '@/components/ui';
 import { HeroTitle, BodyText } from '@/components/ui/typography';
-import Link from 'next/link';
 
 export default function AboutSection() {
   const { theme } = useTheme();

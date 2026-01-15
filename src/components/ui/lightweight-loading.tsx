@@ -164,15 +164,15 @@ export function LightweightLoading({
           sizeClasses[size]
         )}
         animate={currentVariant.container.animate}
-        transition={currentVariant.container.transition as any}
+        transition={currentVariant.container.transition as Record<string, unknown>}
         style={{
           '--loading-bg': 'var(--background)',
-        } as any}
+        } as React.CSSProperties}
       >
         {currentVariant.icon.animate ? (
           <motion.div
             animate={currentVariant.icon.animate}
-            transition={currentVariant.icon.transition as any}
+            transition={currentVariant.icon.transition as Record<string, unknown>}
             className="w-full h-full"
           >
             <DisruptivoIcon className="w-full h-full text-foreground dark:text-white" />

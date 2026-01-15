@@ -38,7 +38,7 @@ export default function ServiceDetailPage() {
 
   const services = useMemo(
     () => (get('servicesLanding.cards') as Array<{ slug: string; title: string; desc?: string }>) ?? [],
-    [get, slug]
+    [get]
   );
 
   const index = services.findIndex((s) => s.slug === slug);

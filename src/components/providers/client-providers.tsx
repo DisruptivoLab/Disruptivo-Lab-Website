@@ -26,7 +26,8 @@ export function ClientProviders({ children }: ClientProvidersProps) {
   // Rutas inmersivas: sin Navigation ni Footer (p. ej., /services/[slug])
   const isImmersive = useMemo(() => {
     if (!pathname) return false;
-    // Ocultar en cualquier detalle de servicio, pero NO en /services (landing)
+    // Ocultar en admin y en detalles de servicio
+    if (pathname.startsWith('/admin')) return true;
     return pathname.startsWith('/services/') && pathname !== '/services';
   }, [pathname]);
 

@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { 
-  DisruptivoLoading, 
   PulseLoading, 
   SpinLoading, 
   MorphLoading, 
@@ -10,7 +9,6 @@ import {
   QuantumLoading 
 } from '@/components/ui/disruptivo-loading';
 import { 
-  LightweightLoading, 
   BreatheLoading, 
   FloatLoading, 
   FadeLoading, 
@@ -147,7 +145,7 @@ export default function LoadingDemoPage() {
             ].map(category => (
               <button
                 key={category.key}
-                onClick={() => setSelectedCategory(category.key as any)}
+                onClick={() => setSelectedCategory(category.key as 'all' | 'lightweight' | 'standard')}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2 ${
                   selectedCategory === category.key 
                     ? 'bg-background text-foreground shadow-sm' 

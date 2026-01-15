@@ -12,7 +12,7 @@ import { useTheme } from '@/contexts/theme-context';
 import { SectionLoading } from '@/components/ui/global-loading';
 
 export default function PortfolioPage() {
-  const { loadModularTranslation, t, get, locale } = useModularTranslation();
+  const { loadModularTranslation, t, get } = useModularTranslation();
   const { theme } = useTheme();
   const [selectedClient, setSelectedClient] = useState<LocalizedPortfolioClient | null>(null);
   const [filter, setFilter] = useState<string>('Todos'); // Valor por defecto
