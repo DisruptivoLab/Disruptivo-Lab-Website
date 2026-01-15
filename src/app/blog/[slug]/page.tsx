@@ -55,33 +55,52 @@ export default function BlogPostPage() {
             title,
             excerpt,
             content,
-            seo_title,
-            seo_description,
+            meta_title,
+            meta_description,
             locale
           )
         `)
         .eq('slug', slug)
         .eq('status', 'published')
-        .eq('blog_post_translations.locale', locale)
-        .single();
+        .eq('blog_post_translations.locale', locale);
 
-      if (error) throw error;
+      console.log('Query result:', { data, error });
 
-      const translation = data.blog_post_translations[0];
+      if (error) {
+        console.error('Supabase error details:', JSON.stringify(error, null, 2));
+        throw error;
+      }
+
+      if (!data || data.length === 0) {
+        console.warn('No post found for slug:', slug);
+        setPost(null);
+        setLoading(false);
+        return;
+      }
+
+      const postData = Array.isArray(data) ? data[0] : data;
+      const translation = postData.blog_post_translations?.[0];
       
+      if (!translation) {
+        console.warn('No translation found for locale:', locale);
+        setPost(null);
+        setLoading(false);
+        return;
+      }
+
       setPost({
-        id: data.id,
-        slug: data.slug,
-        cover_image: data.cover_image,
-        author_name: data.author_name,
-        published_at: data.published_at,
-        views_count: data.views_count,
-        reading_time: data.reading_time || 5,
-        title: translation?.title || 'Sin título',
-        excerpt: translation?.excerpt || '',
-        content: translation?.content || '',
-        seo_title: translation?.seo_title,
-        seo_description: translation?.seo_description,
+        id: postData.id,
+        slug: postData.slug,
+        cover_image: postData.cover_image,
+        author_name: postData.author_name,
+        published_at: postData.published_at,
+        views_count: postData.views_count,
+        reading_time: postData.reading_time || 5,
+        title: translation.title || 'Sin título',
+        excerpt: translation.excerpt || '',
+        content: translation.content || '',
+        seo_title: translation.meta_title,
+        seo_description: translation.meta_description,
         categories: [],
         tags: []
       });
@@ -89,11 +108,12 @@ export default function BlogPostPage() {
       // Incrementar vistas
       await supabase
         .from('blog_posts')
-        .update({ views_count: (data.views_count || 0) + 1 })
-        .eq('id', data.id);
+        .update({ views_count: (postData.views_count || 0) + 1 })
+        .eq('id', postData.id);
 
     } catch (error) {
       console.error('Error fetching post:', error);
+      setPost(null);
     } finally {
       setLoading(false);
     }
