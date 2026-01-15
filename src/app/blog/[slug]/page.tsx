@@ -89,6 +89,11 @@ export default function BlogPostPage() {
         return;
       }
 
+      // Procesar contenido: reemplazar \n con saltos de línea reales
+      const processedContent = translation.content
+        ? translation.content.replace(/\\n/g, '\n')
+        : '';
+
       setPost({
         id: postData.id,
         slug: postData.slug,
@@ -99,7 +104,7 @@ export default function BlogPostPage() {
         reading_time: postData.reading_time || 5,
         title: translation.title || 'Sin título',
         excerpt: translation.excerpt || '',
-        content: translation.content || '',
+        content: processedContent,
         seo_title: translation.meta_title,
         seo_description: translation.meta_description,
         categories: [],
