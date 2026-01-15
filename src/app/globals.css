@@ -250,6 +250,14 @@
 }
 
 /* Utilidad para ocultar scrollbars en carruseles */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 .no-scrollbar {
   -ms-overflow-style: none; /* IE 10+ */
 }

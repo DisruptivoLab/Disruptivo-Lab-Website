@@ -5,7 +5,7 @@ import { useModularTranslation } from '@/contexts/modular-translation-context';
 import { supabase } from '@/lib/supabase';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Calendar, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar, Clock } from 'lucide-react';
 import { SectionLoading } from '@/components/ui/global-loading';
 
 interface BlogPost {
@@ -27,7 +27,6 @@ export default function BlogPage() {
   const { locale } = useModularTranslation();
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [featuredPosts, setFeaturedPosts] = useState<BlogPost[]>([]);
-  const [currentFeatured, setCurrentFeatured] = useState(0);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -133,14 +132,6 @@ export default function BlogPage() {
     fetchPosts(false);
   }
 
-  function nextFeatured() {
-    setCurrentFeatured((prev) => (prev + 1) % featuredPosts.length);
-  }
-
-  function prevFeatured() {
-    setCurrentFeatured((prev) => (prev - 1 + featuredPosts.length) % featuredPosts.length);
-  }
-
   function formatDate(date: string) {
     return new Date(date).toLocaleDateString(locale === 'es' ? 'es-ES' : 'en-US', {
       year: 'numeric',
@@ -150,8 +141,6 @@ export default function BlogPage() {
   }
 
   if (loading) return <SectionLoading />;
-
-  const currentFeaturedPost = featuredPosts[currentFeatured];
 
   return (
     <div className="min-h-screen pt-28 pb-16 px-4">
@@ -167,81 +156,54 @@ export default function BlogPage() {
           </p>
         </div>
 
-        {/* Featured Posts Carousel */}
-        {featuredPosts.length > 0 && currentFeaturedPost && (
-          <div className="mb-16 relative">
-            <Link href={`/blog/${currentFeaturedPost.slug}`}>
-              <article className="group cursor-pointer">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
-                    {currentFeaturedPost.cover_image ? (
-                      <Image
-                        src={currentFeaturedPost.cover_image}
-                        alt={currentFeaturedPost.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-red-600 to-orange-600" />
-                    )}
-                    <div className="absolute top-4 left-4 px-3 py-1 bg-red-600 text-white text-xs font-bold rounded-full">
-                      {locale === 'es' ? 'DESTACADO' : 'FEATURED'}
-                    </div>
-                  </div>
-                  <div>
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4 group-hover:text-red-600 transition-colors">
-                      {currentFeaturedPost.title}
-                    </h2>
-                    <p className="text-muted-foreground text-lg mb-6 line-clamp-3">
-                      {currentFeaturedPost.excerpt}
-                    </p>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <span className="font-medium text-foreground">{currentFeaturedPost.author_name}</span>
-                      <span className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        {formatDate(currentFeaturedPost.published_at)}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-4 h-4" />
-                        {currentFeaturedPost.reading_time} min
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </Link>
-
-            {/* Carousel Controls */}
-            {featuredPosts.length > 1 && (
-              <>
-                <button
-                  onClick={prevFeatured}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-white dark:bg-black border border-border shadow-lg flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"
-                  aria-label="Previous"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button
-                  onClick={nextFeatured}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-white dark:bg-black border border-border shadow-lg flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors"
-                  aria-label="Next"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-                <div className="flex justify-center gap-2 mt-6">
-                  {featuredPosts.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCurrentFeatured(idx)}
-                      className={`w-2 h-2 rounded-full transition-all ${
-                        idx === currentFeatured ? 'bg-red-600 w-8' : 'bg-muted-foreground/30'
-                      }`}
-                      aria-label={`Go to slide ${idx + 1}`}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
+        {/* Featured Posts Carousel - App Store Style */}
+        {featuredPosts.length > 0 && (
+          <div className="mb-16">
+            <h2 className="text-2xl font-heading font-bold text-foreground mb-6">
+              {locale === 'es' ? 'Destacados' : 'Featured'}
+            </h2>
+            <div className="relative group">
+              <div 
+                className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {featuredPosts.map((post) => (
+                  <Link key={post.id} href={`/blog/${post.slug}`}>
+                    <article className="flex-shrink-0 w-[340px] md:w-[400px] group/card cursor-pointer snap-start">
+                      <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-4">
+                        {post.cover_image ? (
+                          <Image
+                            src={post.cover_image}
+                            alt={post.title}
+                            fill
+                            className="object-cover group-hover/card:scale-105 transition-transform duration-500"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-red-600 to-orange-600" />
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        <div className="absolute top-4 left-4 px-3 py-1 bg-red-600 text-white text-xs font-bold rounded-full">
+                          {locale === 'es' ? 'DESTACADO' : 'FEATURED'}
+                        </div>
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <h3 className="text-white font-heading font-bold text-xl mb-2 line-clamp-2">
+                            {post.title}
+                          </h3>
+                          <div className="flex items-center gap-2 text-white/80 text-xs">
+                            <span className="font-medium">{post.author_name}</span>
+                            <span>•</span>
+                            <span className="flex items-center gap-1">
+                              <Clock className="w-3 h-3" />
+                              {post.reading_time} min
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         )}
 
