@@ -63,7 +63,7 @@ export default function PortfolioPage() {
       
       // Solo proceder si tenemos las traducciones de clientes
       if (clientsTranslations && typeof clientsTranslations === 'object') {
-        const allTranslations = {
+        const allTranslations: any = {
           clients: clientsTranslations,
           filterAll: filterAllTranslation
         };
