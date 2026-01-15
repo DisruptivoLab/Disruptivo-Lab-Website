@@ -6,7 +6,8 @@ import { useModularTranslation } from '@/contexts/modular-translation-context';
 import { supabase } from '@/lib/supabase';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Calendar, Clock, ArrowLeft, Tag } from 'lucide-react';
+import Head from 'next/head';
+import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import { SectionLoading } from '@/components/ui/global-loading';
 
 interface BlogPost {
@@ -142,7 +143,26 @@ export default function BlogPostPage() {
   );
 
   return (
-    <article className="min-h-screen pt-28 pb-16 px-4">
+    <>
+      {/* SEO Meta Tags */}
+      {post && (
+        <Head>
+          <title>{post.seo_title || post.title}</title>
+          <meta name="description" content={post.seo_description || post.excerpt} />
+          <meta property="og:title" content={post.seo_title || post.title} />
+          <meta property="og:description" content={post.seo_description || post.excerpt} />
+          <meta property="og:image" content={post.cover_image || ''} />
+          <meta property="og:type" content="article" />
+          <meta property="article:published_time" content={post.published_at} />
+          <meta property="article:author" content={post.author_name} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={post.seo_title || post.title} />
+          <meta name="twitter:description" content={post.seo_description || post.excerpt} />
+          <meta name="twitter:image" content={post.cover_image || ''} />
+        </Head>
+      )}
+
+      <article className="min-h-screen pt-28 pb-16 px-4">
       <div className="container mx-auto max-w-4xl">
         {/* Back button */}
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors">
@@ -215,5 +235,6 @@ export default function BlogPostPage() {
         </footer>
       </div>
     </article>
+    </>
   );
 }
