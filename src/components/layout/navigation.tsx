@@ -46,6 +46,7 @@ export function Navigation() {
     { href: "/method", label: t("navigation.method") },
     { href: "/services", label: t("navigation.services") },
     { href: "/portfolio", label: t("navigation.portfolio") },
+    { href: "/blog", label: t("navigation.blog") },
     { href: "/about", label: t("navigation.about") },
   ];
 
