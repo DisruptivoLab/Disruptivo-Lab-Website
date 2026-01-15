@@ -213,22 +213,23 @@ export default function BlogPostPage() {
         <div 
           className="prose prose-lg max-w-none dark:prose-invert
             prose-headings:font-heading prose-headings:font-bold prose-headings:text-foreground
-            prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:leading-tight
-            prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:leading-snug
-            prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6 prose-p:text-base
+            prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-8 prose-h2:leading-tight
+            prose-h3:text-2xl prose-h3:mt-12 prose-h3:mb-6 prose-h3:leading-snug
+            prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:my-6 prose-p:text-base
             prose-a:text-red-600 prose-a:no-underline hover:prose-a:underline prose-a:font-medium
             prose-strong:text-foreground prose-strong:font-semibold
             prose-em:text-foreground prose-em:italic
-            prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6 prose-ul:space-y-2
-            prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6 prose-ol:space-y-2
+            prose-ul:my-8 prose-ul:list-disc prose-ul:pl-6 prose-ul:space-y-3
+            prose-ol:my-8 prose-ol:list-decimal prose-ol:pl-6 prose-ol:space-y-3
             prose-li:text-muted-foreground prose-li:leading-relaxed prose-li:text-base
             prose-li:marker:text-red-600
             prose-code:bg-muted prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:font-mono prose-code:text-foreground
-            prose-pre:bg-muted prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-pre:border prose-pre:border-border
-            prose-blockquote:border-l-4 prose-blockquote:border-red-600 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-muted-foreground
-            prose-img:rounded-xl prose-img:my-8 prose-img:shadow-lg
-            prose-hr:border-border prose-hr:my-8
-            [&>h2]:scroll-mt-28 [&>h3]:scroll-mt-28"
+            prose-pre:bg-muted prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-pre:border prose-pre:border-border prose-pre:my-8
+            prose-blockquote:border-l-4 prose-blockquote:border-red-600 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-muted-foreground prose-blockquote:my-8
+            prose-img:rounded-xl prose-img:my-10 prose-img:shadow-lg
+            prose-hr:border-border prose-hr:my-12
+            [&>h2]:scroll-mt-28 [&>h3]:scroll-mt-28
+            [&>*]:block"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
