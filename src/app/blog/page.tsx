@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { useModularTranslation } from '@/contexts/modular-translation-context';
 import { supabase } from '@/lib/supabase';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Calendar, Clock } from 'lucide-react';
+import { Calendar, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionLoading } from '@/components/ui/global-loading';
 
 interface BlogPost {
@@ -31,10 +31,30 @@ export default function BlogPage() {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const observerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     fetchPosts(true);
   }, [locale]);
+
+  // Infinite scroll observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && hasMore && !loadingMore && !loading) {
+          loadMore();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (observerRef.current) {
+      observer.observe(observerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasMore, loadingMore, loading]);
 
   async function fetchPosts(reset = false) {
     if (reset) {
@@ -132,6 +152,16 @@ export default function BlogPage() {
     fetchPosts(false);
   }
 
+  function scrollCarousel(direction: 'left' | 'right') {
+    if (scrollRef.current) {
+      const scrollAmount = 420;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  }
+
   function formatDate(date: string) {
     return new Date(date).toLocaleDateString(locale === 'es' ? 'es-ES' : 'en-US', {
       year: 'numeric',
@@ -159,11 +189,30 @@ export default function BlogPage() {
         {/* Featured Posts Carousel - App Store Style */}
         {featuredPosts.length > 0 && (
           <div className="mb-16">
-            <h2 className="text-2xl font-heading font-bold text-foreground mb-6">
-              {locale === 'es' ? 'Destacados' : 'Featured'}
-            </h2>
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-heading font-bold text-foreground">
+                {locale === 'es' ? 'Destacados' : 'Featured'}
+              </h2>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => scrollCarousel('left')}
+                  className="w-10 h-10 rounded-full bg-white dark:bg-black border border-border shadow-sm flex items-center justify-center hover:bg-red-600 hover:text-white hover:border-red-600 transition-colors"
+                  aria-label="Scroll left"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => scrollCarousel('right')}
+                  className="w-10 h-10 rounded-full bg-white dark:bg-black border border-border shadow-sm flex items-center justify-center hover:bg-red-600 hover:text-white hover:border-red-600 transition-colors"
+                  aria-label="Scroll right"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
             <div className="relative group">
               <div 
+                ref={scrollRef}
                 className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
@@ -243,20 +292,14 @@ export default function BlogPage() {
           ))}
         </div>
 
-        {/* Load More Button */}
-        {hasMore && (
-          <div className="mt-12 text-center">
-            <button
-              onClick={loadMore}
-              disabled={loadingMore}
-              className="px-8 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {loadingMore 
-                ? (locale === 'es' ? 'Cargando...' : 'Loading...') 
-                : (locale === 'es' ? 'Cargar más artículos' : 'Load more articles')}
-            </button>
-          </div>
-        )}
+        {/* Infinite Scroll Observer */}
+        <div ref={observerRef} className="h-20 flex items-center justify-center">
+          {loadingMore && (
+            <div className="text-muted-foreground text-sm">
+              {locale === 'es' ? 'Cargando más artículos...' : 'Loading more articles...'}
+            </div>
+          )}
+        </div>
 
         {/* Empty State */}
         {posts.length === 0 && featuredPosts.length === 0 && (
