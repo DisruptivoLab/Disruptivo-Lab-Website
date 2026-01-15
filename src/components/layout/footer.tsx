@@ -22,9 +22,9 @@ export default function Footer() {
   const year = new Date().getFullYear();
   const waLink = useMemo(() => generateWhatsAppLink(locale as 'es' | 'en' | 'pt' | 'fr' | 'ja' | 'ko' | 'zh'), [locale]);
   const phoneForSchema = useMemo(() => {
-    const raw = (contactConfig as Record<string, Record<string, string>>)?.phone?.whatsapp || '';
+    const raw = (contactConfig as any)?.phone?.whatsapp || '';
     const e164Candidate = raw ? (raw.startsWith('+') ? raw : `+${raw}`) : '';
-    return e164Candidate || (contactConfig as Record<string, Record<string, string>>)?.phone?.display || '';
+    return e164Candidate || (contactConfig as any)?.phone?.display || '';
   }, []);
 
   const navLinks = [
