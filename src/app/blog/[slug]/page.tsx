@@ -212,24 +212,21 @@ export default function BlogPostPage() {
         {/* Content */}
         <div 
           className="prose prose-lg max-w-none dark:prose-invert
-            prose-headings:font-heading prose-headings:font-bold prose-headings:text-foreground
-            prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-8 prose-h2:leading-tight
-            prose-h3:text-2xl prose-h3:mt-12 prose-h3:mb-6 prose-h3:leading-snug
-            prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:my-6 prose-p:text-base
-            prose-a:text-red-600 prose-a:no-underline hover:prose-a:underline prose-a:font-medium
-            prose-strong:text-foreground prose-strong:font-semibold
-            prose-em:text-foreground prose-em:italic
-            prose-ul:my-8 prose-ul:list-disc prose-ul:pl-6 prose-ul:space-y-3
-            prose-ol:my-8 prose-ol:list-decimal prose-ol:pl-6 prose-ol:space-y-3
-            prose-li:text-muted-foreground prose-li:leading-relaxed prose-li:text-base
-            prose-li:marker:text-red-600
-            prose-code:bg-muted prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:font-mono prose-code:text-foreground
-            prose-pre:bg-muted prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-pre:border prose-pre:border-border prose-pre:my-8
-            prose-blockquote:border-l-4 prose-blockquote:border-red-600 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-muted-foreground prose-blockquote:my-8
-            prose-img:rounded-xl prose-img:my-10 prose-img:shadow-lg
-            prose-hr:border-border prose-hr:my-12
-            [&>h2]:scroll-mt-28 [&>h3]:scroll-mt-28
-            [&>*]:block"
+            [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:mt-16 [&_h2]:mb-8 [&_h2]:text-foreground
+            [&_h3]:text-2xl [&_h3]:font-bold [&_h3]:mt-12 [&_h3]:mb-6 [&_h3]:text-foreground
+            [&_p]:text-muted-foreground [&_p]:leading-relaxed [&_p]:mb-6 [&_p]:text-base
+            [&_a]:text-red-600 [&_a]:no-underline hover:[&_a]:underline [&_a]:font-medium
+            [&_strong]:text-foreground [&_strong]:font-semibold
+            [&_em]:text-foreground [&_em]:italic
+            [&_ul]:my-8 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-3
+            [&_ol]:my-8 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-3
+            [&_li]:text-muted-foreground [&_li]:leading-relaxed [&_li]:text-base
+            [&_li]:marker:text-red-600
+            [&_code]:bg-muted [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm [&_code]:font-mono [&_code]:text-foreground
+            [&_pre]:bg-muted [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:border [&_pre]:border-border [&_pre]:my-8
+            [&_blockquote]:border-l-4 [&_blockquote]:border-red-600 [&_blockquote]:pl-6 [&_blockquote]:italic [&_blockquote]:text-muted-foreground [&_blockquote]:my-8
+            [&_img]:rounded-xl [&_img]:my-10 [&_img]:shadow-lg
+            [&_hr]:border-border [&_hr]:my-12"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
