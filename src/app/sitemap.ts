@@ -6,7 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Páginas estáticas
   const staticPages = [
-    '',
+    '/',
     '/method',
     '/services',
     '/portfolio',
@@ -17,9 +17,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/cookies',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
+    lastModified: new Date().toISOString(),
     changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : route === '/blog' ? 0.9 : 0.8,
+    priority: route === '/' ? 1 : route === '/blog' ? 0.9 : 0.8,
   }));
 
   // Servicios
@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'embudo-ia',
   ].map((slug) => ({
     url: `${baseUrl}/services/${slug}`,
-    lastModified: new Date(),
+    lastModified: new Date().toISOString(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
@@ -48,7 +48,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     if (data) {
       blogPosts = data.map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: new Date(post.updated_at || post.published_at),
+        lastModified: new Date(post.updated_at || post.published_at).toISOString(),
         changeFrequency: 'weekly' as const,
         priority: 0.8,
       }));
