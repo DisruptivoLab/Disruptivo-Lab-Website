@@ -17,7 +17,7 @@ export async function GET() {
         )
       `)
       .eq('status', 'published')
-      .eq('blog_post_translations.locale', 'es')
+      .eq('blog_post_translations.locale', 'en')
       .order('published_at', { ascending: false })
       .limit(50);
 
@@ -27,6 +27,7 @@ export async function GET() {
       const translation = post.blog_post_translations[0];
       const pubDate = new Date(post.published_at).toUTCString();
       const contentPreview = translation?.excerpt || '';
+      const fullContent = translation?.content || '';
       
       return `
     <item>
@@ -34,12 +35,14 @@ export async function GET() {
       <link>${baseUrl}/blog/${post.slug}</link>
       <guid isPermaLink="true">${baseUrl}/blog/${post.slug}</guid>
       <description>${escapeXml(contentPreview)}</description>
+      <content:encoded><![CDATA[${fullContent}]]></content:encoded>
       <pubDate>${pubDate}</pubDate>
-      <author>${escapeXml(post.author_name)}</author>
-      ${post.cover_image ? `<enclosure url="${escapeXml(post.cover_image)}" type="image/jpeg" length="0" />` : ''}
-      <category>Tecnología</category>
-      <category>Innovación</category>
-      <category>IA</category>
+      <dc:creator>${escapeXml(post.author_name)}</dc:creator>
+      ${post.cover_image ? `<media:thumbnail url="${escapeXml(post.cover_image)}" />
+      <enclosure url="${escapeXml(post.cover_image)}" type="image/jpeg" length="0" />` : ''}
+      <category>Technology</category>
+      <category>Innovation</category>
+      <category>AI</category>
     </item>`;
     }).join('') || '';
 
@@ -47,14 +50,19 @@ export async function GET() {
 <rss version="2.0" 
      xmlns:atom="http://www.w3.org/2005/Atom"
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:media="http://search.yahoo.com/mrss/"
+     xmlns:snf="http://www.smartnews.be/snf">
   <channel>
     <title>Disruptivo Lab - Blog</title>
     <link>${baseUrl}/blog</link>
-    <description>Insights, tendencias y conocimiento sobre innovación, tecnología e IA</description>
-    <language>es</language>
+    <description>Insights, trends and knowledge about innovation, technology and AI</description>
+    <language>en</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml" />
+    <snf:logo>
+      <url>${baseUrl}/media/Identidad/iconotipo_disrptivo_Lab.png</url>
+    </snf:logo>
     <image>
       <url>${baseUrl}/media/Identidad/iconotipo_disrptivo_Lab.png</url>
       <title>Disruptivo Lab</title>
