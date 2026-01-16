@@ -61,10 +61,10 @@ export async function GET() {
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${baseUrl}/smartnews-rss.xml" rel="self" type="application/rss+xml" />
     <snf:logo>
-      <url>${baseUrl}/media/Identidad/iconotipo_disrptivo_Lab.png</url>
+      <url>${baseUrl}/media/Identidad/Icono-Disruptivo-Lab.webp</url>
     </snf:logo>
     <image>
-      <url>${baseUrl}/media/Identidad/iconotipo_disrptivo_Lab.png</url>
+      <url>${baseUrl}/media/Identidad/Icono-Disruptivo-Lab.webp</url>
       <title>Disruptivo Lab</title>
       <link>${baseUrl}</link>
     </image>
