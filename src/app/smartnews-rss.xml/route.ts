@@ -17,7 +17,7 @@ export async function GET() {
         )
       `)
       .eq('status', 'published')
-      .eq('blog_post_translations.locale', 'es')
+      .eq('blog_post_translations.locale', 'en')
       .order('published_at', { ascending: false })
       .limit(50);
 
@@ -40,8 +40,8 @@ export async function GET() {
       <dc:creator>${escapeXml(post.author_name)}</dc:creator>
       ${post.cover_image ? `<media:thumbnail url="${escapeXml(post.cover_image)}" />
       <enclosure url="${escapeXml(post.cover_image)}" type="image/jpeg" length="0" />` : ''}
-      <category>Tecnología</category>
-      <category>Innovación</category>
+      <category>Technology</category>
+      <category>Innovation</category>
       <category>AI</category>
     </item>`;
     }).join('') || '';
@@ -56,10 +56,10 @@ export async function GET() {
   <channel>
     <title>Disruptivo Lab - Blog</title>
     <link>${baseUrl}/blog</link>
-    <description>Insights, tendencias y conocimiento sobre innovación, tecnología e IA</description>
-    <language>es</language>
+    <description>Insights, trends and knowledge about innovation, technology and AI</description>
+    <language>en</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-    <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="${baseUrl}/smartnews-rss.xml" rel="self" type="application/rss+xml" />
     <snf:logo>
       <url>${baseUrl}/media/Identidad/iconotipo_disrptivo_Lab.png</url>
     </snf:logo>
@@ -79,7 +79,7 @@ export async function GET() {
       },
     });
   } catch (error) {
-    console.error('Error generating RSS feed:', error);
+    console.error('Error generating SmartNews RSS:', error);
     return new Response('Error', { status: 500 });
   }
 }
