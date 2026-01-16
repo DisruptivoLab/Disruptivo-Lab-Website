@@ -36,7 +36,7 @@ export async function GET() {
       <description>${escapeXml(contentPreview)}</description>
       <pubDate>${pubDate}</pubDate>
       <author>${escapeXml(post.author_name)}</author>
-      ${post.cover_image ? `<enclosure url="${escapeXml(post.cover_image)}" type="image/jpeg" />` : ''}
+      ${post.cover_image ? `<enclosure url="${escapeXml(post.cover_image)}" type="image/jpeg" length="0" />` : ''}
       <category>Tecnología</category>
       <category>Innovación</category>
       <category>IA</category>
