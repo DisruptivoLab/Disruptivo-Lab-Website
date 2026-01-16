@@ -45,6 +45,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/admin/', '/api/'],
       },
     ],
-    sitemap: 'https://disruptivolab.com/sitemap.xml',
+    sitemap: 'https://disruptivo.app/sitemap.xml',
   };
 }

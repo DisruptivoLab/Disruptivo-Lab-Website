@@ -242,14 +242,14 @@ export default function BlogPostPage() {
                 name: 'Disruptivo Lab',
                 logo: {
                   '@type': 'ImageObject',
-                  url: 'https://disruptivolab.com/media/Identidad/iconotipo_disrptivo_Lab.png',
+                  url: 'https://disruptivo.app/media/Identidad/iconotipo_disrptivo_Lab.png',
                 },
               },
               datePublished: post.published_at,
               dateModified: post.published_at,
               mainEntityOfPage: {
                 '@type': 'WebPage',
-                '@id': `https://disruptivolab.com/blog/${post.slug}`,
+                '@id': `https://disruptivo.app/blog/${post.slug}`,
               },
             }),
           }}

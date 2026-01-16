@@ -20,7 +20,7 @@ export async function GET() {
       .gte('published_at', twoDaysAgo.toISOString())
       .order('published_at', { ascending: false });
 
-    const baseUrl = 'https://disruptivolab.com';
+    const baseUrl = 'https://disruptivo.app';
     
     const newsItems = posts?.map((post) => {
       const translation = post.blog_post_translations.find((t: any) => t.locale === 'es');

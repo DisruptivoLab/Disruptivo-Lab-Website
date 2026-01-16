@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const translation = data.blog_post_translations[0];
     const title = translation?.meta_title || translation?.title || 'Blog';
     const description = translation?.meta_description || translation?.excerpt || '';
-    const url = `https://disruptivolab.com/blog/${data.slug}`;
+    const url = `https://disruptivo.app/blog/${data.slug}`;
 
     return {
       title: `${title} | Disruptivo Lab`,
