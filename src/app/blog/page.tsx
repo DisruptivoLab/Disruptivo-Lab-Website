@@ -173,8 +173,9 @@ export default function BlogPage() {
   if (loading) return <SectionLoading />;
 
   return (
-    <div className="min-h-screen pt-28 pb-16 px-4">
-      <div className="container mx-auto max-w-7xl">
+    <div className="min-h-screen pt-28 pb-16">
+      {/* Header con container */}
+      <div className="container mx-auto max-w-7xl px-4">
         <div className="mb-12 text-center">
           <h1 className="text-5xl md:text-7xl font-heading font-bold text-foreground mb-4">
             Blog
@@ -185,10 +186,12 @@ export default function BlogPage() {
               : 'Insights, trends and knowledge about innovation, technology and AI'}
           </p>
         </div>
+      </div>
 
-        {/* Featured Posts Carousel - App Store Style */}
-        {featuredPosts.length > 0 && (
-          <div className="mb-16">
+      {/* Featured Posts Carousel - Full Width */}
+      {featuredPosts.length > 0 && (
+        <div className="mb-16 w-full">
+          <div className="container mx-auto max-w-7xl px-4">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-heading font-bold text-foreground">
                 {locale === 'es' ? 'Destacados' : 'Featured'}
@@ -210,12 +213,13 @@ export default function BlogPage() {
                 </button>
               </div>
             </div>
-            <div className="relative group">
-              <div 
-                ref={scrollRef}
-                className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-              >
+          </div>
+          <div className="relative group px-4">
+            <div 
+              ref={scrollRef}
+              className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
                 {featuredPosts.map((post) => (
                   <Link key={post.id} href={`/blog/${post.slug}`}>
                     <article className="flex-shrink-0 w-[340px] md:w-[400px] group/card cursor-pointer snap-start">
@@ -254,9 +258,11 @@ export default function BlogPage() {
               </div>
             </div>
           </div>
-        )}
+        </div>
+      )}
 
-        {/* Posts Grid */}
+      {/* Posts Grid con container */}
+      <div className="container mx-auto max-w-7xl px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
             <Link key={post.id} href={`/blog/${post.slug}`}>
