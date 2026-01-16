@@ -220,42 +220,41 @@ export default function BlogPage() {
               className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-                {featuredPosts.map((post) => (
-                  <Link key={post.id} href={`/blog/${post.slug}`}>
-                    <article className="flex-shrink-0 w-[340px] md:w-[400px] group/card cursor-pointer snap-start">
-                      <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-4">
-                        {post.cover_image ? (
-                          <Image
-                            src={post.cover_image}
-                            alt={post.title}
-                            fill
-                            className="object-cover group-hover/card:scale-105 transition-transform duration-500"
-                          />
-                        ) : (
-                          <div className="w-full h-full bg-gradient-to-br from-red-600 to-orange-600" />
-                        )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                        <div className="absolute top-4 left-4 px-3 py-1 bg-red-600 text-white text-xs font-bold rounded-full">
-                          {locale === 'es' ? 'DESTACADO' : 'FEATURED'}
-                        </div>
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <h3 className="text-white font-heading font-bold text-xl mb-2 line-clamp-2">
-                            {post.title}
-                          </h3>
-                          <div className="flex items-center gap-2 text-white/80 text-xs">
-                            <span className="font-medium">{post.author_name}</span>
-                            <span>•</span>
-                            <span className="flex items-center gap-1">
-                              <Clock className="w-3 h-3" />
-                              {post.reading_time} min
-                            </span>
-                          </div>
+              {featuredPosts.map((post) => (
+                <Link key={post.id} href={`/blog/${post.slug}`}>
+                  <article className="flex-shrink-0 w-[340px] md:w-[400px] group/card cursor-pointer snap-start">
+                    <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-4">
+                      {post.cover_image ? (
+                        <Image
+                          src={post.cover_image}
+                          alt={post.title}
+                          fill
+                          className="object-cover group-hover/card:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-red-600 to-orange-600" />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      <div className="absolute top-4 left-4 px-3 py-1 bg-red-600 text-white text-xs font-bold rounded-full">
+                        {locale === 'es' ? 'DESTACADO' : 'FEATURED'}
+                      </div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h3 className="text-white font-heading font-bold text-xl mb-2 line-clamp-2">
+                          {post.title}
+                        </h3>
+                        <div className="flex items-center gap-2 text-white/80 text-xs">
+                          <span className="font-medium">{post.author_name}</span>
+                          <span>•</span>
+                          <span className="flex items-center gap-1">
+                            <Clock className="w-3 h-3" />
+                            {post.reading_time} min
+                          </span>
                         </div>
                       </div>
-                    </article>
-                  </Link>
-                ))}
-              </div>
+                    </div>
+                  </article>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
