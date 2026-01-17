@@ -1,30 +1,49 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAdminAuth } from '@/contexts/admin/AdminAuthContext';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
 
 export default function AdminLoginPage() {
-  const { signIn } = useAdminAuth();
+  const { signIn, user, isLoading: authLoading } = useAdminAuth();
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
+  useEffect(() => {
+    console.log('👤 [LOGIN PAGE] Estado del usuario:', user ? 'Autenticado' : 'No autenticado');
+    console.log('⏳ [LOGIN PAGE] authLoading:', authLoading);
+    
+    if (user && !authLoading) {
+      console.log('🔄 [LOGIN PAGE] Usuario ya autenticado, redirigiendo a /admin');
+      router.push('/admin');
+    }
+  }, [user, authLoading, router]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     setIsLoading(true);
 
+    console.log('🔐 [LOGIN] Iniciando proceso de login...');
+    console.log('📧 [LOGIN] Email:', email);
+
     try {
+      console.log('⏳ [LOGIN] Llamando a signIn...');
       await signIn(email, password);
+      console.log('✅ [LOGIN] signIn completado exitosamente');
     } catch (err) {
+      console.error('❌ [LOGIN] Error en signIn:', err);
       setError('Credenciales inválidas. Verifica tu email y contraseña.');
     } finally {
       setIsLoading(false);
+      console.log('🏁 [LOGIN] Proceso finalizado');
     }
   };
 

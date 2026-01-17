@@ -31,11 +31,15 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
 
   useEffect(() => {
+    console.log('🔍 [AUTH CONTEXT] Verificando sesión inicial...');
     supabase.auth.getSession().then(({ data: { session } }) => {
+      console.log('📊 [AUTH CONTEXT] Sesión encontrada:', !!session);
       setUser(session?.user ?? null);
       if (session?.user) {
+        console.log('👤 [AUTH CONTEXT] Usuario en sesión:', session.user.id);
         fetchAdminUser(session.user.id);
       } else {
+        console.log('⚠️ [AUTH CONTEXT] No hay sesión activa');
         setIsLoading(false);
       }
     });
@@ -43,6 +47,8 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
+      console.log('🔄 [AUTH CONTEXT] Cambio de estado de auth:', _event);
+      console.log('📊 [AUTH CONTEXT] Nueva sesión:', !!session);
       setUser(session?.user ?? null);
       if (session?.user) {
         fetchAdminUser(session.user.id);
@@ -100,15 +106,29 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
 
   const signIn = async (email: string, password: string) => {
     try {
+      console.log('🔑 [AUTH CONTEXT] Iniciando signIn...');
+      console.log('📧 [AUTH CONTEXT] Email:', email);
+      
       // TEMPORAL: Login simple sin verificar admin_users
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
-      if (error) throw error;
+      console.log('📊 [AUTH CONTEXT] Respuesta de Supabase:', { 
+        hasData: !!data, 
+        hasUser: !!data?.user,
+        hasError: !!error,
+        error: error?.message 
+      });
+
+      if (error) {
+        console.error('❌ [AUTH CONTEXT] Error de Supabase:', error);
+        throw error;
+      }
 
       if (data.user) {
+        console.log('✅ [AUTH CONTEXT] Usuario autenticado:', data.user.id);
         // Crear adminUser temporal sin consultar la base de datos
         setAdminUser({
           id: data.user.id,
@@ -116,10 +136,11 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
           full_name: 'Admin',
           role: 'admin'
         });
+        console.log('🔄 [AUTH CONTEXT] Redirigiendo a /admin...');
         router.push('/admin');
       }
     } catch (error) {
-      console.error('Sign in error:', error);
+      console.error('❌ [AUTH CONTEXT] Sign in error:', error);
       throw error;
     }
   };
