@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { AdminHeader } from '@/components/admin/AdminHeader';
 import { PostPreviewModal } from '@/components/admin/PostPreviewModal';
 import { supabase } from '@/lib/supabase';
-import { Eye, Edit, Trash2, Plus, Star, Send } from 'lucide-react';
+import { Eye, Edit, Trash2, Plus, Star, Send, Archive } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface Post {
@@ -126,6 +126,20 @@ export default function AdminPostsPage() {
       fetchPosts();
     } catch (error) {
       console.error('Error publishing post:', error);
+    }
+  }
+
+  async function unpublishPost(postId: string) {
+    try {
+      const { error } = await supabase
+        .from('blog_posts')
+        .update({ status: 'draft' })
+        .eq('id', postId);
+
+      if (error) throw error;
+      fetchPosts();
+    } catch (error) {
+      console.error('Error unpublishing post:', error);
     }
   }
 
@@ -256,6 +270,15 @@ export default function AdminPostsPage() {
                             title="Publicar"
                           >
                             <Send className="w-4 h-4" />
+                          </button>
+                        )}
+                        {post.status === 'published' && (
+                          <button 
+                            onClick={() => unpublishPost(post.id)} 
+                            className="p-2 rounded-lg hover:bg-orange-500/10 text-black/70 dark:text-white/70 hover:text-orange-600 dark:hover:text-orange-400"
+                            title="Despublicar"
+                          >
+                            <Archive className="w-4 h-4" />
                           </button>
                         )}
                         <button onClick={() => viewPost(post.id)} className="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white" title="Ver">
