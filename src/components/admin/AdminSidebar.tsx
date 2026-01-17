@@ -91,15 +91,25 @@ export function AdminSidebar() {
         })}
       </nav>
 
-      {/* Logout */}
-      <div className="p-1 border-t">
+      {/* User Info & Logout */}
+      <div className="p-2 border-t border-black/10 dark:border-white/10 space-y-2">
+        {isExpanded && (
+          <div className="px-2 py-2 rounded-lg bg-black/5 dark:bg-white/5">
+            <p className="text-xs font-medium text-black dark:text-white truncate">
+              {user?.email || 'Admin'}
+            </p>
+            <p className="text-xs text-black/60 dark:text-white/60 capitalize">
+              {user ? 'Admin' : 'Usuario'}
+            </p>
+          </div>
+        )}
         <button
           onClick={() => signOut()}
-          className="w-full flex items-center gap-3 px-1 py-2.5 rounded-lg text-black/70 dark:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-all"
+          className="w-full flex items-center gap-3 px-2 py-2.5 rounded-lg text-black/70 dark:text-white/70 hover:bg-red-500/10 hover:text-red-600 dark:hover:text-red-400 transition-all"
           title={!isExpanded ? 'Cerrar Sesión' : undefined}
         >
           <LogOut className="w-4 h-4 flex-shrink-0" />
-          {isExpanded && <span className="text-sm font-medium">Salir</span>}
+          {isExpanded && <span className="text-sm font-medium">Cerrar Sesión</span>}
         </button>
       </div>
     </aside>
