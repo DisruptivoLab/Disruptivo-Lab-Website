@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { AdminHeader } from '@/components/admin/AdminHeader';
 import { PostPreviewModal } from '@/components/admin/PostPreviewModal';
 import { supabase } from '@/lib/supabase';
-import { Eye, Edit, Trash2, Plus, Star } from 'lucide-react';
+import { Eye, Edit, Trash2, Plus, Star, Send } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface Post {
@@ -249,6 +249,15 @@ export default function AdminPostsPage() {
                         >
                           <Star className={cn("w-4 h-4", post.is_featured && "fill-current")} />
                         </button>
+                        {post.status === 'draft' && (
+                          <button 
+                            onClick={() => publishPost(post.id)} 
+                            className="p-2 rounded-lg hover:bg-green-500/10 text-black/70 dark:text-white/70 hover:text-green-600 dark:hover:text-green-400"
+                            title="Publicar"
+                          >
+                            <Send className="w-4 h-4" />
+                          </button>
+                        )}
                         <button onClick={() => viewPost(post.id)} className="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white" title="Ver">
                           <Eye className="w-4 h-4" />
                         </button>

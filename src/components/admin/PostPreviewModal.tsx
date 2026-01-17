@@ -42,18 +42,7 @@ export function PostPreviewModal({ isOpen, onClose, post, onPublish }: PostPrevi
         >
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-black/10 dark:border-white/10">
-            <div className="flex items-center gap-3">
-              <h2 className="text-lg font-bold text-black dark:text-white">Preview Post</h2>
-              {post.status === 'draft' && onPublish && (
-                <button
-                  onClick={() => onPublish(post.id)}
-                  className="px-3 py-1.5 rounded-lg bg-red-600 text-white text-sm font-medium hover:bg-red-700 transition-colors flex items-center gap-2"
-                >
-                  <CheckCircle className="w-4 h-4" />
-                  Publicar
-                </button>
-              )}
-            </div>
+            <h2 className="text-lg font-bold text-black dark:text-white">Preview Post</h2>
             <button
               onClick={onClose}
               className="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 text-black dark:text-white transition-colors"
