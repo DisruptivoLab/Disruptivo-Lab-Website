@@ -18,7 +18,7 @@ export function AdminLayoutContent({ children }: { children: React.ReactNode }) 
     }
   }, [user, isLoading, router, pathname]);
 
-  if (isLoading) {
+  if (isLoading && pathname !== '/admin/login') {
     return (
       <main className="flex-1 flex items-center justify-center min-h-screen">
         <div className="text-black/60 dark:text-white/60">Cargando...</div>
@@ -33,7 +33,7 @@ export function AdminLayoutContent({ children }: { children: React.ReactNode }) 
   return (
     <main className={cn(
       "flex-1 transition-all duration-300",
-      isExpanded ? "ml-56" : "ml-10"
+      pathname !== '/admin/login' && (isExpanded ? "ml-56" : "ml-10")
     )}>
       {children}
     </main>
