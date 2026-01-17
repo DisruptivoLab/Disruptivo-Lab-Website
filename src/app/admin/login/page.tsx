@@ -22,7 +22,7 @@ export default function AdminLoginPage() {
     
     if (user && !authLoading) {
       console.log('🔄 [LOGIN PAGE] Usuario ya autenticado, redirigiendo a /admin');
-      router.push('/admin');
+      router.replace('/admin');
     }
   }, [user, authLoading, router]);
 

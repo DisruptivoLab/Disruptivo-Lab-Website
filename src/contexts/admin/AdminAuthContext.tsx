@@ -137,7 +137,7 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
           role: 'admin'
         });
         console.log('🔄 [AUTH CONTEXT] Redirigiendo a /admin...');
-        router.push('/admin');
+        router.replace('/admin');
       }
     } catch (error) {
       console.error('❌ [AUTH CONTEXT] Sign in error:', error);
@@ -150,7 +150,7 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
       await supabase.auth.signOut();
       setUser(null);
       setAdminUser(null);
-      router.push('/admin/login');
+      router.replace('/admin/login');
     } catch (error) {
       console.error('Sign out error:', error);
       throw error;
