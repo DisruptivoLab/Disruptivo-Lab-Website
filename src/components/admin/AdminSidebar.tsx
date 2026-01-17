@@ -28,7 +28,12 @@ export function AdminSidebar() {
   const pathname = usePathname();
   const router = useRouter();
   const { isPinned, isHovered, isExpanded, togglePin, setHovered } = useAdminSidebar();
-  const { signOut } = useAdminAuth();
+  const { signOut, user } = useAdminAuth();
+
+  // No mostrar sidebar en login
+  if (pathname === '/admin/login' || !user) {
+    return null;
+  }
 
   return (
     <aside 
