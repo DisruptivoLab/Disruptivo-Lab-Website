@@ -68,12 +68,7 @@ export default function AdminPostsPage() {
           created_at,
           views_count,
           is_featured,
-          blog_post_translations(title, excerpt, locale),
-          blog_post_categories(
-            blog_categories(
-              category_translations(name, locale)
-            )
-          )
+          blog_post_translations(title, excerpt, locale)
         `)
         .order('created_at', { ascending: false });
 
@@ -84,26 +79,39 @@ export default function AdminPostsPage() {
       const { data, error } = await query;
       if (error) throw error;
 
-      const formattedPosts = data?.map((post: any) => {
-        const esTranslation = post.blog_post_translations?.find((t: any) => t.locale === 'es');
-        const enTranslation = post.blog_post_translations?.find((t: any) => t.locale === 'en');
-        const translation = esTranslation || enTranslation || {};
-        
-        const categories = post.blog_post_categories?.map((pc: any) => {
-          const catTrans = pc.blog_categories?.category_translations?.find((t: any) => t.locale === 'es') ||
-                          pc.blog_categories?.category_translations?.[0];
-          return catTrans?.name;
-        }).filter(Boolean) || [];
-        
-        return {
-          ...post,
-          title: translation.title || 'Sin título',
-          excerpt: translation.excerpt || '',
-          categories
-        };
-      }) || [];
+      // Obtener categorías para cada post
+      const postsWithCategories = await Promise.all(
+        (data || []).map(async (post: any) => {
+          const esTranslation = post.blog_post_translations?.find((t: any) => t.locale === 'es');
+          const enTranslation = post.blog_post_translations?.find((t: any) => t.locale === 'en');
+          const translation = esTranslation || enTranslation || {};
 
-      setPosts(formattedPosts);
+          // Obtener categorías
+          const { data: catData } = await supabase
+            .from('blog_post_categories')
+            .select(`
+              blog_categories(
+                category_translations(name, locale)
+              )
+            `)
+            .eq('post_id', post.id);
+
+          const categories = catData?.map((pc: any) => {
+            const catTrans = pc.blog_categories?.category_translations?.find((t: any) => t.locale === 'es') ||
+                            pc.blog_categories?.category_translations?.[0];
+            return catTrans?.name;
+          }).filter(Boolean) || [];
+
+          return {
+            ...post,
+            title: translation.title || 'Sin título',
+            excerpt: translation.excerpt || '',
+            categories
+          };
+        })
+      );
+
+      setPosts(postsWithCategories);
     } catch (error) {
       console.error('Error fetching posts:', error);
     } finally {
