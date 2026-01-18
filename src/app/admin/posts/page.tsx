@@ -91,14 +91,14 @@ export default function AdminPostsPage() {
             .from('blog_post_categories')
             .select(`
               blog_categories(
-                category_translations(name, locale)
+                blog_category_translations(name, locale)
               )
             `)
             .eq('post_id', post.id);
 
           const categories = catData?.map((pc: any) => {
-            const catTrans = pc.blog_categories?.category_translations?.find((t: any) => t.locale === 'es') ||
-                            pc.blog_categories?.category_translations?.[0];
+            const catTrans = pc.blog_categories?.blog_category_translations?.find((t: any) => t.locale === 'es') ||
+                            pc.blog_categories?.blog_category_translations?.[0];
             return catTrans?.name;
           }).filter(Boolean) || [];
 
