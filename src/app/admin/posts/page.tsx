@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { AdminHeader } from '@/components/admin/AdminHeader';
 import { PostPreviewModal } from '@/components/admin/PostPreviewModal';
 import { supabase } from '@/lib/supabase';
-import { Eye, Edit, Trash2, Plus, Star, Send, Archive } from 'lucide-react';
+import { Eye, Edit, Trash2, Plus, Star, Send, Archive, Tag } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface Post {
@@ -19,6 +19,7 @@ interface Post {
   title: string;
   excerpt: string;
   is_featured: boolean;
+  categories?: string[];
 }
 
 function getTimeAgo(date: string | null): string {
@@ -67,7 +68,12 @@ export default function AdminPostsPage() {
           created_at,
           views_count,
           is_featured,
-          blog_post_translations(title, excerpt, locale)
+          blog_post_translations(title, excerpt, locale),
+          blog_post_categories(
+            blog_categories(
+              category_translations(name, locale)
+            )
+          )
         `)
         .order('created_at', { ascending: false });
 
@@ -83,10 +89,17 @@ export default function AdminPostsPage() {
         const enTranslation = post.blog_post_translations?.find((t: any) => t.locale === 'en');
         const translation = esTranslation || enTranslation || {};
         
+        const categories = post.blog_post_categories?.map((pc: any) => {
+          const catTrans = pc.blog_categories?.category_translations?.find((t: any) => t.locale === 'es') ||
+                          pc.blog_categories?.category_translations?.[0];
+          return catTrans?.name;
+        }).filter(Boolean) || [];
+        
         return {
           ...post,
           title: translation.title || 'Sin título',
           excerpt: translation.excerpt || '',
+          categories
         };
       }) || [];
 
@@ -225,6 +238,7 @@ export default function AdminPostsPage() {
               <thead>
                 <tr className="border-b border-black/10 dark:border-white/10">
                   <th className="text-left py-3 px-4 text-sm font-medium text-black/70 dark:text-white/70">Título</th>
+                  <th className="text-left py-3 px-4 text-sm font-medium text-black/70 dark:text-white/70">Categorías</th>
                   <th className="text-left py-3 px-4 text-sm font-medium text-black/70 dark:text-white/70">Estado</th>
                   <th className="text-left py-3 px-4 text-sm font-medium text-black/70 dark:text-white/70">Autor</th>
                   <th className="text-left py-3 px-4 text-sm font-medium text-black/70 dark:text-white/70">Vistas</th>
@@ -239,6 +253,20 @@ export default function AdminPostsPage() {
                     <td className="py-3 px-4">
                       <p className="font-medium text-black dark:text-white text-sm">{post.title}</p>
                       <p className="text-xs text-black/60 dark:text-white/60 truncate max-w-md">{post.excerpt}</p>
+                    </td>
+                    <td className="py-3 px-4">
+                      <div className="flex flex-wrap gap-1">
+                        {post.categories && post.categories.length > 0 ? (
+                          post.categories.map((cat, idx) => (
+                            <span key={idx} className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs bg-red-500/10 text-red-600 dark:text-red-400">
+                              <Tag className="w-3 h-3" />
+                              {cat}
+                            </span>
+                          ))
+                        ) : (
+                          <span className="text-xs text-black/40 dark:text-white/40">-</span>
+                        )}
+                      </div>
                     </td>
                     <td className="py-3 px-4">
                       <span className={cn("px-2 py-1 rounded text-xs font-medium", statusColors[post.status])}>
