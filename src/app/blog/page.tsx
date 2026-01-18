@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionLoading } from '@/components/ui/global-loading';
+import { getTimeAgo } from '@/lib/time-utils';
 
 interface BlogPost {
   id: string;
@@ -245,6 +246,8 @@ export default function BlogPage() {
                         <div className="flex items-center gap-2 text-white/80 text-xs">
                           <span className="font-medium">{post.author_name}</span>
                           <span>•</span>
+                          <span>{getTimeAgo(post.published_at, locale)}</span>
+                          <span>•</span>
                           <span className="flex items-center gap-1">
                             <Clock className="w-3 h-3" />
                             {post.reading_time} min
@@ -286,6 +289,8 @@ export default function BlogPage() {
                 </p>
                 <div className="flex items-center gap-3 text-xs text-muted-foreground">
                   <span className="font-medium text-foreground">{post.author_name}</span>
+                  <span>•</span>
+                  <span>{getTimeAgo(post.published_at, locale)}</span>
                   <span>•</span>
                   <span className="flex items-center gap-1">
                     <Clock className="w-3 h-3" />
