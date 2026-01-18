@@ -18,9 +18,15 @@ export async function GET() {
         post_id,
         blog_categories(
           slug,
-          category_translations(name, locale)
+          blog_category_translations(name, locale)
         )
-      `);
+      `) as { data: Array<{
+        post_id: string;
+        blog_categories: {
+          slug: string;
+          blog_category_translations: Array<{ name: string; locale: string }>;
+        } | null;
+      }> | null; error: any };
 
     if (catError) throw catError;
 
@@ -33,8 +39,8 @@ export async function GET() {
       const categories = postCategories
         ?.filter(pc => pc.post_id === post.id)
         .map(pc => {
-          const catName = pc.blog_categories?.category_translations?.find(t => t.locale === 'es')?.name ||
-                         pc.blog_categories?.category_translations?.[0]?.name ||
+          const catName = pc.blog_categories?.blog_category_translations?.find(t => t.locale === 'es')?.name ||
+                         pc.blog_categories?.blog_category_translations?.[0]?.name ||
                          'Sin nombre';
           return catName;
         }) || [];
