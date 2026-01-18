@@ -44,6 +44,7 @@ export default function AdminCategoriesPage() {
   async function fetchCategories() {
     setLoading(true);
     try {
+      console.log('📊 [CATEGORIES] Fetching categories...');
       const { data, error } = await supabase
         .from('blog_categories')
         .select(`
@@ -53,6 +54,8 @@ export default function AdminCategoriesPage() {
           category_translations(name, description, locale)
         `)
         .order('created_at', { ascending: false });
+
+      console.log('📊 [CATEGORIES] Response:', { data, error });
 
       if (error) throw error;
 
@@ -71,9 +74,10 @@ export default function AdminCategoriesPage() {
         })
       );
 
+      console.log('📊 [CATEGORIES] Categories with count:', categoriesWithCount);
       setCategories(categoriesWithCount);
     } catch (error) {
-      console.error('Error fetching categories:', error);
+      console.error('❌ [CATEGORIES] Error fetching categories:', error);
     } finally {
       setLoading(false);
     }
