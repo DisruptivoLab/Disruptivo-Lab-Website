@@ -9,7 +9,7 @@ interface Category {
   id: string;
   slug: string;
   created_at: string;
-  category_translations: Array<{
+  blog_category_translations: Array<{
     name: string;
     description: string;
     locale: string;
@@ -51,7 +51,7 @@ export default function AdminCategoriesPage() {
           id,
           slug,
           created_at,
-          category_translations(name, description, locale)
+          blog_category_translations(name, description, locale)
         `)
         .order('created_at', { ascending: false });
 
@@ -106,8 +106,8 @@ export default function AdminCategoriesPage() {
               </thead>
               <tbody>
                 {categories.map((category) => {
-                  const esTranslation = category.category_translations?.find(t => t.locale === 'es');
-                  const enTranslation = category.category_translations?.find(t => t.locale === 'en');
+                  const esTranslation = category.blog_category_translations?.find(t => t.locale === 'es');
+                  const enTranslation = category.blog_category_translations?.find(t => t.locale === 'en');
                   const translation = esTranslation || enTranslation || { name: '', description: '' };
 
                   return (
