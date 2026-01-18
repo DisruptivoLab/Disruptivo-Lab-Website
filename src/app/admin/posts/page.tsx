@@ -266,7 +266,7 @@ export default function AdminPostsPage() {
                       <div className="flex flex-wrap gap-1">
                         {post.categories && post.categories.length > 0 ? (
                           post.categories.map((cat, idx) => (
-                            <span key={idx} className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs bg-red-500/10 text-red-600 dark:text-red-400">
+                            <span key={idx} className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs bg-black/5 dark:bg-white/5 text-black/70 dark:text-white/70">
                               <Tag className="w-3 h-3" />
                               {cat}
                             </span>
