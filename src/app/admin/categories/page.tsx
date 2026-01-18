@@ -104,7 +104,7 @@ export default function AdminCategoriesPage() {
                 {categories.map((category) => {
                   const esTranslation = category.category_translations?.find(t => t.locale === 'es');
                   const enTranslation = category.category_translations?.find(t => t.locale === 'en');
-                  const translation = esTranslation || enTranslation || {};
+                  const translation = esTranslation || enTranslation || { name: '', description: '' };
 
                   return (
                     <tr key={category.id} className="border-b border-black/5 dark:border-white/5 hover:bg-black/5 dark:hover:bg-white/5">
