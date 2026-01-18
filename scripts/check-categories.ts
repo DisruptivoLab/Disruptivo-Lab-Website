@@ -28,7 +28,13 @@ async function generateReport() {
         slug,
         blog_category_translations(name, locale)
       )
-    `);
+    `) as { data: Array<{
+      post_id: string;
+      blog_categories: {
+        slug: string;
+        blog_category_translations: Array<{ name: string; locale: string }>;
+      } | null;
+    }> | null; error: any };
 
   if (catError) {
     console.error('❌ Error obteniendo categorías:', catError);
