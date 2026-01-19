@@ -46,8 +46,12 @@
   "validatorAI": {
     "badge": "Herramienta Gratuita",
     "title": "Validator AI",
-    "subtitle": "Valida tu idea de startup antes de escribir una línea de código",
-    "description": "Gemelo digital de un Analista VC. Análisis con IA, búsqueda en tiempo real y modelado financiero. Sin sesgos, sin fatiga, solo datos.",
-    "cta": "Conocer Validator AI"
+    "stat": "90%",
+    "statLabel": "de startups fallan por no validar su idea",
+    "description": "Con nuestra herramienta de IA ayudamos a validar tu startup antes de invertir tiempo y dinero. Análisis inteligente en minutos, no en meses.",
+    "ctaLearn": "Ver Cómo Funciona",
+    "ctaTool": "Probar Ahora",
+    "chartFail": "Fallan sin validar",
+    "chartSuccess": "Triunfan con validación"
   }
 }

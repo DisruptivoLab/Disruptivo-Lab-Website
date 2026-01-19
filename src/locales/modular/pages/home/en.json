@@ -47,8 +47,12 @@
   "validatorAI": {
     "badge": "Free Tool",
     "title": "Validator AI",
-    "subtitle": "Validate your startup idea before writing a single line of code",
-    "description": "Digital twin of a VC Analyst. AI analysis, real-time search and financial modeling. No bias, no fatigue, just data.",
-    "cta": "Discover Validator AI"
+    "stat": "90%",
+    "statLabel": "of startups fail without validating their idea",
+    "description": "With our AI-powered tool, we help validate your startup before investing time and money. Intelligent analysis in minutes, not months.",
+    "ctaLearn": "See How It Works",
+    "ctaTool": "Try Now",
+    "chartFail": "Fail without validation",
+    "chartSuccess": "Succeed with validation"
   }
 }
