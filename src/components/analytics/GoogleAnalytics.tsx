@@ -43,7 +43,6 @@ export function GoogleAnalytics() {
     </>
   );
 }
-}
 
 export const pageview = (url: string) => {
   if (typeof window.gtag !== 'undefined') {
