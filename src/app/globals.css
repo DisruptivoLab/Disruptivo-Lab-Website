@@ -382,11 +382,9 @@
 @keyframes disruptive-pulse {
   0%, 100% {
     transform: scale(1);
-    filter: blur(0px);
   }
   50% {
     transform: scale(1.2);
-    filter: blur(1px);
   }
 }
 
@@ -413,30 +411,37 @@
     radial-gradient(circle at 40% 80%, rgba(248, 113, 113, 0.7) 0%, transparent 50%),
     radial-gradient(circle at 70% 60%, rgba(185, 28, 28, 0.8) 0%, transparent 40%);
   animation: disruptive-mesh 8s ease-in-out infinite;
+  will-change: transform;
 }
 
 .disruptive-float-1 {
   animation: disruptive-float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .disruptive-float-2 {
   animation: disruptive-float 4s ease-in-out infinite 1s;
+  will-change: transform;
 }
 
 .disruptive-float-3 {
   animation: disruptive-float 5s ease-in-out infinite 1.5s;
+  will-change: transform;
 }
 
 .disruptive-pulse-1 {
   animation: disruptive-pulse 7s ease-in-out infinite 2s;
+  will-change: transform;
 }
 
 .disruptive-pulse-2 {
   animation: disruptive-pulse 10s linear infinite;
+  will-change: transform;
 }
 
 .disruptive-pulse-3 {
   animation: disruptive-pulse 8s linear infinite 2s;
+  will-change: transform;
 }
 
 /* Animación para carrusel horizontal de tecnologías */
@@ -450,8 +455,8 @@
 }
 
 .animate-scroll-left {
-  /* velocidad base más rápida */
   animation: scroll-left 40s linear infinite;
+  will-change: transform;
 }
 
 /* Más rápida en pantallas pequeñas (móvil) */

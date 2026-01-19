@@ -1,20 +1,22 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { Play, Pause, ChevronUp, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useVideoOptimization } from '@/hooks/use-video-optimization';
-import HeroSlide from '@/components/slides/HeroSlide';
-import AutomationSlide from '@/components/slides/AutomationSlide';
-import ConsultingSlide from '@/components/slides/ConsultingSlide';
-import ProductDevelopmentSlide from '@/components/slides/ProductDevelopmentSlide';
-import AboutSection from '@/components/sections/AboutSection';
-import ValidatorAISection from '@/components/sections/ValidatorAISection';
-import ConversionSection from '@/components/sections/ConversionSection';
-import ParallaxVideoCTA from '@/components/sections/ParallaxVideoCTA';
 import { useModularTranslation } from '@/contexts/modular-translation-context';
 import { useTheme } from '@/contexts/theme-context';
 import { ContentLoading } from '@/components/ui/global-loading';
+
+const HeroSlide = dynamic(() => import('@/components/slides/HeroSlide'), { ssr: false });
+const AutomationSlide = dynamic(() => import('@/components/slides/AutomationSlide'), { ssr: false });
+const ConsultingSlide = dynamic(() => import('@/components/slides/ConsultingSlide'), { ssr: false });
+const ProductDevelopmentSlide = dynamic(() => import('@/components/slides/ProductDevelopmentSlide'), { ssr: false });
+const AboutSection = dynamic(() => import('@/components/sections/AboutSection'));
+const ValidatorAISection = dynamic(() => import('@/components/sections/ValidatorAISection'));
+const ConversionSection = dynamic(() => import('@/components/sections/ConversionSection'));
+const ParallaxVideoCTA = dynamic(() => import('@/components/sections/ParallaxVideoCTA'));
 
 export default function HomePage() {
   const { loadModularTranslation, isLoading } = useModularTranslation();
@@ -29,7 +31,6 @@ export default function HomePage() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
-  // Array dinámico de slides
   const slides = [
     { component: HeroSlide, name: 'hero' },
     { component: AutomationSlide, name: 'automation' },
@@ -39,7 +40,6 @@ export default function HomePage() {
 
   const totalSlides = slides.length;
 
-  // Hook de optimización de videos
   const {
     videoStates,
     handleVideoLoad,
@@ -55,13 +55,11 @@ export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Detección de preferencias de movimiento reducido
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setPrefersReducedMotion(mediaQuery.matches);
   }, []);
 
-  // Auto-play functionality
   useEffect(() => {
     if (!isPlaying || prefersReducedMotion) return;
 
@@ -72,7 +70,6 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, [isPlaying, totalSlides, prefersReducedMotion]);
 
-  // Función para ir a slide específico
   const goToSlide = useCallback((index: number) => {
     if (isTransitioning || index === currentSlide) return;
     
@@ -82,7 +79,6 @@ export default function HomePage() {
     setTimeout(() => setIsTransitioning(false), 1000);
   }, [currentSlide, isTransitioning]);
 
-  // Navegación de slides
   const nextSlide = useCallback(() => {
     const nextIndex = (currentSlide + 1) % totalSlides;
     goToSlide(nextIndex);
@@ -97,8 +93,6 @@ export default function HomePage() {
     setIsPlaying(prev => !prev);
   }, []);
 
-  // Mapeo de clases para mover el contenedor (evita estilos inline)
-  // Asumimos 4 slides. Si cambian, ajusta este arreglo y la altura h-[400dvh].
   const translateYClasses = [
     'translate-y-0',
     '-translate-y-[100dvh]',
@@ -108,7 +102,6 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Loading overlay sutil para traducciones iniciales */}
       {isLoading && (
         <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 pointer-events-none opacity-100 transition-opacity duration-500">
           <ContentLoading />
@@ -122,12 +115,12 @@ export default function HomePage() {
           theme === 'dark' ? 'bg-black' : 'bg-white'
         )}
       >
-        {/* Capa deslizante: se mueve verticalmente. Altura total = totalSlides * 100vh */}
         <div
           className={cn(
             "absolute inset-0 w-full transition-transform duration-1000 ease-in-out h-[400dvh]",
             translateYClasses[currentSlide] || 'translate-y-0'
           )}
+          style={{ willChange: 'transform' }}
         >
           {slides.map(({ component: SlideComponent, name }, index) => (
             <div key={name} className="h-[100dvh] w-full flex items-center">
@@ -149,9 +142,7 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* Capa de controles overlay (no se mueve con el translateY). */}
         <div className="absolute inset-0 z-50 pointer-events-none">
-          {/* Dots móviles */}
           <div className="lg:hidden absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-3 pointer-events-auto">
             {Array.from({ length: totalSlides }).map((_, index) => (
               <button
@@ -168,7 +159,6 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Contador + Play/Pause en móvil */}
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3 pointer-events-auto">
             <div className="backdrop-blur-[6px] bg-card/20 border border-border/10 rounded-full px-3 py-1.5 lg:px-4 lg:py-2">
               <span className="text-foreground text-xs lg:text-sm font-medium">
@@ -188,7 +178,6 @@ export default function HomePage() {
             </button>
           </div>
 
-          {/* Controles Desktop */}
           <div className="hidden lg:flex absolute right-6 top-1/2 -translate-y-1/2 flex-col gap-2 slide-controls-desktop pointer-events-auto">
             <button
               onClick={togglePlayPause}
