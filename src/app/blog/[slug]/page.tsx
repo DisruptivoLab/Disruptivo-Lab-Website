@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/structured-data';
+import { generateHreflangMetadata } from '@/lib/hreflang-metadata';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -43,6 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${title} | Disruptivo Lab`,
     description,
+    alternates: generateHreflangMetadata(`/blog/${slug}`),
     openGraph: {
       title,
       description,
