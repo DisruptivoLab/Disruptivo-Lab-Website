@@ -119,6 +119,11 @@ export default function Footer() {
                   </MinimalistLink>
                 </li>
               ))}
+              <li>
+                <MinimalistLink href="/validator-ai" className="text-foreground/80 hover:text-foreground">
+                  Validator AI
+                </MinimalistLink>
+              </li>
             </ul>
           </nav>
 

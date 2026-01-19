@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "title": "Validator AI",
+    "subtitle": "Ingeniería para convertir Ideas en Realidad",
+    "description": "Creamos el gemelo digital de un Analista de Venture Capital. Sin sesgos, sin fatiga, solo validación basada en datos puros."
+  },
+  "problem": {
+    "title": "El Costo de Oportunidad",
+    "subtitle": "Por qué fallan los Fundadores",
+    "description": "El ecosistema startup está plagado de una mentalidad de \"construir primero\". Los fundadores apasionados a menudo se enamoran de su solución antes de entender el problema.",
+    "quote": "El código es caro. La validación debe ser barata.",
+    "explanation": "Cada línea de código escrita para una idea no validada es deuda técnica desde el día uno. Validator AI existe para resolver la \"Trampa de Construcción\" forzando una revisión arquitectónica rigurosa del modelo de negocio antes de gastar un solo dólar en desarrollo.",
+    "stat": {
+      "number": "90%",
+      "text": "De startups fallan por falta de necesidad de mercado",
+      "source": "\"The number one reason startups fail (42%) is no market need.\" — CB Insights"
+    }
+  },
+  "technology": {
+    "title": "Bajo el Capó",
+    "subtitle": "Cómo combinamos IA Generativa con Búsqueda en Tiempo Real",
+    "features": {
+      "gemini": {
+        "title": "Lógica Gemini Enterprise",
+        "description": "Aprovechamos los modelos de razonamiento más avanzados de Google para simular la mentalidad escéptica de un inversor, buscando brechas lógicas en tu plan."
+      },
+      "grounding": {
+        "title": "Grounding (Búsqueda en Vivo)",
+        "description": "Los LLMs alucinan. Para evitar esto, nuestro motor realiza búsquedas en Google en vivo para verificar la existencia de competidores y tendencias de mercado en tiempo real."
+      },
+      "financial": {
+        "title": "Modelado Financiero",
+        "description": "No solo analizamos texto. Proyectamos números. Nuestros algoritmos estiman tasas de consumo inicial y potencial de ingresos basados en tu ubicación específica."
+      }
+    }
+  },
+  "origin": {
+    "title": "Powered by Disruptivo Lab",
+    "subtitle": "Nacido dentro de Disruptivo Lab",
+    "description": "Validator AI comenzó como una herramienta interna. En Disruptivo Lab, somos una agencia de desarrollo de software. Nos cansamos de ver clientes acercarse con presupuestos para construir productos que tenían fallos fundamentales.",
+    "story": "Construimos este motor para auditar las ideas de nuestros clientes antes de aceptar su dinero. Funcionó tan bien que decidimos abrirlo al mundo de forma gratuita.",
+    "cta": "Visitar Agencia Disruptivo Lab",
+    "expertise": {
+      "title": "Nuestra Experiencia",
+      "items": [
+        "Desarrollo de MVP (Web y Móvil)",
+        "Integración e Ingeniería de IA",
+        "Arquitectura Cloud Escalable",
+        "Estrategia de Producto y Diseño"
+      ]
+    }
+  },
+  "cta": {
+    "title": "Valida tu Idea Ahora",
+    "description": "Accede gratis a Validator AI y descubre si tu startup tiene lo necesario para triunfar.",
+    "primary": "Probar Validator AI",
+    "secondary": "Ver Nuestros Servicios"
+  }
+}

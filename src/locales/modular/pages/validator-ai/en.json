@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "title": "Validator AI",
+    "subtitle": "Engineering to Turn Ideas into Reality",
+    "description": "We created the digital twin of a Venture Capital Analyst. No bias, no fatigue, just validation based on pure data."
+  },
+  "problem": {
+    "title": "The Opportunity Cost",
+    "subtitle": "Why Founders Fail",
+    "description": "The startup ecosystem is plagued by a \"build first\" mentality. Passionate founders often fall in love with their solution before understanding the problem.",
+    "quote": "Code is expensive. Validation should be cheap.",
+    "explanation": "Every line of code written for an unvalidated idea is technical debt from day one. Validator AI exists to solve the \"Build Trap\" by forcing a rigorous architectural review of the business model before spending a single dollar on development.",
+    "stat": {
+      "number": "90%",
+      "text": "Of startups fail due to lack of market need",
+      "source": "\"The number one reason startups fail (42%) is no market need.\" — CB Insights"
+    }
+  },
+  "technology": {
+    "title": "Under the Hood",
+    "subtitle": "How we combine Generative AI with Real-Time Search",
+    "features": {
+      "gemini": {
+        "title": "Gemini Enterprise Logic",
+        "description": "We leverage Google's most advanced reasoning models to simulate the skeptical mindset of an investor, looking for logical gaps in your plan."
+      },
+      "grounding": {
+        "title": "Grounding (Live Search)",
+        "description": "LLMs hallucinate. To avoid this, our engine performs live Google searches to verify the existence of competitors and market trends in real time."
+      },
+      "financial": {
+        "title": "Financial Modeling",
+        "description": "We don't just analyze text. We project numbers. Our algorithms estimate initial burn rates and revenue potential based on your specific location."
+      }
+    }
+  },
+  "origin": {
+    "title": "Powered by Disruptivo Lab",
+    "subtitle": "Born inside Disruptivo Lab",
+    "description": "Validator AI started as an internal tool. At Disruptivo Lab, we are a software development agency. We got tired of seeing clients approach us with budgets to build products that had fundamental flaws.",
+    "story": "We built this engine to audit our clients' ideas before taking their money. It worked so well that we decided to open it to the world for free.",
+    "cta": "Visit Disruptivo Lab Agency",
+    "expertise": {
+      "title": "Our Expertise",
+      "items": [
+        "MVP Development (Web & Mobile)",
+        "AI Integration & Engineering",
+        "Scalable Cloud Architecture",
+        "Product Strategy & Design"
+      ]
+    }
+  },
+  "cta": {
+    "title": "Validate Your Idea Now",
+    "description": "Access Validator AI for free and discover if your startup has what it takes to succeed.",
+    "primary": "Try Validator AI",
+    "secondary": "See Our Services"
+  }
+}
