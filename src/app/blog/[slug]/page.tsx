@@ -1,150 +1,115 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
-import { useModularTranslation } from '@/contexts/modular-translation-context';
+import { Metadata } from 'next';
 import { supabase } from '@/lib/supabase';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
-import { SectionLoading } from '@/components/ui/global-loading';
+import { notFound } from 'next/navigation';
 
-interface BlogPost {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  cover_image: string | null;
-  author_name: string;
-  published_at: string;
-  views_count: number;
-  reading_time: number;
-  seo_title: string | null;
-  seo_description: string | null;
-  categories: string[];
-  tags: string[];
+interface Props {
+  params: { slug: string };
 }
 
-export default function BlogPostPage() {
-  const params = useParams();
-  const { locale } = useModularTranslation();
-  const [post, setPost] = useState<BlogPost | null>(null);
-  const [loading, setLoading] = useState(true);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { data } = await supabase
+    .from('blog_posts')
+    .select(`
+      slug,
+      cover_image,
+      blog_post_translations!inner(
+        title,
+        excerpt,
+        meta_title,
+        meta_description,
+        locale
+      )
+    `)
+    .eq('slug', params.slug)
+    .eq('status', 'published')
+    .eq('blog_post_translations.locale', 'es')
+    .single();
 
-  useEffect(() => {
-    if (params.slug) {
-      fetchPost(params.slug as string);
-    }
-  }, [params.slug, locale]);
-
-  async function fetchPost(slug: string) {
-    setLoading(true);
-    try {
-      const { data, error } = await supabase
-        .from('blog_posts')
-        .select(`
-          id,
-          slug,
-          cover_image,
-          author_name,
-          published_at,
-          views_count,
-          reading_time,
-          blog_post_translations!inner(
-            title,
-            excerpt,
-            content,
-            meta_title,
-            meta_description,
-            locale
-          )
-        `)
-        .eq('slug', slug)
-        .eq('status', 'published')
-        .eq('blog_post_translations.locale', locale);
-
-      console.log('Query result:', { data, error });
-
-      if (error) {
-        console.error('Supabase error details:', JSON.stringify(error, null, 2));
-        throw error;
-      }
-
-      if (!data || data.length === 0) {
-        console.warn('No post found for slug:', slug);
-        setPost(null);
-        setLoading(false);
-        return;
-      }
-
-      const postData = Array.isArray(data) ? data[0] : data;
-      const translation = postData.blog_post_translations?.[0];
-      
-      if (!translation) {
-        console.warn('No translation found for locale:', locale);
-        setPost(null);
-        setLoading(false);
-        return;
-      }
-
-      // Procesar contenido: reemplazar \n con saltos de línea reales
-      const processedContent = translation.content
-        ? translation.content.replace(/\\n/g, '\n')
-        : '';
-
-      setPost({
-        id: postData.id,
-        slug: postData.slug,
-        cover_image: postData.cover_image,
-        author_name: postData.author_name,
-        published_at: postData.published_at,
-        views_count: postData.views_count,
-        reading_time: postData.reading_time || 5,
-        title: translation.title || 'Sin título',
-        excerpt: translation.excerpt || '',
-        content: processedContent,
-        seo_title: translation.meta_title,
-        seo_description: translation.meta_description,
-        categories: [],
-        tags: []
-      });
-
-      // Incrementar vistas
-      await supabase
-        .from('blog_posts')
-        .update({ views_count: (postData.views_count || 0) + 1 })
-        .eq('id', postData.id);
-
-    } catch (error) {
-      console.error('Error fetching post:', error);
-      setPost(null);
-    } finally {
-      setLoading(false);
-    }
+  if (!data) {
+    return {
+      title: 'Artículo no encontrado | Disruptivo Lab',
+    };
   }
 
+  const translation = data.blog_post_translations?.[0];
+  const title = translation?.meta_title || translation?.title || 'Disruptivo Lab';
+  const description = translation?.meta_description || translation?.excerpt || '';
+
+  return {
+    title: `${title} | Disruptivo Lab`,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: data.cover_image ? [data.cover_image] : [],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: data.cover_image ? [data.cover_image] : [],
+    },
+  };
+}
+
+export default async function BlogPostPage({ params }: Props) {
+  const { data, error } = await supabase
+    .from('blog_posts')
+    .select(`
+      id,
+      slug,
+      cover_image,
+      author_name,
+      published_at,
+      views_count,
+      reading_time,
+      blog_post_translations!inner(
+        title,
+        excerpt,
+        content,
+        meta_title,
+        meta_description,
+        locale
+      )
+    `)
+    .eq('slug', params.slug)
+    .eq('status', 'published')
+    .eq('blog_post_translations.locale', 'es')
+    .single();
+
+  if (error || !data) {
+    notFound();
+  }
+
+  const translation = data.blog_post_translations?.[0];
+  if (!translation) {
+    notFound();
+  }
+
+  const post = {
+    id: data.id,
+    slug: data.slug,
+    cover_image: data.cover_image,
+    author_name: data.author_name,
+    published_at: data.published_at,
+    views_count: data.views_count,
+    reading_time: data.reading_time || 5,
+    title: translation.title || 'Sin título',
+    excerpt: translation.excerpt || '',
+    content: translation.content ? translation.content.replace(/\\n/g, '\n') : '',
+  };
+
   function formatDate(date: string) {
-    return new Date(date).toLocaleDateString(locale === 'es' ? 'es-ES' : 'en-US', {
+    return new Date(date).toLocaleDateString('es-ES', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
     });
   }
-
-  if (loading) return <SectionLoading />;
-  if (!post) return (
-    <div className="min-h-screen pt-28 pb-16 px-4">
-      <div className="container mx-auto max-w-4xl text-center">
-        <h1 className="text-3xl font-bold text-foreground mb-4">
-          {locale === 'es' ? 'Artículo no encontrado' : 'Article not found'}
-        </h1>
-        <Link href="/blog" className="text-red-600 hover:underline">
-          {locale === 'es' ? '← Volver al blog' : '← Back to blog'}
-        </Link>
-      </div>
-    </div>
-  );
 
   return (
     <article className="min-h-screen pt-28 pb-16 px-4">
@@ -152,7 +117,7 @@ export default function BlogPostPage() {
         {/* Back button */}
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4" />
-          {locale === 'es' ? 'Volver al blog' : 'Back to blog'}
+          Volver al blog
         </Link>
 
         {/* Cover Image */}
@@ -217,44 +182,42 @@ export default function BlogPostPage() {
             className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium"
           >
             <ArrowLeft className="w-4 h-4" />
-            {locale === 'es' ? 'Ver más artículos' : 'View more articles'}
+            Ver más artículos
           </Link>
         </footer>
       </div>
 
-      {/* JSON-LD Structured Data for SEO and LLMs */}
-      {post && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'BlogPosting',
-              headline: post.title,
-              description: post.excerpt,
-              image: post.cover_image,
-              author: {
-                '@type': 'Person',
-                name: post.author_name,
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: post.title,
+            description: post.excerpt,
+            image: post.cover_image,
+            author: {
+              '@type': 'Person',
+              name: post.author_name,
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Disruptivo Lab',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://disruptivo.app/media/Identidad/iconotipo_disrptivo_Lab.png',
               },
-              publisher: {
-                '@type': 'Organization',
-                name: 'Disruptivo Lab',
-                logo: {
-                  '@type': 'ImageObject',
-                  url: 'https://disruptivo.app/media/Identidad/iconotipo_disrptivo_Lab.png',
-                },
-              },
-              datePublished: post.published_at,
-              dateModified: post.published_at,
-              mainEntityOfPage: {
-                '@type': 'WebPage',
-                '@id': `https://disruptivo.app/blog/${post.slug}`,
-              },
-            }),
-          }}
-        />
-      )}
+            },
+            datePublished: post.published_at,
+            dateModified: post.published_at,
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': `https://disruptivo.app/blog/${post.slug}`,
+            },
+          }),
+        }}
+      />
     </article>
   );
 }
