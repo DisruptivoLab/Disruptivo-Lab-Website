@@ -17,6 +17,11 @@
 - ✅ RSS feeds
 - ✅ Canonical URLs
 - ✅ Metadata dinámica (Layout + Blog)
+- ✅ Preconnect a dominios externos
+- ✅ DNS-prefetch configurado
+- ✅ 404 page personalizada
+- ✅ Redirects 301 (middleware)
+- ✅ PWA Manifest mejorado
 
 ## 🚀 FALTA IMPLEMENTAR (Crítico)
 
