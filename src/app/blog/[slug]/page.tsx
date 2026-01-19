@@ -105,6 +105,49 @@ export default async function BlogPostPage({ params }: Props) {
     content: translation.content ? translation.content.replace(/\\n/g, '\n') : '',
   };
 
+  // Obtener posts relacionados por categoría
+  const { data: categoryData } = await supabase
+    .from('blog_post_categories')
+    .select('category_id')
+    .eq('post_id', post.id)
+    .limit(1)
+    .single();
+
+  let relatedPosts: any[] = [];
+  if (categoryData?.category_id) {
+    const { data: related } = await supabase
+      .from('blog_post_categories')
+      .select(`
+        blog_posts!inner(
+          id,
+          slug,
+          cover_image,
+          reading_time,
+          blog_post_translations!inner(
+            title,
+            excerpt,
+            locale
+          )
+        )
+      `)
+      .eq('category_id', categoryData.category_id)
+      .neq('post_id', post.id)
+      .limit(3);
+
+    if (related) {
+      relatedPosts = related
+        .map(r => r.blog_posts)
+        .filter(Boolean)
+        .map(p => ({
+          slug: p.slug,
+          cover_image: p.cover_image,
+          reading_time: p.reading_time,
+          title: p.blog_post_translations?.[0]?.title || '',
+          excerpt: p.blog_post_translations?.[0]?.excerpt || '',
+        }));
+    }
+  }
+
   function formatDate(date: string) {
     return new Date(date).toLocaleDateString('es-ES', {
       year: 'numeric',
@@ -176,6 +219,45 @@ export default async function BlogPostPage({ params }: Props) {
             [&_hr]:border-border [&_hr]:my-12"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+
+        {/* Related Posts */}
+        {relatedPosts.length > 0 && (
+          <section className="mt-16 pt-8 border-t border-border">
+            <h2 className="text-2xl font-bold text-foreground mb-6">Artículos Relacionados</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {relatedPosts.map((related) => (
+                <Link
+                  key={related.slug}
+                  href={`/blog/${related.slug}`}
+                  className="group block rounded-lg overflow-hidden border border-border hover:border-red-600 transition-colors"
+                >
+                  {related.cover_image && (
+                    <div className="relative aspect-video overflow-hidden">
+                      <Image
+                        src={related.cover_image}
+                        alt={related.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
+                  <div className="p-4">
+                    <h3 className="font-semibold text-foreground mb-2 line-clamp-2 group-hover:text-red-600 transition-colors">
+                      {related.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+                      {related.excerpt}
+                    </p>
+                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                      <Clock className="w-3 h-3" />
+                      {related.reading_time} min
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Footer */}
         <footer className="mt-16 pt-8 border-t border-border">
