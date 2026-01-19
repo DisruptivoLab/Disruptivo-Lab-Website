@@ -16,7 +16,7 @@ export function GoogleAnalytics() {
     }
   }, [pathname, searchParams]);
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
     return null;
   }
 
@@ -42,6 +42,7 @@ export function GoogleAnalytics() {
       />
     </>
   );
+}
 }
 
 export const pageview = (url: string) => {
