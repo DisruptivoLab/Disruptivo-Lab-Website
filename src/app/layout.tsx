@@ -103,8 +103,7 @@ export default function RootLayout({
                 "contactType": "customer service",
                 "availableLanguage": ["Spanish", "English", "Portuguese"]
               },
-              "areaServed": "Worldwide",
-              "serviceType": ["Artificial Intelligence", "Branding", "Digital Strategy", "Web Development"]
+              "areaServed": "Worldwide"
             })
           }}
         />
