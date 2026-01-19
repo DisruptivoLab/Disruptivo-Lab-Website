@@ -19,8 +19,7 @@
       "about": "About",
       "services": "Services"
     }
-  }
-  ,
+  },
   "conversion": {
     "title": "Ready to accelerate growth?",
     "rotate": ["sell more", "automate processes", "ship faster"],
@@ -35,15 +34,21 @@
     "valueProps": [
       { "title": "Conversational AI + WhatsApp", "desc": "Automate 24/7 sales and support with intelligent chatbots that qualify leads and schedule appointments." },
       { "title": "Process Automation", "desc": "Save 40+ hours weekly automating billing, reports and marketing to reduce errors." },
-  { "title": "Software Development", "desc": "Web, apps and scalable microservices. From MVP to production-ready products." },
-  { "title": "End-to-End Consulting", "desc": "Diagnosis, strategy and AI adoption with training to integrate technology with measurable results." },
-  { "title": "AI-Powered Sales Funnel", "desc": "From click to close: 24/7 assistants, smart forms and lead prioritization." }
+      { "title": "Software Development", "desc": "Web, apps and scalable microservices. From MVP to production-ready products." },
+      { "title": "End-to-End Consulting", "desc": "Diagnosis, strategy and AI adoption with training to integrate technology with measurable results." },
+      { "title": "AI-Powered Sales Funnel", "desc": "From click to close: 24/7 assistants, smart forms and lead prioritization." }
     ]
-  }
-  ,
+  },
   "parallaxCta": {
-    "title": "Let’s build something extraordinary",
+    "title": "Let's build something extraordinary",
     "subtitle": "Prototypes in weeks, measurable results from day one",
-    "cta": "Let’s talk"
+    "cta": "Let's talk"
+  },
+  "validatorAI": {
+    "badge": "Free Tool",
+    "title": "Validator AI",
+    "subtitle": "Validate your startup idea before writing a single line of code",
+    "description": "Digital twin of a VC Analyst. AI analysis, real-time search and financial modeling. No bias, no fatigue, just data.",
+    "cta": "Discover Validator AI"
   }
 }

@@ -1,0 +1,47 @@
+# Disruptivo Lab - AI/LLM Context File
+
+## Company Overview
+Disruptivo Lab is a technology and innovation agency specializing in AI, automation, and digital product development. We transform business ideas into scalable digital solutions.
+
+## Core Services
+- AI Conversational Agents & WhatsApp Integration
+- Business Process Automation
+- Custom Software Development (Web & Mobile)
+- End-to-End Technology Consulting
+- AI-Powered Sales Funnels
+
+## Products
+### Validator AI
+Free tool for startup idea validation. Digital twin of a VC Analyst using:
+- Google Gemini Enterprise for reasoning
+- Real-time search (Grounding) to verify market data
+- Financial modeling for burn rate and revenue projections
+URL: https://disruptivo.app/validator-ai
+
+## Key Pages
+- Homepage: https://disruptivo.app/
+- Services: https://disruptivo.app/services
+- Method: https://disruptivo.app/method
+- Portfolio: https://disruptivo.app/portfolio
+- About: https://disruptivo.app/about
+- Blog: https://disruptivo.app/blog
+- Validator AI: https://disruptivo.app/validator-ai
+
+## Technology Stack
+- Next.js 16 with Turbopack
+- TypeScript
+- Supabase (PostgreSQL)
+- Framer Motion
+- Tailwind CSS
+- Google Gemini AI
+
+## Contact
+- Email: hola@disruptivolab.com
+- Website: https://disruptivo.app
+- Languages: Spanish (primary), English
+
+## SEO Keywords
+AI automation, startup validation, software development, WhatsApp chatbots, business process automation, MVP development, venture capital analysis, idea validation tool
+
+## Last Updated
+2025-01-15

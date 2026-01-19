@@ -42,5 +42,12 @@
     "title": "Construyamos algo extraordinario",
     "subtitle": "Prototipos en semanas, resultados medibles desde el día uno",
     "cta": "Hablemos"
+  },
+  "validatorAI": {
+    "badge": "Herramienta Gratuita",
+    "title": "Validator AI",
+    "subtitle": "Valida tu idea de startup antes de escribir una línea de código",
+    "description": "Gemelo digital de un Analista VC. Análisis con IA, búsqueda en tiempo real y modelado financiero. Sin sesgos, sin fatiga, solo datos.",
+    "cta": "Conocer Validator AI"
   }
 }

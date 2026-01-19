@@ -9,6 +9,7 @@ import AutomationSlide from '@/components/slides/AutomationSlide';
 import ConsultingSlide from '@/components/slides/ConsultingSlide';
 import ProductDevelopmentSlide from '@/components/slides/ProductDevelopmentSlide';
 import AboutSection from '@/components/sections/AboutSection';
+import ValidatorAISection from '@/components/sections/ValidatorAISection';
 import ConversionSection from '@/components/sections/ConversionSection';
 import ParallaxVideoCTA from '@/components/sections/ParallaxVideoCTA';
 import { useModularTranslation } from '@/contexts/modular-translation-context';
@@ -225,6 +226,7 @@ export default function HomePage() {
       </main>
 
   <AboutSection />
+  <ValidatorAISection />
   <ParallaxVideoCTA />
   <ConversionSection />
     </>
