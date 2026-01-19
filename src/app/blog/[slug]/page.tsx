@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
+import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/structured-data';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -275,31 +276,25 @@ export default async function BlogPostPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            headline: post.title,
+          __html: JSON.stringify(generateArticleSchema({
+            title: post.title,
             description: post.excerpt,
-            image: post.cover_image,
-            author: {
-              '@type': 'Person',
-              name: post.author_name,
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'Disruptivo Lab',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://disruptivo.app/media/Identidad/iconotipo_disrptivo_Lab.png',
-              },
-            },
+            url: `https://disruptivo.app/blog/${post.slug}`,
+            image: post.cover_image || 'https://disruptivo.app/media/Identidad/iconotipo_disrptivo_Lab.png',
             datePublished: post.published_at,
             dateModified: post.published_at,
-            mainEntityOfPage: {
-              '@type': 'WebPage',
-              '@id': `https://disruptivo.app/blog/${post.slug}`,
-            },
-          }),
+            author: post.author_name
+          }))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema([
+            { name: 'Home', url: 'https://disruptivo.app' },
+            { name: 'Blog', url: 'https://disruptivo.app/blog' },
+            { name: post.title, url: `https://disruptivo.app/blog/${post.slug}` }
+          ]))
         }}
       />
     </article>

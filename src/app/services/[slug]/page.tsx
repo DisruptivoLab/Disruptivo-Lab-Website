@@ -11,6 +11,7 @@ import { ContactModal } from '@/components/ui/contact-modal';
 import { FloatingControlsBar } from '@/components/ui/floating-controls-bar';
 import { ServiceHero } from '@/components/sections/ServiceHero';
 import { getServiceTheme } from '@/config/service-themes';
+import { generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from '@/lib/structured-data';
 
 export default function ServiceDetailPage() {
   const router = useRouter();
@@ -22,7 +23,6 @@ export default function ServiceDetailPage() {
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      // Carga secuencial para evitar carreras: el módulo del slug SIEMPRE al final
       await loadModularTranslation('pages/services-landing');
       await loadModularTranslation('pages/services');
       await loadModularTranslation('components/modals/contact');
@@ -46,22 +46,6 @@ export default function ServiceDetailPage() {
   const prev = index > 0 ? services[index - 1] : null;
   const next = index >= 0 && index < services.length - 1 ? services[index + 1] : null;
 
-  // JSON-LD básico para Service
-  const jsonLd = service
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: (get('hero.title') as string) || service.title,
-        description: (get('hero.subtitle') as string) || service.desc || '',
-        provider: {
-          '@type': 'Organization',
-          name: 'Disruptivo Lab',
-          url: 'https://disruptivolab.com',
-        },
-      }
-    : null;
-
-  // Contenido detallado por slug (por ahora, whatsapp-ia)
   const details = (() => {
     const subtitleLong = (get('pitch.subtitle_long') as string) || '';
     const pains = (get('pains') as string[]) || [];
@@ -87,20 +71,23 @@ export default function ServiceDetailPage() {
     } as const;
   })();
 
-  const faqJsonLd = details
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: details.faqs.map((f) => ({
-          '@type': 'Question',
-          name: f.q,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: f.a,
-          },
-        })),
-      }
-    : null;
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://disruptivo.app' },
+    { name: 'Servicios', url: 'https://disruptivo.app/services' },
+    { name: service?.title || '', url: `https://disruptivo.app/services/${slug}` }
+  ]);
+
+  const serviceSchema = service ? generateServiceSchema({
+    name: (get('hero.title') as string) || service.title,
+    description: (get('hero.subtitle') as string) || service.desc || '',
+    url: `https://disruptivo.app/services/${slug}`,
+    provider: 'Disruptivo Lab',
+    areaServed: 'Worldwide'
+  }) : null;
+
+  const faqSchema = details.faqs.length > 0 ? generateFAQSchema(
+    details.faqs.map(f => ({ question: f.q, answer: f.a }))
+  ) : null;
 
   if (!service) {
     return (
@@ -117,19 +104,9 @@ export default function ServiceDetailPage() {
 
   return (
   <main key={slug} className="min-h-[100svh]">
-      {/* JSON-LD */}
-      {jsonLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      )}
-      {faqJsonLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-        />
-      )}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {serviceSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />}
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
 
       {/* Barra superior minimal con breadcrumbs y navegación */}
       <div className="fixed top-4 left-4 right-4 z-40 flex items-center justify-between">
