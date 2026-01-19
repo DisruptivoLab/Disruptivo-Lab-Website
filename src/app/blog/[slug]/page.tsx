@@ -136,9 +136,9 @@ export default async function BlogPostPage({ params }: Props) {
 
     if (related) {
       relatedPosts = related
-        .map(r => r.blog_posts)
+        .map((r: any) => r.blog_posts)
         .filter(Boolean)
-        .map(p => ({
+        .map((p: any) => ({
           slug: p.slug,
           cover_image: p.cover_image,
           reading_time: p.reading_time,
