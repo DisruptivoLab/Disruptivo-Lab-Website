@@ -17,13 +17,16 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://disruptivolab.com"),
+  metadataBase: new URL("https://disruptivo.app"),
   title: "Disruptivo Lab - Innovación Radical, Resultados Reales",
   description: "Transformamos ideas en futuros digitales. Agencia de innovación y tecnología especializada en IA, Branding, Estrategia y Plataformas Web con metodología disruptiva.",
   keywords: ["innovación", "tecnología", "IA", "inteligencia artificial", "branding", "estrategia digital", "desarrollo web", "agencia digital", "transformación digital"],
   authors: [{ name: "Disruptivo Lab" }],
   creator: "Disruptivo Lab",
   publisher: "Disruptivo Lab",
+  alternates: {
+    canonical: "https://disruptivo.app",
+  },
   robots: {
     index: true,
     follow: true,
@@ -40,10 +43,11 @@ export const metadata: Metadata = {
     description: "Transformamos ideas en futuros digitales. Agencia de innovación y tecnología especializada en IA, Branding, Estrategia y Plataformas Web.",
     type: "website",
     locale: "es_ES",
+    url: "https://disruptivo.app",
     siteName: "Disruptivo Lab",
     images: [
       {
-        url: "/media/Identidad/iconotipo_disrptivo_Lab.png",
+        url: "https://disruptivo.app/media/Identidad/iconotipo_disrptivo_Lab.png",
         width: 1200,
         height: 630,
         alt: "Disruptivo Lab - Agencia de Innovación y Tecnología",
@@ -54,7 +58,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Disruptivo Lab - Innovación Radical, Resultados Reales",
     description: "Transformamos ideas en futuros digitales. Agencia de innovación y tecnología.",
-    images: ["/media/Identidad/iconotipo_disrptivo_Lab.png"],
+    images: ["https://disruptivo.app/media/Identidad/iconotipo_disrptivo_Lab.png"],
+  },
+  verification: {
+    google: "google-site-verification-code",
   },
 };
 
@@ -88,8 +95,8 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Disruptivo Lab",
               "description": "Agencia de innovación y tecnología especializada en IA, Branding, Estrategia y Plataformas Web",
-              "url": "https://disruptivolab.com",
-              "logo": "/media/Identidad/iconotipo_disrptivo_Lab.png",
+              "url": "https://disruptivo.app",
+              "logo": "https://disruptivo.app/media/Identidad/iconotipo_disrptivo_Lab.png",
               "sameAs": [],
               "contactPoint": {
                 "@type": "ContactPoint",

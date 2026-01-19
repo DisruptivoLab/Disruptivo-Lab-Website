@@ -34,7 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/services/${slug}`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    priority: 0.75,
   }));
 
   // Posts del blog (dinámicos desde Supabase)
@@ -50,8 +50,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       blogPosts = data.map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
         lastModified: new Date(post.updated_at || post.published_at).toISOString(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.8,
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
       }));
     }
   } catch (error) {
