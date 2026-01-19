@@ -43,31 +43,12 @@
 - [ ] Footer con links importantes
 - [ ] Related posts en blog
 
-### 4. **Technical SEO** ⭐⭐
-- [ ] Preconnect a dominios externos
-- [ ] Prefetch recursos críticos
-- [ ] Service Worker para PWA
-- [ ] 404 page personalizada
-- [ ] Redirects 301 si aplica
-
-### 5. **Content Optimization** ⭐
-- [ ] H1 único por página
-- [ ] Jerarquía H2-H6 correcta
-- [ ] Párrafos cortos (2-3 líneas)
-- [ ] Listas y bullets
-- [ ] CTAs claros
-
-### 6. **Analytics & Tracking** ⭐
-- [ ] Google Analytics 4
-- [ ] Google Tag Manager
-- [ ] Hotjar/Clarity (heatmaps)
-- [ ] Conversion tracking
-
-### 7. **Link Building** ⭐
-- [ ] Backlinks de calidad
-- [ ] Guest posting
-- [ ] Directorios relevantes
-- [ ] Social signals
+### 4. **Analytics & Tracking** ⭐
+- ✅ Google Analytics 4 (setup listo)
+- [ ] Configurar GA4 Measurement ID
+- [ ] Google Tag Manager (opcional)
+- [ ] Microsoft Clarity (opcional)
+- [ ] Eventos de conversión
 
 ## 📊 Prioridad de Implementación
 

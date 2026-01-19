@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { ClientProviders } from "@/components/providers/client-providers";
 import { Poppins, JetBrains_Mono } from 'next/font/google';
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import "./globals.css";
 
 // Configurar las fuentes
@@ -159,6 +160,7 @@ export default function RootLayout({
           </filter>
         </svg>
         <ClientProviders>
+          <GoogleAnalytics />
           {children}
           {/* Toast de detección de idioma */}
           <div id="language-detection-portal" />
