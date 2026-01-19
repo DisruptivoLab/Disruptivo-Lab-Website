@@ -36,6 +36,18 @@ interface CategoryWithPosts extends Category {
 const POSTS_PER_PAGE = 9;
 const POSTS_PER_CATEGORY = 8;
 
+const CATEGORY_TRANSLATIONS: Record<string, Record<string, string>> = {
+  'inteligencia-artificial': { es: 'Inteligencia Artificial', en: 'Artificial Intelligence' },
+  'automatizacion': { es: 'Automatización', en: 'Automation' },
+  'desarrollo-software': { es: 'Desarrollo Software', en: 'Software Development' },
+  'estrategia-digital': { es: 'Estrategia Digital', en: 'Digital Strategy' },
+  'casos-de-exito': { es: 'Casos de Éxito', en: 'Success Stories' }
+};
+
+function getCategoryName(slug: string, locale: string): string {
+  return CATEGORY_TRANSLATIONS[slug]?.[locale] || slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
 export default function BlogPage() {
   const { locale } = useModularTranslation();
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -73,15 +85,15 @@ export default function BlogPage() {
 
   async function fetchCategoriesWithPosts() {
     try {
-      const { data: categories } = await supabase
+      const { data: categories, error: catError } = await supabase
         .from('blog_categories')
-        .select('id, name, slug')
-        .order('name');
+        .select('*');
 
-      if (!categories) return;
+      if (catError || !categories || categories.length === 0) return;
 
       const categoriesData = await Promise.all(
         categories.map(async (category) => {
+          const categoryName = category.name || category.title || category.slug;
           const { data: postCategories } = await supabase
             .from('blog_post_categories')
             .select(`
@@ -92,6 +104,7 @@ export default function BlogPage() {
                 author_name,
                 published_at,
                 reading_time,
+                is_featured,
                 blog_post_translations!inner(
                   title,
                   excerpt,
@@ -101,6 +114,7 @@ export default function BlogPage() {
             `)
             .eq('category_id', category.id)
             .eq('blog_posts.status', 'published')
+            .eq('blog_posts.is_featured', false)
             .eq('blog_posts.blog_post_translations.locale', locale)
             .order('blog_posts(published_at)', { ascending: false })
             .limit(POSTS_PER_CATEGORY);
@@ -119,7 +133,9 @@ export default function BlogPage() {
           })) || [];
 
           return {
-            ...category,
+            id: category.id,
+            name: getCategoryName(category.slug, locale),
+            slug: category.slug,
             posts
           };
         })
@@ -167,8 +183,10 @@ export default function BlogPage() {
         .eq('blog_post_translations.locale', locale)
         .order('published_at', { ascending: false });
 
-      // Fetch regular posts
-      const { data: regularData, error } = await supabase
+      // Fetch regular posts (excluding featured and carousel posts)
+      const carouselPostIds = categoriesWithPosts.flatMap(c => c.posts.map(p => p.id));
+      
+      let query = supabase
         .from('blog_posts')
         .select(`
           id,
@@ -188,8 +206,13 @@ export default function BlogPage() {
         .eq('status', 'published')
         .eq('is_featured', false)
         .eq('blog_post_translations.locale', locale)
-        .order('published_at', { ascending: false })
-        .range(from, to);
+        .order('published_at', { ascending: false });
+      
+      if (carouselPostIds.length > 0) {
+        query = query.not('id', 'in', `(${carouselPostIds.join(',')})`);
+      }
+      
+      const { data: regularData, error } = await query.range(from, to);
 
       if (error) throw error;
 
@@ -296,7 +319,7 @@ export default function BlogPage() {
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {featuredPosts.map((post) => (
-                <Link key={post.id} href={`/blog/${post.slug}`}>
+                <Link key={`featured-${post.id}`} href={`/blog/${post.slug}`}>
                   <article className="flex-shrink-0 w-[340px] md:w-[400px] group/card cursor-pointer snap-start">
                     <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-4">
                       {post.cover_image ? (
@@ -340,7 +363,7 @@ export default function BlogPage() {
       {/* Category Carousels */}
       {categoriesWithPosts.map((category) => (
         <CategoryCarousel
-          key={category.id}
+          key={`category-${category.id}`}
           categoryName={category.name}
           posts={category.posts}
           locale={locale}
@@ -351,7 +374,7 @@ export default function BlogPage() {
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
-            <Link key={post.id} href={`/blog/${post.slug}`}>
+            <Link key={`grid-${post.id}`} href={`/blog/${post.slug}`}>
               <article className="group cursor-pointer h-full flex flex-col">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-xl mb-4">
                   {post.cover_image ? (

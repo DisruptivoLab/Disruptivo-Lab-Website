@@ -70,7 +70,7 @@ export function CategoryCarousel({ categoryName, posts, locale }: CategoryCarous
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {posts.map((post) => (
-            <Link key={post.id} href={`/blog/${post.slug}`}>
+            <Link key={`carousel-${post.id}`} href={`/blog/${post.slug}`}>
               <article className="flex-shrink-0 w-[340px] md:w-[400px] group/card cursor-pointer snap-start">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-4">
                   {post.cover_image ? (
