@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useModularTranslation } from '@/contexts/modular-translation-context';
 import { supabase } from '@/lib/supabase';
 import Image from 'next/image';
@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Calendar, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionLoading } from '@/components/ui/global-loading';
 import { getTimeAgo } from '@/lib/time-utils';
+import { CategoryCarousel } from '@/components/blog/CategoryCarousel';
 
 interface BlogPost {
   id: string;
@@ -22,12 +23,24 @@ interface BlogPost {
   reading_time: number;
 }
 
+interface Category {
+  id: string;
+  name: string;
+  slug: string;
+}
+
+interface CategoryWithPosts extends Category {
+  posts: BlogPost[];
+}
+
 const POSTS_PER_PAGE = 9;
+const POSTS_PER_CATEGORY = 8;
 
 export default function BlogPage() {
   const { locale } = useModularTranslation();
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [featuredPosts, setFeaturedPosts] = useState<BlogPost[]>([]);
+  const [categoriesWithPosts, setCategoriesWithPosts] = useState<CategoryWithPosts[]>([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -37,6 +50,7 @@ export default function BlogPage() {
 
   useEffect(() => {
     fetchPosts(true);
+    fetchCategoriesWithPosts();
   }, [locale]);
 
   // Infinite scroll observer
@@ -56,6 +70,66 @@ export default function BlogPage() {
 
     return () => observer.disconnect();
   }, [hasMore, loadingMore, loading]);
+
+  async function fetchCategoriesWithPosts() {
+    try {
+      const { data: categories } = await supabase
+        .from('blog_categories')
+        .select('id, name, slug')
+        .order('name');
+
+      if (!categories) return;
+
+      const categoriesData = await Promise.all(
+        categories.map(async (category) => {
+          const { data: postCategories } = await supabase
+            .from('blog_post_categories')
+            .select(`
+              blog_posts!inner(
+                id,
+                slug,
+                cover_image,
+                author_name,
+                published_at,
+                reading_time,
+                blog_post_translations!inner(
+                  title,
+                  excerpt,
+                  locale
+                )
+              )
+            `)
+            .eq('category_id', category.id)
+            .eq('blog_posts.status', 'published')
+            .eq('blog_posts.blog_post_translations.locale', locale)
+            .order('blog_posts(published_at)', { ascending: false })
+            .limit(POSTS_PER_CATEGORY);
+
+          const posts = postCategories?.map((pc: any) => ({
+            id: pc.blog_posts.id,
+            slug: pc.blog_posts.slug,
+            cover_image: pc.blog_posts.cover_image,
+            author_name: pc.blog_posts.author_name,
+            published_at: pc.blog_posts.published_at,
+            reading_time: pc.blog_posts.reading_time || 5,
+            views_count: 0,
+            is_featured: false,
+            title: pc.blog_posts.blog_post_translations[0]?.title || 'Sin título',
+            excerpt: pc.blog_posts.blog_post_translations[0]?.excerpt || ''
+          })) || [];
+
+          return {
+            ...category,
+            posts
+          };
+        })
+      );
+
+      setCategoriesWithPosts(categoriesData.filter(c => c.posts.length > 0));
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+    }
+  }
 
   async function fetchPosts(reset = false) {
     if (reset) {
@@ -262,6 +336,16 @@ export default function BlogPage() {
           </div>
         </div>
       )}
+
+      {/* Category Carousels */}
+      {categoriesWithPosts.map((category) => (
+        <CategoryCarousel
+          key={category.id}
+          categoryName={category.name}
+          posts={category.posts}
+          locale={locale}
+        />
+      ))}
 
       {/* Posts Grid con container */}
       <div className="container mx-auto max-w-7xl px-4">
