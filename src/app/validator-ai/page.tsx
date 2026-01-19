@@ -191,15 +191,14 @@ export default function ValidatorAIPage() {
               {t('cta.description')}
             </BodyText>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <MinimalistLink 
+              <a 
                 href="#" 
                 target="_blank"
                 rel="noopener noreferrer"
-                size="lg"
-                className="text-foreground"
+                className="inline-flex items-center justify-center px-6 py-3 text-lg font-medium text-foreground hover:opacity-80 transition-opacity"
               >
                 {t('cta.primary')}
-              </MinimalistLink>
+              </a>
               <MinimalistLink 
                 href="/services" 
                 size="lg"
