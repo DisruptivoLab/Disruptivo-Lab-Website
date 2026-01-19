@@ -9,83 +9,56 @@
 - ✅ Service Schema - Implementado
 - ✅ BlogPosting Schema - Implementado
 - ✅ FAQPage Schema - Validado por Google
+- ✅ Hreflang tags - 7 idiomas
 - ✅ Open Graph completo
 - ✅ Twitter Cards
 - ✅ Meta tags básicos
-- ✅ Core Web Vitals optimizados
+- ✅ Core Web Vitals optimizados (-42% Speed Index)
 - ✅ RSS feeds
 - ✅ Canonical URLs
+- ✅ Metadata dinámica (Layout + Blog)
 
 ## 🚀 FALTA IMPLEMENTAR (Crítico)
 
-### 1. **Structured Data Avanzado** ⭐⭐⭐
-```typescript
-// Agregar en cada página:
-- BreadcrumbList (navegación)
-- Service (páginas de servicios)
-- Article (blog posts)
-- FAQPage (preguntas frecuentes)
-- LocalBusiness (si aplica)
-- Review/Rating (testimonios)
-```
-
-### 2. **Hreflang Tags** ⭐⭐⭐
-```html
-<!-- Para multi-idioma -->
-<link rel="alternate" hreflang="es" href="https://disruptivo.app/" />
-<link rel="alternate" hreflang="en" href="https://disruptivo.app/en/" />
-<link rel="alternate" hreflang="pt" href="https://disruptivo.app/pt/" />
-<link rel="alternate" hreflang="x-default" href="https://disruptivo.app/" />
-```
-
-### 3. **Google Search Console** ⭐⭐⭐
+### 1. **Google Search Console** ⭐⭐⭐
 - [ ] Verificar propiedad (cambiar "google-site-verification-code")
 - [ ] Enviar sitemap
 - [ ] Configurar IndexNow
 - [ ] Monitorear Core Web Vitals
 
-### 4. **Metadata Dinámica por Página** ⭐⭐⭐
-```typescript
-// Cada página debe tener:
-- Title único (50-60 caracteres)
-- Description única (150-160 caracteres)
-- OG Image específica
-- Keywords relevantes
-```
+### 2. **Image Optimization** ⭐⭐
+- [ ] Alt text descriptivo en TODAS las imágenes
+- ✅ Lazy loading (implementado)
+- ✅ WebP/AVIF (configurado)
+- [ ] Dimensiones explícitas
 
-### 5. **Internal Linking Strategy** ⭐⭐
+### 3. **Internal Linking Strategy** ⭐⭐
 - [ ] Links contextuales entre servicios
 - [ ] Breadcrumbs visibles
 - [ ] Footer con links importantes
 - [ ] Related posts en blog
 
-### 6. **Image Optimization** ⭐⭐
-- [ ] Alt text descriptivo en TODAS las imágenes
-- [ ] Lazy loading (ya implementado)
-- [ ] WebP/AVIF (ya configurado)
-- [ ] Dimensiones explícitas
-
-### 7. **Content Optimization** ⭐⭐
-- [ ] H1 único por página
-- [ ] Jerarquía H2-H6 correcta
-- [ ] Párrafos cortos (2-3 líneas)
-- [ ] Listas y bullets
-- [ ] CTAs claros
-
-### 8. **Technical SEO** ⭐⭐
+### 4. **Technical SEO** ⭐⭐
 - [ ] Preconnect a dominios externos
 - [ ] Prefetch recursos críticos
 - [ ] Service Worker para PWA
 - [ ] 404 page personalizada
 - [ ] Redirects 301 si aplica
 
-### 9. **Analytics & Tracking** ⭐⭐
+### 5. **Content Optimization** ⭐
+- [ ] H1 único por página
+- [ ] Jerarquía H2-H6 correcta
+- [ ] Párrafos cortos (2-3 líneas)
+- [ ] Listas y bullets
+- [ ] CTAs claros
+
+### 6. **Analytics & Tracking** ⭐
 - [ ] Google Analytics 4
 - [ ] Google Tag Manager
 - [ ] Hotjar/Clarity (heatmaps)
 - [ ] Conversion tracking
 
-### 10. **Link Building** ⭐
+### 7. **Link Building** ⭐
 - [ ] Backlinks de calidad
 - [ ] Guest posting
 - [ ] Directorios relevantes
