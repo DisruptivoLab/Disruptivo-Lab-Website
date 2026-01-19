@@ -6,10 +6,11 @@ import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
   const { data } = await supabase
     .from('blog_posts')
     .select(`
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         locale
       )
     `)
-    .eq('slug', params.slug)
+    .eq('slug', slug)
     .eq('status', 'published')
     .eq('blog_post_translations.locale', 'es')
     .single();
@@ -57,6 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPostPage({ params }: Props) {
+  const { slug } = await params;
   const { data, error } = await supabase
     .from('blog_posts')
     .select(`
@@ -76,7 +78,7 @@ export default async function BlogPostPage({ params }: Props) {
         locale
       )
     `)
-    .eq('slug', params.slug)
+    .eq('slug', slug)
     .eq('status', 'published')
     .eq('blog_post_translations.locale', 'es')
     .single();
