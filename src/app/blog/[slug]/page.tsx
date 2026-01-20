@@ -1,163 +1,143 @@
-import { Metadata } from 'next';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useModularTranslation } from '@/contexts/modular-translation-context';
 import { supabase } from '@/lib/supabase';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
-import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/structured-data';
-import { generateHreflangMetadata } from '@/lib/hreflang-metadata';
+import { SectionLoading } from '@/components/ui/global-loading';
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const { data } = await supabase
-    .from('blog_posts')
-    .select(`
-      slug,
-      cover_image,
-      blog_post_translations!inner(
-        title,
-        excerpt,
-        meta_title,
-        meta_description,
-        locale
-      )
-    `)
-    .eq('slug', slug)
-    .eq('status', 'published')
-    .eq('blog_post_translations.locale', 'es')
-    .single();
+export default function BlogPostPage({ params }: Props) {
+  const { locale } = useModularTranslation();
+  const [slug, setSlug] = useState<string>('');
+  const [post, setPost] = useState<any>(null);
+  const [relatedPosts, setRelatedPosts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  if (!data) {
-    return {
-      title: 'Artículo no encontrado | Disruptivo Lab',
-    };
-  }
+  useEffect(() => {
+    params.then(p => setSlug(p.slug));
+  }, [params]);
 
-  const translation = data.blog_post_translations?.[0];
-  const title = translation?.meta_title || translation?.title || 'Disruptivo Lab';
-  const description = translation?.meta_description || translation?.excerpt || '';
-
-  return {
-    title: `${title} | Disruptivo Lab`,
-    description,
-    alternates: generateHreflangMetadata(`/blog/${slug}`),
-    openGraph: {
-      title,
-      description,
-      images: data.cover_image ? [data.cover_image] : [],
-      type: 'article',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: data.cover_image ? [data.cover_image] : [],
-    },
-  };
-}
-
-export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params;
-  const { data, error } = await supabase
-    .from('blog_posts')
-    .select(`
-      id,
-      slug,
-      cover_image,
-      author_name,
-      published_at,
-      views_count,
-      reading_time,
-      blog_post_translations!inner(
-        title,
-        excerpt,
-        content,
-        meta_title,
-        meta_description,
-        locale
-      )
-    `)
-    .eq('slug', slug)
-    .eq('status', 'published')
-    .eq('blog_post_translations.locale', 'es')
-    .single();
-
-  if (error || !data) {
-    notFound();
-  }
-
-  const translation = data.blog_post_translations?.[0];
-  if (!translation) {
-    notFound();
-  }
-
-  const post = {
-    id: data.id,
-    slug: data.slug,
-    cover_image: data.cover_image,
-    author_name: data.author_name,
-    published_at: data.published_at,
-    views_count: data.views_count,
-    reading_time: data.reading_time || 5,
-    title: translation.title || 'Sin título',
-    excerpt: translation.excerpt || '',
-    content: translation.content ? translation.content.replace(/\\n/g, '\n') : '',
-  };
-
-  // Obtener posts relacionados por categoría
-  const { data: categoryData } = await supabase
-    .from('blog_post_categories')
-    .select('category_id')
-    .eq('post_id', post.id)
-    .limit(1)
-    .single();
-
-  let relatedPosts: any[] = [];
-  if (categoryData?.category_id) {
-    const { data: related } = await supabase
-      .from('blog_post_categories')
-      .select(`
-        blog_posts!inner(
+  useEffect(() => {
+    if (!slug || !locale) return;
+    
+    async function fetchPost() {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('blog_posts')
+        .select(`
           id,
           slug,
           cover_image,
+          author_name,
+          published_at,
+          views_count,
           reading_time,
           blog_post_translations!inner(
             title,
             excerpt,
+            content,
+            meta_title,
+            meta_description,
             locale
           )
-        )
-      `)
-      .eq('category_id', categoryData.category_id)
-      .neq('post_id', post.id)
-      .limit(3);
+        `)
+        .eq('slug', slug)
+        .eq('status', 'published')
+        .eq('blog_post_translations.locale', locale)
+        .single();
 
-    if (related) {
-      relatedPosts = related
-        .map((r: any) => r.blog_posts)
-        .filter(Boolean)
-        .map((p: any) => ({
-          slug: p.slug,
-          cover_image: p.cover_image,
-          reading_time: p.reading_time,
-          title: p.blog_post_translations?.[0]?.title || '',
-          excerpt: p.blog_post_translations?.[0]?.excerpt || '',
-        }));
+      if (error || !data) {
+        notFound();
+        return;
+      }
+
+      const translation = data.blog_post_translations?.[0];
+      if (!translation) {
+        notFound();
+        return;
+      }
+
+      const postData = {
+        id: data.id,
+        slug: data.slug,
+        cover_image: data.cover_image,
+        author_name: data.author_name,
+        published_at: data.published_at,
+        views_count: data.views_count,
+        reading_time: data.reading_time || 5,
+        title: translation.title || 'Sin título',
+        excerpt: translation.excerpt || '',
+        content: translation.content ? translation.content.replace(/\\n/g, '\n') : '',
+      };
+
+      setPost(postData);
+
+      // Fetch related posts
+      const { data: categoryData } = await supabase
+        .from('blog_post_categories')
+        .select('category_id')
+        .eq('post_id', postData.id)
+        .limit(1)
+        .single();
+
+      if (categoryData?.category_id) {
+        const { data: related } = await supabase
+          .from('blog_post_categories')
+          .select(`
+            blog_posts!inner(
+              id,
+              slug,
+              cover_image,
+              reading_time,
+              blog_post_translations!inner(
+                title,
+                excerpt,
+                locale
+              )
+            )
+          `)
+          .eq('category_id', categoryData.category_id)
+          .eq('blog_posts.blog_post_translations.locale', locale)
+          .neq('post_id', postData.id)
+          .limit(3);
+
+        if (related) {
+          const relatedData = related
+            .map((r: any) => r.blog_posts)
+            .filter(Boolean)
+            .map((p: any) => ({
+              slug: p.slug,
+              cover_image: p.cover_image,
+              reading_time: p.reading_time,
+              title: p.blog_post_translations?.[0]?.title || '',
+              excerpt: p.blog_post_translations?.[0]?.excerpt || '',
+            }));
+          setRelatedPosts(relatedData);
+        }
+      }
+
+      setLoading(false);
     }
-  }
+
+    fetchPost();
+  }, [slug, locale]);
 
   function formatDate(date: string) {
-    return new Date(date).toLocaleDateString('es-ES', {
+    return new Date(date).toLocaleDateString(locale === 'es' ? 'es-ES' : 'en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
     });
   }
+
+  if (loading || !post) return <SectionLoading />;
 
   return (
     <article className="min-h-screen pt-28 pb-16 px-4">
@@ -165,7 +145,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Back button */}
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4" />
-          Volver al blog
+          {locale === 'es' ? 'Volver al blog' : 'Back to blog'}
         </Link>
 
         {/* Cover Image */}
@@ -226,7 +206,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
           <section className="mt-16 pt-8 border-t border-border">
-            <h2 className="text-2xl font-bold text-foreground mb-6">Artículos Relacionados</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-6">{locale === 'es' ? 'Artículos Relacionados' : 'Related Articles'}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedPosts.map((related) => (
                 <Link
@@ -269,36 +249,10 @@ export default async function BlogPostPage({ params }: Props) {
             className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium"
           >
             <ArrowLeft className="w-4 h-4" />
-            Ver más artículos
+            {locale === 'es' ? 'Ver más artículos' : 'View more articles'}
           </Link>
         </footer>
       </div>
-
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateArticleSchema({
-            title: post.title,
-            description: post.excerpt,
-            url: `https://disruptivo.app/blog/${post.slug}`,
-            image: post.cover_image || 'https://disruptivo.app/media/Identidad/iconotipo_disrptivo_Lab.png',
-            datePublished: post.published_at,
-            dateModified: post.published_at,
-            author: post.author_name
-          }))
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateBreadcrumbSchema([
-            { name: 'Home', url: 'https://disruptivo.app' },
-            { name: 'Blog', url: 'https://disruptivo.app/blog' },
-            { name: post.title, url: `https://disruptivo.app/blog/${post.slug}` }
-          ]))
-        }}
-      />
     </article>
   );
 }

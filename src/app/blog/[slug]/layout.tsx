@@ -1,8 +1,13 @@
 import { Metadata } from 'next';
 import { supabase } from '@/lib/supabase';
+import { cookies } from 'next/headers';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   try {
+    const { slug } = await params;
+    const cookieStore = await cookies();
+    const locale = cookieStore.get('locale')?.value || 'es';
+    
     const { data } = await supabase
       .from('blog_posts')
       .select(`
@@ -18,9 +23,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
           locale
         )
       `)
-      .eq('slug', params.slug)
+      .eq('slug', slug)
       .eq('status', 'published')
-      .eq('blog_post_translations.locale', 'es')
+      .eq('blog_post_translations.locale', locale)
       .single();
 
     if (!data) {
