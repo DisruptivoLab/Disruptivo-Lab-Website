@@ -1,0 +1,19 @@
+{
+  "newsletter": {
+    "title": "¿Te gustó este artículo?",
+    "subtitle": "Únete a {count} innovadores que reciben:",
+    "benefits": [
+      "Insights de IA antes que nadie",
+      "Templates y recursos exclusivos",
+      "Casos de éxito reales"
+    ],
+    "placeholder": "tu@email.com",
+    "cta": "UNIRME",
+    "privacy": "Sin spam. Cancela cuando quieras.",
+    "success_title": "🎉 ¡Bienvenido a la comunidad!",
+    "success_message": "Revisa tu email para confirmar tu suscripción.",
+    "error_invalid": "Por favor ingresa un email válido",
+    "error_exists": "Este email ya está suscrito",
+    "error_generic": "Algo salió mal. Intenta de nuevo."
+  }
+}

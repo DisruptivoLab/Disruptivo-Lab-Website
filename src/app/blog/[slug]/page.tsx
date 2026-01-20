@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { SectionLoading } from '@/components/ui/global-loading';
+import { NewsletterCTA } from '@/components/newsletter/NewsletterCTA';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -206,6 +207,14 @@ export default function BlogPostPage({ params }: Props) {
             [&_hr]:border-border [&_hr]:my-12"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+
+        {/* Newsletter CTA */}
+        <div className="mt-16">
+          <NewsletterCTA 
+            source="blog-post"
+            articleSlug={post.slug}
+          />
+        </div>
 
         {/* Related Posts */}
         {relatedPosts.length > 0 && (

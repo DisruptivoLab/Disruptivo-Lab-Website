@@ -1,0 +1,19 @@
+{
+  "newsletter": {
+    "title": "Enjoyed this article?",
+    "subtitle": "Join {count} innovators who receive:",
+    "benefits": [
+      "AI insights before anyone else",
+      "Exclusive templates and resources",
+      "Real success stories"
+    ],
+    "placeholder": "your@email.com",
+    "cta": "JOIN NOW",
+    "privacy": "No spam. Unsubscribe anytime.",
+    "success_title": "🎉 Welcome to the community!",
+    "success_message": "Check your email to confirm your subscription.",
+    "error_invalid": "Please enter a valid email",
+    "error_exists": "This email is already subscribed",
+    "error_generic": "Something went wrong. Try again."
+  }
+}
