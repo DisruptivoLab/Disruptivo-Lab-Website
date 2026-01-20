@@ -75,9 +75,13 @@ export default function BlogPostPage({ params }: Props) {
         title: translation.title || 'Sin título',
         excerpt: translation.excerpt || '',
         content: translation.content ? translation.content.replace(/\\n/g, '\n') : '',
+        meta_title: translation.meta_title,
       };
 
       setPost(postData);
+
+      // Update document title
+      document.title = `${postData.meta_title || postData.title} | Disruptivo Lab`;
 
       // Fetch related posts
       const { data: categoryData } = await supabase
