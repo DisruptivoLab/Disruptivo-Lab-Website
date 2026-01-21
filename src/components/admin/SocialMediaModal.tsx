@@ -196,9 +196,10 @@ export function SocialMediaModal({ isOpen, onClose, postId, postTitle, postSlug,
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+            className="flex-shrink-0 p-2 rounded-lg hover:bg-red-500/10 hover:text-red-600 dark:hover:text-red-400 transition-colors text-foreground"
+            title="Cerrar"
           >
-            <X className="w-5 h-5" />
+            <X className="w-6 h-6" />
           </button>
         </div>
 
