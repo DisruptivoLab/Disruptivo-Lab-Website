@@ -64,8 +64,23 @@ export function SocialMediaModal({ isOpen, onClose, postId, postTitle, postSlug,
     setLoading(false);
   }
 
-  function copyToClipboard(text: string, id: string) {
-    navigator.clipboard.writeText(text);
+  function copyToClipboard(text: string, id: string, platform?: string) {
+    let contentToCopy = text;
+    
+    // Limpiar markdown para Reddit
+    if (platform === 'reddit') {
+      contentToCopy = text
+        .replace(/\*\*(.+?)\*\*/g, '$1')
+        .replace(/\*(.+?)\*/g, '$1')
+        .replace(/#{1,6}\s/g, '')
+        .replace(/\[(.+?)\]\(.+?\)/g, '$1')
+        .replace(/`(.+?)`/g, '$1')
+        .replace(/^[-*+]\s/gm, '• ')
+        .replace(/^\d+\.\s/gm, '')
+        .trim();
+    }
+    
+    navigator.clipboard.writeText(contentToCopy);
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
   }
@@ -273,7 +288,7 @@ export function SocialMediaModal({ isOpen, onClose, postId, postTitle, postSlug,
                         {/* Actions */}
                         <div className="flex gap-2 pt-2">
                           <button
-                            onClick={() => copyToClipboard(social.content, social.id)}
+                            onClick={() => copyToClipboard(social.content, social.id, social.platform)}
                             className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-foreground"
                           >
                             {copiedId === social.id ? (
