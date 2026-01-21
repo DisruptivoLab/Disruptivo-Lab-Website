@@ -89,8 +89,30 @@ export function SocialMediaModal({ isOpen, onClose, postId, postTitle, postSlug,
     setPublishing(social.id);
     
     try {
-      // Aquí irá la lógica de publicación según la plataforma
-      // Por ahora solo actualizamos el estado
+      // 1. Copiar contenido al portapapeles
+      await navigator.clipboard.writeText(social.content);
+      
+      // 2. Generar URL de la plataforma
+      const platformUrls: Record<string, string> = {
+        twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(social.content)}`,
+        x: `https://twitter.com/intent/tweet?text=${encodeURIComponent(social.content)}`,
+        linkedin: 'https://www.linkedin.com/feed/',
+        meta: 'https://www.facebook.com/',
+        reddit: social.social_title 
+          ? `https://www.reddit.com/submit?title=${encodeURIComponent(social.social_title)}&text=${encodeURIComponent(social.content)}`
+          : 'https://www.reddit.com/submit',
+        digg: 'https://digg.com/submit',
+        video_script: '' // No tiene URL, solo copia
+      };
+
+      const url = platformUrls[social.platform];
+      
+      // 3. Abrir plataforma en nueva pestaña (excepto video_script)
+      if (url) {
+        window.open(url, '_blank');
+      }
+
+      // 4. Actualizar estado en BD
       const { error } = await supabase
         .from('blog_social_queue')
         .update({ status: 'published' })
@@ -98,15 +120,17 @@ export function SocialMediaModal({ isOpen, onClose, postId, postTitle, postSlug,
 
       if (error) throw error;
 
-      // Actualizar estado local
+      // 5. Actualizar estado local
       setSocialPosts(prev => 
         prev.map(p => p.id === social.id ? { ...p, status: 'published' } : p)
       );
 
-      alert(`Contenido publicado en ${PLATFORM_CONFIG[social.platform]?.name || social.platform}`);
+      // 6. Mostrar mensaje de éxito
+      const platformName = PLATFORM_CONFIG[social.platform]?.name || social.platform;
+      alert(`✓ Contenido copiado y ${platformName} abierto.\n\nPega el contenido (Ctrl+V) y publica.`);
     } catch (error) {
       console.error('Error publishing:', error);
-      alert('Error al publicar. Intenta de nuevo.');
+      alert('Error al procesar. Intenta de nuevo.');
     } finally {
       setPublishing(null);
     }
