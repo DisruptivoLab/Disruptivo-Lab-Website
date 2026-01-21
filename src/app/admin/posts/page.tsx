@@ -22,6 +22,7 @@ interface Post {
   is_featured: boolean;
   categories?: string[];
   cover_image?: string | null;
+  social_status?: 'pending' | 'partial' | 'completed';
 }
 
 function getTimeAgo(date: string | null): string {
@@ -73,6 +74,7 @@ export default function AdminPostsPage() {
           views_count,
           is_featured,
           cover_image,
+          social_status,
           blog_post_translations(title, excerpt, locale)
         `)
         .order('created_at', { ascending: false });
@@ -112,6 +114,7 @@ export default function AdminPostsPage() {
             title: translation.title || 'Sin título',
             excerpt: translation.excerpt || '',
             cover_image: post.cover_image,
+            social_status: post.social_status || 'pending',
             categories
           };
         })
@@ -196,10 +199,34 @@ export default function AdminPostsPage() {
     }
   }
 
+  async function toggleSocialStatus(id: string, currentStatus: string) {
+    const statusOrder = ['pending', 'partial', 'completed'];
+    const currentIndex = statusOrder.indexOf(currentStatus);
+    const nextStatus = statusOrder[(currentIndex + 1) % statusOrder.length];
+
+    try {
+      const { error } = await supabase
+        .from('blog_posts')
+        .update({ social_status: nextStatus })
+        .eq('id', id);
+
+      if (error) throw error;
+      fetchPosts();
+    } catch (error) {
+      console.error('Error toggling social status:', error);
+    }
+  }
+
   const statusColors = {
     draft: 'bg-yellow-500/10 text-yellow-600 dark:text-yellow-400',
     published: 'bg-green-500/10 text-green-600 dark:text-green-400',
     archived: 'bg-gray-500/10 text-gray-600 dark:text-gray-400',
+  };
+
+  const socialStatusConfig = {
+    pending: { color: 'bg-gray-500/10 text-gray-600 dark:text-gray-400', icon: '⏸️', label: 'Pendiente' },
+    partial: { color: 'bg-yellow-500/10 text-yellow-600 dark:text-yellow-400', icon: '🔄', label: 'Parcial' },
+    completed: { color: 'bg-green-500/10 text-green-600 dark:text-green-400', icon: '✅', label: 'Completado' }
   };
 
   return (
@@ -263,6 +290,7 @@ export default function AdminPostsPage() {
                   <th className="text-left py-3 px-4 text-sm font-medium text-black/70 dark:text-white/70">Título</th>
                   <th className="text-left py-3 px-4 text-sm font-medium text-black/70 dark:text-white/70">Categorías</th>
                   <th className="text-left py-3 px-4 text-sm font-medium text-black/70 dark:text-white/70">Estado</th>
+                  <th className="text-left py-3 px-4 text-sm font-medium text-black/70 dark:text-white/70">Social</th>
                   <th className="text-left py-3 px-4 text-sm font-medium text-black/70 dark:text-white/70">Autor</th>
                   <th className="text-left py-3 px-4 text-sm font-medium text-black/70 dark:text-white/70">Vistas</th>
                   <th className="text-left py-3 px-4 text-sm font-medium text-black/70 dark:text-white/70">Creado</th>
@@ -295,6 +323,18 @@ export default function AdminPostsPage() {
                       <span className={cn("px-2 py-1 rounded text-xs font-medium", statusColors[post.status])}>
                         {post.status}
                       </span>
+                    </td>
+                    <td className="py-3 px-4">
+                      <button
+                        onClick={() => toggleSocialStatus(post.id, post.social_status || 'pending')}
+                        className={cn(
+                          "px-2 py-1 rounded text-xs font-medium cursor-pointer hover:opacity-80 transition-opacity",
+                          socialStatusConfig[post.social_status || 'pending'].color
+                        )}
+                        title="Click para cambiar estado"
+                      >
+                        {socialStatusConfig[post.social_status || 'pending'].icon} {socialStatusConfig[post.social_status || 'pending'].label}
+                      </button>
                     </td>
                     <td className="py-3 px-4 text-sm text-black/70 dark:text-white/70">{post.author_name}</td>
                     <td className="py-3 px-4 text-sm text-black/70 dark:text-white/70">{post.views_count}</td>
