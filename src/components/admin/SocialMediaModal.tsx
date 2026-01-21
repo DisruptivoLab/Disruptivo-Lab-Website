@@ -89,8 +89,22 @@ export function SocialMediaModal({ isOpen, onClose, postId, postTitle, postSlug,
     setPublishing(social.id);
     
     try {
+      // Limpiar markdown para Reddit (usa editor visual)
+      let contentToCopy = social.content;
+      if (social.platform === 'reddit') {
+        contentToCopy = social.content
+          .replace(/\*\*(.+?)\*\*/g, '$1') // Quitar negritas **texto**
+          .replace(/\*(.+?)\*/g, '$1')     // Quitar cursivas *texto*
+          .replace(/#{1,6}\s/g, '')        // Quitar headers #
+          .replace(/\[(.+?)\]\(.+?\)/g, '$1') // Quitar links [texto](url)
+          .replace(/`(.+?)`/g, '$1')       // Quitar code `texto`
+          .replace(/^[-*+]\s/gm, '• ')     // Convertir listas a bullets
+          .replace(/^\d+\.\s/gm, '')       // Quitar numeración
+          .trim();
+      }
+      
       // 1. Copiar contenido al portapapeles
-      await navigator.clipboard.writeText(social.content);
+      await navigator.clipboard.writeText(contentToCopy);
       
       // 2. Generar URL de la plataforma
       const platformUrls: Record<string, string> = {
@@ -98,9 +112,7 @@ export function SocialMediaModal({ isOpen, onClose, postId, postTitle, postSlug,
         x: `https://twitter.com/intent/tweet?text=${encodeURIComponent(social.content)}`,
         linkedin: 'https://www.linkedin.com/feed/',
         meta: 'https://www.facebook.com/',
-        reddit: social.social_title 
-          ? `https://www.reddit.com/submit?title=${encodeURIComponent(social.social_title)}&text=${encodeURIComponent(social.content)}`
-          : 'https://www.reddit.com/submit',
+        reddit: 'https://www.reddit.com/submit',
         digg: 'https://digg.com/submit',
         video_script: '' // No tiene URL, solo copia
       };
@@ -127,7 +139,10 @@ export function SocialMediaModal({ isOpen, onClose, postId, postTitle, postSlug,
 
       // 6. Mostrar mensaje de éxito
       const platformName = PLATFORM_CONFIG[social.platform]?.name || social.platform;
-      alert(`✓ Contenido copiado y ${platformName} abierto.\n\nPega el contenido (Ctrl+V) y publica.`);
+      const message = social.platform === 'reddit'
+        ? `✓ Contenido limpio (sin markdown) copiado y ${platformName} abierto.\n\nPega el contenido (Ctrl+V) en el editor visual y publica.`
+        : `✓ Contenido copiado y ${platformName} abierto.\n\nPega el contenido (Ctrl+V) y publica.`;
+      alert(message);
     } catch (error) {
       console.error('Error publishing:', error);
       alert('Error al procesar. Intenta de nuevo.');
