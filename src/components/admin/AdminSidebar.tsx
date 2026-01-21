@@ -12,14 +12,12 @@ import {
   Settings,
   LogOut,
   Pin,
-  PinOff,
-  Share2
+  PinOff
 } from 'lucide-react';
 
 const menuItems = [
   { icon: LayoutDashboard, label: 'Dashboard', href: '/admin' },
   { icon: FileText, label: 'Posts', href: '/admin/posts' },
-  { icon: Share2, label: 'Social Media', href: '/admin/social-media' },
   { icon: FolderOpen, label: 'Categorías', href: '/admin/categories' },
   { icon: Settings, label: 'Config', href: '/admin/settings' },
 ];
