@@ -82,7 +82,7 @@ export function SocialMediaModal({ isOpen, onClose, postId, postTitle, postSlug,
   }
 
   function generateShortlink(): string {
-    return `https://disruptivo.app/b/${postSlug.split('-').slice(0, 3).join('-')}`;
+    return `https://disruptivo.app/blog/${postSlug}`;
   }
 
   async function publishToPlatform(social: SocialPost) {
