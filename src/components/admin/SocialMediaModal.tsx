@@ -85,15 +85,25 @@ export function SocialMediaModal({ isOpen, onClose, postId, postTitle, postSlug,
     setTimeout(() => setCopiedId(null), 2000);
   }
 
-  function downloadImage() {
+  async function downloadImage() {
     if (!coverImage) return;
-    const link = document.createElement('a');
-    link.href = coverImage;
-    link.download = `${postTitle.toLowerCase().replace(/\s+/g, '-')}.jpg`;
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    
+    try {
+      const response = await fetch(coverImage);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${postTitle.toLowerCase().replace(/\s+/g, '-')}.jpg`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading image:', error);
+      // Fallback: abrir en nueva pestaña
+      window.open(coverImage, '_blank');
+    }
   }
 
   function generateShortlink(): string {
