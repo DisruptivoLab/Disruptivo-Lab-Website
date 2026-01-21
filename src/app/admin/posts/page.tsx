@@ -6,7 +6,7 @@ import { AdminHeader } from '@/components/admin/AdminHeader';
 import { PostPreviewModal } from '@/components/admin/PostPreviewModal';
 import { SocialMediaModal } from '@/components/admin/SocialMediaModal';
 import { supabase } from '@/lib/supabase';
-import { Eye, Edit, Trash2, Plus, Star, Send, Archive, Tag, Share2 } from 'lucide-react';
+import { Eye, Edit, Trash2, Plus, Star, Send, Archive, Tag, Share2, Clock, CheckCircle, Circle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface Post {
@@ -224,9 +224,9 @@ export default function AdminPostsPage() {
   };
 
   const socialStatusConfig = {
-    pending: { color: 'bg-gray-500/10 text-gray-600 dark:text-gray-400', icon: '⏸️', label: 'Pendiente' },
-    partial: { color: 'bg-yellow-500/10 text-yellow-600 dark:text-yellow-400', icon: '🔄', label: 'Parcial' },
-    completed: { color: 'bg-green-500/10 text-green-600 dark:text-green-400', icon: '✅', label: 'Completado' }
+    pending: { color: 'bg-gray-500/10 text-gray-600 dark:text-gray-400', icon: Circle, label: 'Pendiente' },
+    partial: { color: 'bg-yellow-500/10 text-yellow-600 dark:text-yellow-400', icon: Clock, label: 'Parcial' },
+    completed: { color: 'bg-green-500/10 text-green-600 dark:text-green-400', icon: CheckCircle, label: 'Completado' }
   };
 
   return (
@@ -328,12 +328,16 @@ export default function AdminPostsPage() {
                       <button
                         onClick={() => toggleSocialStatus(post.id, post.social_status || 'pending')}
                         className={cn(
-                          "px-2 py-1 rounded text-xs font-medium cursor-pointer hover:opacity-80 transition-opacity",
+                          "px-2 py-1 rounded text-xs font-medium cursor-pointer hover:opacity-80 transition-opacity flex items-center gap-1",
                           socialStatusConfig[post.social_status || 'pending'].color
                         )}
                         title="Click para cambiar estado"
                       >
-                        {socialStatusConfig[post.social_status || 'pending'].icon} {socialStatusConfig[post.social_status || 'pending'].label}
+                        {(() => {
+                          const Icon = socialStatusConfig[post.social_status || 'pending'].icon;
+                          return <Icon className="w-3 h-3" />;
+                        })()}
+                        {socialStatusConfig[post.social_status || 'pending'].label}
                       </button>
                     </td>
                     <td className="py-3 px-4 text-sm text-black/70 dark:text-white/70">{post.author_name}</td>
