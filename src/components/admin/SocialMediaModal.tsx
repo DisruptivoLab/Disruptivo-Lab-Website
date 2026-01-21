@@ -234,7 +234,7 @@ export function SocialMediaModal({ isOpen, onClose, postId, postTitle, postSlug,
                         <div className="flex gap-2 pt-2">
                           <button
                             onClick={() => copyToClipboard(social.content, social.id)}
-                            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white dark:bg-black border border-border rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+                            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-foreground"
                           >
                             {copiedId === social.id ? (
                               <>
