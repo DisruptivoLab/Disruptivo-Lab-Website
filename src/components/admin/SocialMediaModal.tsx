@@ -181,8 +181,14 @@ export function SocialMediaModal({ isOpen, onClose, postId, postTitle, postSlug,
   const shortlink = generateShortlink();
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div className="relative w-full max-w-4xl max-h-[90vh] bg-white dark:bg-black rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div 
+        className="relative w-full max-w-4xl max-h-[90vh] bg-white dark:bg-black rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Header */}
         <div className="flex items-start justify-between p-6 border-b border-border">
           <div className="flex-1 pr-4">
