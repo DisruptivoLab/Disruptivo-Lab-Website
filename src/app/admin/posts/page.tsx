@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { AdminHeader } from '@/components/admin/AdminHeader';
 import { PostPreviewModal } from '@/components/admin/PostPreviewModal';
+import { SocialMediaModal } from '@/components/admin/SocialMediaModal';
 import { supabase } from '@/lib/supabase';
-import { Eye, Edit, Trash2, Plus, Star, Send, Archive, Tag } from 'lucide-react';
+import { Eye, Edit, Trash2, Plus, Star, Send, Archive, Tag, Share2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface Post {
@@ -20,6 +21,7 @@ interface Post {
   excerpt: string;
   is_featured: boolean;
   categories?: string[];
+  cover_image?: string | null;
 }
 
 function getTimeAgo(date: string | null): string {
@@ -49,6 +51,8 @@ export default function AdminPostsPage() {
   const [filter, setFilter] = useState<'all' | 'draft' | 'published' | 'archived'>('all');
   const [selectedPost, setSelectedPost] = useState<any>(null);
   const [showPreview, setShowPreview] = useState(false);
+  const [showSocialModal, setShowSocialModal] = useState(false);
+  const [selectedSocialPost, setSelectedSocialPost] = useState<Post | null>(null);
 
   useEffect(() => {
     fetchPosts();
@@ -68,6 +72,7 @@ export default function AdminPostsPage() {
           created_at,
           views_count,
           is_featured,
+          cover_image,
           blog_post_translations(title, excerpt, locale)
         `)
         .order('created_at', { ascending: false });
@@ -106,6 +111,7 @@ export default function AdminPostsPage() {
             ...post,
             title: translation.title || 'Sin título',
             excerpt: translation.excerpt || '',
+            cover_image: post.cover_image,
             categories
           };
         })
@@ -218,6 +224,15 @@ export default function AdminPostsPage() {
         onPublish={publishPost}
       />
 
+      <SocialMediaModal
+        isOpen={showSocialModal}
+        onClose={() => setShowSocialModal(false)}
+        postId={selectedSocialPost?.id || ''}
+        postTitle={selectedSocialPost?.title || ''}
+        postSlug={selectedSocialPost?.slug || ''}
+        coverImage={selectedSocialPost?.cover_image || null}
+      />
+
       <div className="p-6">
         <div className="flex gap-2 mb-6">
           {(['all', 'draft', 'published', 'archived'] as const).map((status) => (
@@ -287,6 +302,16 @@ export default function AdminPostsPage() {
                     <td className="py-3 px-4 text-sm text-black/70 dark:text-white/70">{getTimeAgo(post.published_at)}</td>
                     <td className="py-3 px-4">
                       <div className="flex items-center justify-end gap-2">
+                        <button 
+                          onClick={() => {
+                            setSelectedSocialPost(post);
+                            setShowSocialModal(true);
+                          }}
+                          className="p-2 rounded-lg hover:bg-purple-500/10 text-black/70 dark:text-white/70 hover:text-purple-600 dark:hover:text-purple-400"
+                          title="Social Media"
+                        >
+                          <Share2 className="w-4 h-4" />
+                        </button>
                         <button 
                           onClick={() => toggleFeatured(post.id, post.is_featured)} 
                           className={cn(
