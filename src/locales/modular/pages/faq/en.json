@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "Frequently Asked Questions - Disruptivo Lab",
+    "description": "Answers to the most frequently asked questions about our AI, automation, software development and digital consulting services."
+  },
+  "hero": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find quick answers about our AI and digital transformation services"
+  },
+  "categories": {
+    "general": "General",
+    "services": "Services",
+    "pricing": "Pricing & Plans",
+    "technical": "Technical",
+    "process": "Process"
+  },
+  "faqs": {
+    "general": [
+      {
+        "q": "What is Disruptivo Lab?",
+        "a": "We are an innovation and technology agency specialized in AI, automation, software development and digital consulting. We transform ideas into digital futures with disruptive methodology."
+      },
+      {
+        "q": "In which countries do you operate?",
+        "a": "We operate globally. We work with clients in Spain, Latin America, United States and Europe. All our services are 100% remote."
+      },
+      {
+        "q": "How long does it take to implement a project?",
+        "a": "It depends on the service. A WhatsApp chatbot can be ready in 2-3 weeks. Software development projects take 2-6 months. Comprehensive consulting can be 3-12 months."
+      }
+    ],
+    "services": [
+      {
+        "q": "What services do you offer?",
+        "a": "We offer 5 main services: WhatsApp Automation with AI, Business Automation, AI Software Development, Comprehensive Consulting, and AI Sales Funnel."
+      },
+      {
+        "q": "Can I hire just one service or do I need a complete package?",
+        "a": "You can hire individual services according to your needs. There are no mandatory packages. We recommend starting with a pilot service and scaling based on results."
+      },
+      {
+        "q": "Do you offer support after implementation?",
+        "a": "Yes, all our projects include 30 days of post-launch support. After that we offer monthly maintenance plans with guaranteed SLA."
+      },
+      {
+        "q": "What is Validator AI?",
+        "a": "It's our free tool that validates business ideas using AI. It analyzes viability, market, competition and gives you a detailed report in minutes."
+      }
+    ],
+    "pricing": [
+      {
+        "q": "How much do your services cost?",
+        "a": "Prices vary according to complexity and scope. Chatbots from €2,500. Software development from €15,000. Consulting from €5,000/month. Schedule a call for personalized quote."
+      },
+      {
+        "q": "Do you offer payment plans?",
+        "a": "Yes, we offer payments in phases: 40% at start, 30% mid-project, 30% at completion. For large projects we accept monthly payments."
+      },
+      {
+        "q": "Are there hidden costs?",
+        "a": "No. All quotes are transparent and include development, implementation and initial support. Additional costs only for approved scope changes."
+      }
+    ],
+    "technical": [
+      {
+        "q": "What technologies do you use?",
+        "a": "We use Next.js, React, Node.js, Python, Supabase, PostgreSQL, OpenAI GPT-4, Claude, n8n, Make, and more. We choose the best technology for each project."
+      },
+      {
+        "q": "Are the systems scalable?",
+        "a": "Yes, all our developments are designed to scale. We use cloud-native architectures, microservices and distributed databases."
+      },
+      {
+        "q": "Do you integrate with existing systems?",
+        "a": "Yes, we integrate with CRMs (Salesforce, HubSpot), ERPs (SAP, Odoo), WhatsApp Business API, social networks, and any system with API."
+      },
+      {
+        "q": "What AI models do you use?",
+        "a": "We work with GPT-4, GPT-4 Turbo, Claude 3.5 Sonnet, Gemini Pro, and open-source models like Llama 3. We choose based on use case and budget."
+      }
+    ],
+    "process": [
+      {
+        "q": "What is the work process?",
+        "a": "1) Discovery call (free), 2) Proposal and quote, 3) Kick-off and planning, 4) Iterative development with weekly demos, 5) Testing and adjustments, 6) Launch and training."
+      },
+      {
+        "q": "Do I need technical knowledge?",
+        "a": "No. We handle all the technical aspects. You only need to know your business and objectives. We train you in the use of the tools we develop."
+      },
+      {
+        "q": "Can I see the project progress?",
+        "a": "Yes, we use agile methodology with weekly demos. You'll have access to real-time Kanban board and progress reports every Friday."
+      },
+      {
+        "q": "What if I'm not satisfied?",
+        "a": "We offer satisfaction guarantee. If within the first 14 days you're not happy, we refund 100% of the initial payment no questions asked."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Can't find your answer?",
+    "description": "Schedule a free 30-minute call with our team",
+    "button": "Schedule Call"
+  }
+}

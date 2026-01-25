@@ -12,6 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/portfolio',
     '/about',
     '/blog',
+    '/faq',
     '/validator-ai',
     '/privacy',
     '/terms',
@@ -20,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
     changeFrequency: 'weekly' as const,
-    priority: route === '/' ? 1 : route === '/blog' ? 0.9 : route === '/validator-ai' ? 0.85 : 0.8,
+    priority: route === '/' ? 1 : route === '/blog' ? 0.9 : route === '/faq' ? 0.85 : route === '/validator-ai' ? 0.85 : 0.8,
   }));
 
   // Servicios
