@@ -50,32 +50,45 @@ export function generateArticleSchema(article: {
   datePublished: string;
   dateModified: string;
   author: string;
+  wordCount?: number;
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": "Article",
     "headline": article.title,
     "description": article.description,
     "url": article.url,
-    "image": article.image,
+    "image": {
+      "@type": "ImageObject",
+      "url": article.image,
+      "width": 1200,
+      "height": 630
+    },
     "datePublished": article.datePublished,
     "dateModified": article.dateModified,
     "author": {
       "@type": "Person",
-      "name": article.author
+      "name": article.author,
+      "url": "https://disruptivo.app/about"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Disruptivo Lab",
+      "url": "https://disruptivo.app",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://disruptivo.app/media/Identidad/iconotipo_disrptivo_Lab.png"
+        "url": "https://disruptivo.app/media/Identidad/iconotipo_disrptivo_Lab.png",
+        "width": 600,
+        "height": 60
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": article.url
-    }
+    },
+    "articleSection": "Technology",
+    "inLanguage": "es-ES",
+    ...(article.wordCount && { "wordCount": article.wordCount })
   };
 }
 

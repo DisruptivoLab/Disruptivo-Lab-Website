@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useModularTranslation } from '@/contexts/modular-translation-context';
 import { supabase } from '@/lib/supabase';
+import { generateArticleSchema } from '@/lib/structured-data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
@@ -38,6 +39,7 @@ export default function BlogPostPage({ params }: Props) {
           cover_image,
           author_name,
           published_at,
+          updated_at,
           views_count,
           reading_time,
           blog_post_translations!inner(
@@ -71,12 +73,14 @@ export default function BlogPostPage({ params }: Props) {
         cover_image: data.cover_image,
         author_name: data.author_name,
         published_at: data.published_at,
+        updated_at: data.updated_at,
         views_count: data.views_count,
         reading_time: data.reading_time || 5,
         title: translation.title || 'Sin título',
         excerpt: translation.excerpt || '',
         content: translation.content ? translation.content.replace(/\\n/g, '\n') : '',
         meta_title: translation.meta_title,
+        meta_description: translation.meta_description,
       };
 
       setPost(postData);
@@ -144,8 +148,23 @@ export default function BlogPostPage({ params }: Props) {
 
   if (loading || !post) return <SectionLoading />;
 
+  const articleSchema = generateArticleSchema({
+    title: post.title,
+    description: post.meta_description || post.excerpt,
+    url: `https://disruptivo.app/blog/${post.slug}`,
+    image: post.cover_image || 'https://disruptivo.app/media/Identidad/iconotipo_disrptivo_Lab.png',
+    datePublished: post.published_at,
+    dateModified: post.updated_at || post.published_at,
+    author: post.author_name,
+    wordCount: Math.ceil(post.content.length / 5)
+  });
+
   return (
     <article className="min-h-screen pt-28 pb-16 px-4">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <div className="container mx-auto max-w-4xl">
         {/* Back button */}
         <Link href="/blog" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors">
