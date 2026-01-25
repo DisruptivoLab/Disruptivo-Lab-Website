@@ -3,21 +3,13 @@ import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const url = request.nextUrl.clone();
-
-  // Forzar HTTPS sin www
-  if (request.headers.get('host')?.startsWith('www.')) {
-    url.host = url.host.replace('www.', '');
-    return NextResponse.redirect(url, 301);
-  }
 
   // Redirigir URLs de idiomas no soportados a español
-  const unsupportedLocales = ['/en/', '/pt/', '/fr/', '/ja/', '/ko/', '/zh/'];
-  for (const locale of unsupportedLocales) {
-    if (pathname.startsWith(locale)) {
-      url.pathname = pathname.replace(locale, '/');
-      return NextResponse.redirect(url, 301);
-    }
+  if (pathname.startsWith('/en/') || pathname.startsWith('/pt/') || 
+      pathname.startsWith('/fr/') || pathname.startsWith('/ja/') || 
+      pathname.startsWith('/ko/') || pathname.startsWith('/zh/')) {
+    const newPath = pathname.replace(/^\/(en|pt|fr|ja|ko|zh)\//, '/');
+    return NextResponse.redirect(new URL(newPath, request.url), 301);
   }
 
   // Redirects 301 permanentes
@@ -37,6 +29,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|media).*)',
+    '/((?!_next|api|favicon.ico|media).*)',
   ],
 };
