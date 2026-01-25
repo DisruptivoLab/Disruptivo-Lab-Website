@@ -93,19 +93,13 @@
 ### Twitter Cards ✅
 
 - ✅ twitter:card (summary_large_image)
+- ✅ twitter:site (@DisruptivoLab)
+- ✅ twitter:creator (@DisruptivoLab)
 - ✅ twitter:title
 - ✅ twitter:description
 - ✅ twitter:image
 
 ### Pendiente ⚠️
-
-- ⚠️ **Twitter handle**: Agregar twitter:site y twitter:creator si tienes cuenta
-
----
-
-## ✅ Performance (92/100)
-
-### Core Web Vitals ✅
 
 - ✅ **LCP** (Largest Contentful Paint): 2.1s → 🟢 Bueno
 - ✅ **FID** (First Input Delay): < 100ms → 🟢 Bueno
@@ -123,12 +117,13 @@
 - ✅ Image optimization (Next.js Image)
 - ✅ Font optimization (next/font)
 - ✅ Preconnect para dominios externos
+- ✅ Lazy loading para imágenes below the fold
+- ✅ AVIF/WebP con deviceSizes optimizados
 
 ### Recomendaciones 💡
 
 - 💡 Implementar Service Worker para PWA offline
-- 💡 Lazy loading para imágenes below the fold
-- 💡 Comprimir imágenes con WebP/AVIF
+- 💡 Comprimir imágenes existentes con herramientas de optimización
 
 ---
 
@@ -139,13 +134,14 @@
 - ✅ **Blog activo**: Posts regulares sobre IA
 - ✅ **Keywords en títulos**: H1, H2, H3 optimizados
 - ✅ **Meta descriptions**: Únicas por página
-- ✅ **Internal linking**: Breadcrumbs, related posts
+- ✅ **Internal linking**: Breadcrumbs, related posts, sistema automático
 - ✅ **Content length**: Posts > 1000 palabras
 - ✅ **Reading time**: Calculado y mostrado
 - ✅ **Author attribution**: Nombre de autor en posts
 - ✅ **Publish dates**: Visible en posts
 - ✅ **Categories**: Sistema de categorías implementado
 - ✅ **Featured posts**: Carrusel destacado
+- ✅ **Keywords long-tail**: Mapa de keywords a URLs
 
 ### Oportunidades de Mejora 💡
 
@@ -244,13 +240,13 @@ Si decides agregar oficina física:
 
 - ✅ **Social sharing**: Botones en posts
 - ✅ **Open Graph**: Meta tags completos
-- ✅ **Twitter Cards**: Configurado
+- ✅ **Twitter Cards**: Configurado con @DisruptivoLab
 - ✅ **Social queue**: Sistema de gestión de contenido
 - ✅ **Social status tracking**: pending/partial/completed
+- ✅ **Social profiles**: Twitter, LinkedIn, GitHub en Schema.org
 
 ### Pendiente ⚠️
 
-- ⚠️ **Social profiles**: Agregar URLs en Organization Schema
 - ⚠️ **Social follow buttons**: En footer/header
 - 💡 **Instagram feed**: Widget en homepage
 - 💡 **LinkedIn company page**: Crear y optimizar
