@@ -29,12 +29,6 @@ export const metadata: Metadata = {
     canonical: "https://disruptivo.app",
     languages: {
       'es': 'https://disruptivo.app',
-      'en': 'https://disruptivo.app/en',
-      'pt': 'https://disruptivo.app/pt',
-      'fr': 'https://disruptivo.app/fr',
-      'ja': 'https://disruptivo.app/ja',
-      'ko': 'https://disruptivo.app/ko',
-      'zh': 'https://disruptivo.app/zh',
       'x-default': 'https://disruptivo.app'
     }
   },

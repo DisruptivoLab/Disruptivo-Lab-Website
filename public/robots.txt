@@ -1,0 +1,31 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Bloquear archivos estáticos de Next.js
+Disallow: /_next/static/
+Disallow: /_next/image/
+
+# Bloquear archivos de fuentes
+Disallow: /*.woff
+Disallow: /*.woff2
+Disallow: /*.ttf
+Disallow: /*.otf
+Disallow: /*.eot
+
+# Bloquear archivos de configuración
+Disallow: /*.json$
+Disallow: /manifest.json
+
+# Bloquear íconos
+Disallow: /favicon.ico
+Disallow: /*.ico
+
+# Bloquear rutas de admin
+Disallow: /admin/
+
+# Bloquear API routes
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://disruptivo.app/sitemap.xml
