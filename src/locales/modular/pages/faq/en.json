@@ -50,7 +50,7 @@
     "pricing": [
       {
         "q": "How much do your services cost?",
-        "a": "Prices vary according to complexity and scope. Chatbots from €2,500. Software development from €15,000. Consulting from €5,000/month. Schedule a call for personalized quote."
+        "a": "Prices vary according to complexity, required technology and project scope. Each solution is customized to maximize ROI. Schedule a call to receive a detailed quote tailored to your specific needs."
       },
       {
         "q": "Do you offer payment plans?",
@@ -76,7 +76,7 @@
       },
       {
         "q": "What AI models do you use?",
-        "a": "We work with GPT-4, GPT-4 Turbo, Claude 3.5 Sonnet, Gemini Pro, and open-source models like Llama 3. We choose based on use case and budget."
+        "a": "We work with the most advanced models: Claude Opus 4.5, GPT-5.2, Gemini 3 Pro/Flash, GLM-4.7, and open-source models like Llama 3.3, Qwen 3, DeepSeek V3. We choose based on use case, budget and privacy requirements."
       }
     ],
     "process": [
