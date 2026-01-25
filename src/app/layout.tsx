@@ -61,6 +61,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@DisruptivoLab",
+    creator: "@DisruptivoLab",
     title: "Disruptivo Lab - Innovación Radical, Resultados Reales",
     description: "Transformamos ideas en futuros digitales. Agencia de innovación y tecnología.",
     images: ["https://disruptivo.app/media/Identidad/iconotipo_disrptivo_Lab.png"],
@@ -120,7 +122,11 @@ export default function RootLayout({
               "description": "Agencia de innovación y tecnología especializada en IA, Branding, Estrategia y Plataformas Web",
               "url": "https://disruptivo.app",
               "logo": "https://disruptivo.app/media/Identidad/iconotipo_disrptivo_Lab.png",
-              "sameAs": [],
+              "sameAs": [
+                "https://twitter.com/DisruptivoLab",
+                "https://www.linkedin.com/company/disruptivo-lab",
+                "https://github.com/DisruptivoLab"
+              ],
               "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "customer service",

@@ -252,6 +252,7 @@ export default function BlogPostPage({ params }: Props) {
                         src={related.cover_image}
                         alt={related.title}
                         fill
+                        loading="lazy"
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
