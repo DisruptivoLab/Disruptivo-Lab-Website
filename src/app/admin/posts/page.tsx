@@ -303,7 +303,6 @@ export default function AdminPostsPage() {
                   <tr key={post.id} className="border-b border-black/5 dark:border-white/5 hover:bg-black/5 dark:hover:bg-white/5">
                     <td className="py-3 px-4">
                       <p className="font-medium text-black dark:text-white text-sm">{post.title}</p>
-                      <p className="text-xs text-black/60 dark:text-white/60 truncate max-w-md">{post.excerpt}</p>
                     </td>
                     <td className="py-3 px-4">
                       <div className="flex flex-wrap gap-1">
